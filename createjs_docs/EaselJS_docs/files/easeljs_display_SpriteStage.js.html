@@ -1,0 +1,1179 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="utf-8">
+    <link rel="stylesheet" href="../assets/css/yui-cssgrids-min.css">
+    <link rel="stylesheet" href="../assets/vendor/prettify/prettify-min.css">
+    <link rel="stylesheet" href="../assets/css/main.css" id="site_styles">
+    <link rel="shortcut icon" type="image/x-icon" href="../assets/favicon.ico">
+    <script src="../assets/js/yui-source.js"></script>
+	<title>EaselJS v0.8.2 API Documentation : easeljs/display/SpriteStage.js</title>
+</head>
+<body class="yui3-skin-sam">
+
+<div id="doc">
+    <div id="hd" class="yui3-g header">
+        <div class="yui3-u-3-4">
+            
+                <h1><a href="http://www.createjs.com/easeljs"><img src="../assets/docs-icon-EaselJS.png" title="EaselJS"></a></h1>
+            
+        </div>
+        <div class="version">
+            <em>API Documentation for: 0.8.2</em>
+        </div>
+    </div>
+    <div id="bd" class="yui3-g">
+
+        <div class="yui3-u-1-4">
+            <div id="docs-sidebar" class="sidebar apidocs">
+                <div id="api-list">
+    <h2 class="off-left">APIs</h2>
+    <div id="api-tabview" class="tabview">
+        <ul class="tabs">
+            <li><a href="#api-classes">Classes</a></li>
+        </ul>
+
+        <div id="api-tabview-filter">
+            <input type="search" id="api-filter" placeholder="Type to filter APIs">
+        </div>
+
+        <div id="api-tabview-panel">
+            <ul id="api-classes" class="apis classes">
+            
+                <li><a href="../classes/AlphaMapFilter.html">AlphaMapFilter</a></li>
+            
+                <li><a href="../classes/AlphaMaskFilter.html">AlphaMaskFilter</a></li>
+            
+                <li><a href="../classes/Bitmap.html">Bitmap</a></li>
+            
+                <li><a href="../classes/BitmapText.html">BitmapText</a></li>
+            
+                <li><a href="../classes/BlurFilter.html">BlurFilter</a></li>
+            
+                <li><a href="../classes/ButtonHelper.html">ButtonHelper</a></li>
+            
+                <li><a href="../classes/ColorFilter.html">ColorFilter</a></li>
+            
+                <li><a href="../classes/ColorMatrix.html">ColorMatrix</a></li>
+            
+                <li><a href="../classes/ColorMatrixFilter.html">ColorMatrixFilter</a></li>
+            
+                <li><a href="../classes/Container.html">Container</a></li>
+            
+                <li><a href="../classes/DisplayObject.html">DisplayObject</a></li>
+            
+                <li><a href="../classes/DisplayProps.html">DisplayProps</a></li>
+            
+                <li><a href="../classes/DOMElement.html">DOMElement</a></li>
+            
+                <li><a href="../classes/EaselJS.html">EaselJS</a></li>
+            
+                <li><a href="../classes/Event.html">Event</a></li>
+            
+                <li><a href="../classes/EventDispatcher.html">EventDispatcher</a></li>
+            
+                <li><a href="../classes/Filter.html">Filter</a></li>
+            
+                <li><a href="../classes/Graphics.html">Graphics</a></li>
+            
+                <li><a href="../classes/Graphics.Arc.html">Graphics.Arc</a></li>
+            
+                <li><a href="../classes/Graphics.ArcTo.html">Graphics.ArcTo</a></li>
+            
+                <li><a href="../classes/Graphics.BeginPath.html">Graphics.BeginPath</a></li>
+            
+                <li><a href="../classes/Graphics.BezierCurveTo.html">Graphics.BezierCurveTo</a></li>
+            
+                <li><a href="../classes/Graphics.Circle.html">Graphics.Circle</a></li>
+            
+                <li><a href="../classes/Graphics.ClosePath.html">Graphics.ClosePath</a></li>
+            
+                <li><a href="../classes/Graphics.Ellipse.html">Graphics.Ellipse</a></li>
+            
+                <li><a href="../classes/Graphics.Fill.html">Graphics.Fill</a></li>
+            
+                <li><a href="../classes/Graphics.LineTo.html">Graphics.LineTo</a></li>
+            
+                <li><a href="../classes/Graphics.MoveTo.html">Graphics.MoveTo</a></li>
+            
+                <li><a href="../classes/Graphics.PolyStar.html">Graphics.PolyStar</a></li>
+            
+                <li><a href="../classes/Graphics.QuadraticCurveTo.html">Graphics.QuadraticCurveTo</a></li>
+            
+                <li><a href="../classes/Graphics.Rect.html">Graphics.Rect</a></li>
+            
+                <li><a href="../classes/Graphics.RoundRect.html">Graphics.RoundRect</a></li>
+            
+                <li><a href="../classes/Graphics.Stroke.html">Graphics.Stroke</a></li>
+            
+                <li><a href="../classes/Graphics.StrokeDash.html">Graphics.StrokeDash</a></li>
+            
+                <li><a href="../classes/Graphics.StrokeStyle.html">Graphics.StrokeStyle</a></li>
+            
+                <li><a href="../classes/Matrix2D.html">Matrix2D</a></li>
+            
+                <li><a href="../classes/MouseEvent.html">MouseEvent</a></li>
+            
+                <li><a href="../classes/MovieClip.html">MovieClip</a></li>
+            
+                <li><a href="../classes/MovieClipPlugin.html">MovieClipPlugin</a></li>
+            
+                <li><a href="../classes/Point.html">Point</a></li>
+            
+                <li><a href="../classes/Rectangle.html">Rectangle</a></li>
+            
+                <li><a href="../classes/Shadow.html">Shadow</a></li>
+            
+                <li><a href="../classes/Shape.html">Shape</a></li>
+            
+                <li><a href="../classes/Sprite.html">Sprite</a></li>
+            
+                <li><a href="../classes/SpriteContainer.html">SpriteContainer</a></li>
+            
+                <li><a href="../classes/SpriteSheet.html">SpriteSheet</a></li>
+            
+                <li><a href="../classes/SpriteSheetBuilder.html">SpriteSheetBuilder</a></li>
+            
+                <li><a href="../classes/SpriteSheetUtils.html">SpriteSheetUtils</a></li>
+            
+                <li><a href="../classes/SpriteStage.html">SpriteStage</a></li>
+            
+                <li><a href="../classes/Stage.html">Stage</a></li>
+            
+                <li><a href="../classes/Text.html">Text</a></li>
+            
+                <li><a href="../classes/Ticker.html">Ticker</a></li>
+            
+                <li><a href="../classes/Touch.html">Touch</a></li>
+            
+                <li><a href="../classes/UID.html">UID</a></li>
+            
+                <li><a href="../classes/Utility Methods.html">Utility Methods</a></li>
+            
+            </ul>
+
+            <ul id="api-modules" class="apis modules">
+            
+                <li><a href="../modules/CreateJS.html">CreateJS</a></li>
+            
+                <li><a href="../modules/EaselJS.html">EaselJS</a></li>
+            
+            </ul>
+        </div>
+    </div>
+</div>
+
+            </div>
+        </div>
+        <div class="yui3-u-3-4">
+            <div id="api-options">
+        Show:
+        <label for="api-show-inherited">
+            <input type="checkbox" id="api-show-inherited" checked>
+            Inherited
+        </label>
+
+        <label for="api-show-protected">
+            <input type="checkbox" id="api-show-protected">
+            Protected
+        </label>
+
+        <label for="api-show-private">
+            <input type="checkbox" id="api-show-private">
+            Private
+        </label>
+        <label for="api-show-deprecated">
+            <input type="checkbox" id="api-show-deprecated">
+            Deprecated
+        </label>
+
+    </div>
+            <div class="apidocs">
+                <div id="docs-main">
+                    <div class="content">
+                        <script>
+	var name = easeljs/display/SpriteStage.js      
+</script>
+<h1 class="file-heading">File:SpriteStage.js</h1>
+
+<div class="file">
+    <pre class="code prettyprint linenums">
+/*
+* SpriteStage
+* Visit http://createjs.com/ for documentation, updates and examples.
+*
+* Copyright (c) 2010 gskinner.com, inc.
+*
+* Permission is hereby granted, free of charge, to any person
+* obtaining a copy of this software and associated documentation
+* files (the &quot;Software&quot;), to deal in the Software without
+* restriction, including without limitation the rights to use,
+* copy, modify, merge, publish, distribute, sublicense, and/or sell
+* copies of the Software, and to permit persons to whom the
+* Software is furnished to do so, subject to the following
+* conditions:
+*
+* The above copyright notice and this permission notice shall be
+* included in all copies or substantial portions of the Software.
+*
+* THE SOFTWARE IS PROVIDED &quot;AS IS&quot;, WITHOUT WARRANTY OF ANY KIND,
+* EXPRESS OR IMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES
+* OF MERCHANTABILITY, FITNESS FOR A PARTICULAR PURPOSE AND
+* NONINFRINGEMENT. IN NO EVENT SHALL THE AUTHORS OR COPYRIGHT
+* HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER LIABILITY,
+* WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING
+* FROM, OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR
+* OTHER DEALINGS IN THE SOFTWARE.
+*/
+
+/**
+ * @module EaselJS
+ */
+
+// namespace:
+this.createjs = this.createjs||{};
+
+(function() {
+	&quot;use strict&quot;;
+
+
+	// Set which classes are compatible with SpriteStage.
+	// The order is important!!! If it&#x27;s changed/appended, make sure that any logic that 
+	// checks _spritestage_compatibility accounts for it!
+	[createjs.SpriteContainer, createjs.Sprite, createjs.BitmapText, createjs.Bitmap, createjs.DOMElement].forEach(function(_class, index) {
+		_class.prototype._spritestage_compatibility = index + 1;
+	});
+	
+
+// constructor:
+	/**
+	 * A sprite stage is the root level {{#crossLink &quot;Container&quot;}}{{/crossLink}} for an aggressively optimized display list. Each time its {{#crossLink &quot;Stage/tick&quot;}}{{/crossLink}}
+	 * method is called, it will render its display list to its target canvas. WebGL content is fully compatible with the existing Context2D renderer.
+	 * On devices or browsers that don&#x27;t support WebGL, content will automatically be rendered via canvas 2D.
+	 *
+	 * Restrictions:
+	 *     - only Sprite, SpriteContainer, BitmapText, Bitmap and DOMElement are allowed to be added to the display list.
+	 *     - a child being added (with the exception of DOMElement) MUST have an image or spriteSheet defined on it.
+	 *     - a child&#x27;s image/spriteSheet MUST never change while being on the display list.
+	 *
+	 * &lt;h4&gt;Example&lt;/h4&gt;
+	 * This example creates a sprite stage, adds a child to it, then uses {{#crossLink &quot;Ticker&quot;}}{{/crossLink}} to update the child
+	 * and redraw the stage using {{#crossLink &quot;SpriteStage/update&quot;}}{{/crossLink}}.
+	 *
+	 *      var stage = new createjs.SpriteStage(&quot;canvasElementId&quot;, false, false);
+	 *      stage.updateViewport(800, 600);
+	 *      var image = new createjs.Bitmap(&quot;imagePath.png&quot;);
+	 *      stage.addChild(image);
+	 *      createjs.Ticker.addEventListener(&quot;tick&quot;, handleTick);
+	 *      function handleTick(event) {
+	 *          image.x += 10;
+	 *          stage.update();
+	 *      }
+	 *
+	 * &lt;strong&gt;Note:&lt;/strong&gt; SpriteStage is not included in the minified version of EaselJS.
+	 *
+	 * @class SpriteStage
+	 * @extends Stage
+	 * @constructor
+	 * @param {HTMLCanvasElement | String | Object} canvas A canvas object that the SpriteStage will render to, or the string id
+	 * of a canvas object in the current document.
+	 * @param {Boolean} preserveDrawingBuffer If true, the canvas is NOT auto-cleared by WebGL (spec discourages true). Useful if you want to use p.autoClear = false.
+	 * @param {Boolean} antialias Specifies whether or not the browser&#x27;s WebGL implementation should try to perform antialiasing.
+	 **/
+	function SpriteStage(canvas, preserveDrawingBuffer, antialias) {
+		this.Stage_constructor(canvas);
+		
+		
+	// private properties:
+		/**
+		 * Specifies whether or not the canvas is auto-cleared by WebGL. Spec discourages true.
+		 * If true, the canvas is NOT auto-cleared by WebGL. Value is ignored if &#x60;_alphaEnabled&#x60; is false.
+		 * Useful if you want to use &#x60;autoClear = false&#x60;.
+		 * @property _preserveDrawingBuffer
+		 * @protected
+		 * @type {Boolean}
+		 * @default false
+		 **/
+		this._preserveDrawingBuffer = preserveDrawingBuffer||false;
+	
+		/**
+		 * Specifies whether or not the browser&#x27;s WebGL implementation should try to perform antialiasing.
+		 * @property _antialias
+		 * @protected
+		 * @type {Boolean}
+		 * @default false
+		 **/
+		this._antialias = antialias||false;
+	
+		/**
+		 * The width of the canvas element.
+		 * @property _viewportWidth
+		 * @protected
+		 * @type {Number}
+		 * @default 0
+		 **/
+		this._viewportWidth = 0;
+	
+		/**
+		 * The height of the canvas element.
+		 * @property _viewportHeight
+		 * @protected
+		 * @type {Number}
+		 * @default 0
+		 **/
+		this._viewportHeight = 0;
+	
+		/**
+		 * A 2D projection matrix used to convert WebGL&#x27;s clipspace into normal pixels.
+		 * @property _projectionMatrix
+		 * @protected
+		 * @type {Float32Array}
+		 * @default null
+		 **/
+		this._projectionMatrix = null;
+	
+		/**
+		 * The current WebGL canvas context.
+		 * @property _webGLContext
+		 * @protected
+		 * @type {WebGLRenderingContext}
+		 * @default null
+		 **/
+		this._webGLContext = null;
+	
+		/**
+		 * Indicates whether or not an error has been detected when dealing with WebGL.
+		 * If the is true, the behavior should be to use Canvas 2D rendering instead.
+		 * @property _webGLErrorDetected
+		 * @protected
+		 * @type {Boolean}
+		 * @default false
+		 **/
+		this._webGLErrorDetected = false;
+	
+		/**
+		 * The color to use when the WebGL canvas has been cleared.
+		 * @property _clearColor
+		 * @protected
+		 * @type {Object}
+		 * @default null
+		 **/
+		this._clearColor = null;
+		
+		/**
+		 * The maximum number of textures WebGL can work with per draw call.
+		 * @property _maxTexturesPerDraw
+		 * @protected
+		 * @type {Number}
+		 * @default 1
+		 **/
+		this._maxTexturesPerDraw = 1; // TODO: this is currently unused.
+	
+		/**
+		 * The maximum total number of boxes points that can be defined per draw call.
+		 * @property _maxBoxesPointsPerDraw
+		 * @protected
+		 * @type {Number}
+		 * @default null
+		 **/
+		this._maxBoxesPointsPerDraw = null;
+	
+		/**
+		 * The maximum number of boxes (sprites) that can be drawn in one draw call.
+		 * @property _maxBoxesPerDraw
+		 * @protected
+		 * @type {Number}
+		 * @default null
+		 **/
+		this._maxBoxesPerDraw = null;
+	
+		/**
+		 * The maximum number of indices that can be drawn in one draw call.
+		 * @property _maxIndicesPerDraw
+		 * @protected
+		 * @type {Number}
+		 * @default null
+		 **/
+		this._maxIndicesPerDraw = null;
+	
+		/**
+		 * The shader program used to draw everything.
+		 * @property _shaderProgram
+		 * @protected
+		 * @type {WebGLProgram}
+		 * @default null
+		 **/
+		this._shaderProgram = null;
+	
+		/**
+		 * The vertices data for the current draw call.
+		 * @property _vertices
+		 * @protected
+		 * @type {Float32Array}
+		 * @default null
+		 **/
+		this._vertices = null;
+	
+		/**
+		 * The buffer that contains all the vertices data.
+		 * @property _verticesBuffer
+		 * @protected
+		 * @type {WebGLBuffer}
+		 * @default null
+		 **/
+		this._verticesBuffer = null;
+	
+		/**
+		 * The indices to the vertices defined in this._vertices.
+		 * @property _indices
+		 * @protected
+		 * @type {Uint16Array}
+		 * @default null
+		 **/
+		this._indices = null;
+	
+		/**
+		 * The buffer that contains all the indices data.
+		 * @property _indicesBuffer
+		 * @protected
+		 * @type {WebGLBuffer}
+		 * @default null
+		 **/
+		this._indicesBuffer = null;
+	
+		/**
+		 * The current box index being defined for drawing.
+		 * @property _currentBoxIndex
+		 * @protected
+		 * @type {Number}
+		 * @default -1
+		 **/
+		this._currentBoxIndex = -1;
+	
+		/**
+		 * The current texture that will be used to draw into the GPU.
+		 * @property _drawTexture
+		 * @protected
+		 * @type {WebGLTexture}
+		 * @default null
+		 **/
+		this._drawTexture = null;
+		
+		
+	// setup:
+		this._initializeWebGL();
+	}
+	var p = createjs.extend(SpriteStage, createjs.Stage);
+
+	// TODO: deprecated
+	// p.initialize = function() {}; // searchable for devs wondering where it is. REMOVED. See docs for details.
+
+
+// constants:
+	/**
+	 * The number of properties defined per vertex in p._verticesBuffer.
+	 * x, y, textureU, textureV, alpha
+	 * @property NUM_VERTEX_PROPERTIES
+	 * @static
+	 * @final
+	 * @type {Number}
+	 * @readonly
+	 **/
+	SpriteStage.NUM_VERTEX_PROPERTIES = 5;
+
+	/**
+	 * The number of points in a box...obviously :)
+	 * @property POINTS_PER_BOX
+	 * @static
+	 * @final
+	 * @type {Number}
+	 * @readonly
+	 **/
+	SpriteStage.POINTS_PER_BOX = 4;
+
+	/**
+	 * The number of vertex properties per box.
+	 * @property NUM_VERTEX_PROPERTIES_PER_BOX
+	 * @static
+	 * @final
+	 * @type {Number}
+	 * @readonly
+	 **/
+	SpriteStage.NUM_VERTEX_PROPERTIES_PER_BOX = SpriteStage.POINTS_PER_BOX * SpriteStage.NUM_VERTEX_PROPERTIES;
+
+	/**
+	 * The number of indices needed to define a box using triangles.
+	 * 6 indices = 2 triangles = 1 box
+	 * @property INDICES_PER_BOX
+	 * @static
+	 * @final
+	 * @type {Number}
+	 * @readonly
+	 **/
+	SpriteStage.INDICES_PER_BOX = 6;
+
+	/**
+	 * The maximum size WebGL allows for element index numbers: 16 bit unsigned integer
+	 * @property MAX_INDEX_SIZE
+	 * @static
+	 * @final
+	 * @type {Number}
+	 * @readonly
+	 **/
+	SpriteStage.MAX_INDEX_SIZE = Math.pow(2, 16);
+
+	/**
+	 * The amount used to increment p._maxBoxesPointsPerDraw when the maximum has been reached.
+	 * If the maximum size of element index WebGL allows for (SpriteStage.MAX_INDEX_SIZE) was used,
+	 * the array size for p._vertices would equal 1280kb and p._indices 192kb. But since mobile phones
+	 * with less memory need to be accounted for, the maximum size is somewhat arbitrarily divided by 4,
+	 * reducing the array sizes to 320kb and 48kb respectively.
+	 * @property MAX_BOXES_POINTS_INCREMENT
+	 * @static
+	 * @final
+	 * @type {Number}
+	 * @readonly
+	 **/
+	SpriteStage.MAX_BOXES_POINTS_INCREMENT = SpriteStage.MAX_INDEX_SIZE / 4;
+
+
+// getter / setters:
+	/**
+	 * Indicates whether WebGL is being used for rendering. For example, this would be false if WebGL is not
+	 * supported in the browser.
+	 * @readonly
+	 * @property isWebGL
+	 * @type {Boolean}
+	 **/
+	p._get_isWebGL = function() {
+		return !!this._webGLContext;
+	};
+	
+	try {
+		Object.defineProperties(p, {
+			isWebGL: { get: p._get_isWebGL }
+		});
+	} catch (e) {} // TODO: use Log
+
+
+// public methods:
+	/**
+	 * Adds a child to the top of the display list.
+	 * Only children of type SpriteContainer, Sprite, Bitmap, BitmapText, or DOMElement are allowed.
+	 * Children also MUST have either an image or spriteSheet defined on them (unless it&#x27;s a DOMElement).
+	 *
+	 * &lt;h4&gt;Example&lt;/h4&gt;
+	 *      container.addChild(bitmapInstance);
+	 *
+	 *  You can also add multiple children at once:
+	 *
+	 *      container.addChild(bitmapInstance, shapeInstance, textInstance);
+	 *
+	 * @method addChild
+	 * @param {DisplayObject} child The display object to add.
+	 * @return {DisplayObject} The child that was added, or the last child if multiple children were added.
+	 **/
+	p.addChild = function(child) {
+		if (child == null) { return child; }
+		if (arguments.length &gt; 1) {
+			return this.addChildAt.apply(this, Array.prototype.slice.call(arguments).concat([this.children.length]));
+		} else {
+			return this.addChildAt(child, this.children.length);
+		}
+	};
+
+	/**
+	 * Adds a child to the display list at the specified index, bumping children at equal or greater indexes up one, and
+	 * setting its parent to this Container.
+	 * Only children of type SpriteContainer, Sprite, Bitmap, BitmapText, or DOMElement are allowed.
+	 * Children also MUST have either an image or spriteSheet defined on them (unless it&#x27;s a DOMElement).
+	 * 
+	 * &lt;h4&gt;Example&lt;/h4&gt;
+	 *
+	 *      addChildAt(child1, index);
+	 *
+	 * You can also add multiple children, such as:
+	 *
+	 *      addChildAt(child1, child2, ..., index);
+	 *
+	 * The index must be between 0 and numChildren. For example, to add myShape under otherShape in the display list,
+	 * you could use:
+	 *
+	 *      container.addChildAt(myShape, container.getChildIndex(otherShape));
+	 *
+	 * This would also bump otherShape&#x27;s index up by one. Fails silently if the index is out of range.
+	 *
+	 * @method addChildAt
+	 * @param {DisplayObject} child The display object to add.
+	 * @param {Number} index The index to add the child at.
+	 * @return {DisplayObject} Returns the last child that was added, or the last child if multiple children were added.
+	 **/
+	p.addChildAt = function(child, index) {
+		var l = arguments.length;
+		var indx = arguments[l-1]; // can&#x27;t use the same name as the index param or it replaces arguments[1]
+		if (indx &lt; 0 || indx &gt; this.children.length) { return arguments[l-2]; }
+		if (l &gt; 2) {
+			for (var i=0; i&lt;l-1; i++) { this.addChildAt(arguments[i], indx+i); }
+			return arguments[l-2];
+		}
+		if (child._spritestage_compatibility &gt;= 1) {
+			// The child is compatible with SpriteStage.
+		} else {
+			console &amp;&amp; console.log(&quot;Error: You can only add children of type SpriteContainer, Sprite, Bitmap, BitmapText, or DOMElement. [&quot; + child.toString() + &quot;]&quot;);
+			return child;
+		}
+		if (!child.image &amp;&amp; !child.spriteSheet &amp;&amp; child._spritestage_compatibility &lt;= 4) {
+			console &amp;&amp; console.log(&quot;Error: You can only add children that have an image or spriteSheet defined on them. [&quot; + child.toString() + &quot;]&quot;);
+			return child;
+		}
+		if (child.parent) { child.parent.removeChild(child); }
+		child.parent = this;
+		this.children.splice(index, 0, child);
+		return child;
+	};
+
+	/** docced in super class **/
+	p.update = function(props) {
+		if (!this.canvas) { return; }
+		if (this.tickOnUpdate) { this.tick(props); }
+		this.dispatchEvent(&quot;drawstart&quot;); // TODO: make cancellable?
+		if (this.autoClear) { this.clear(); }
+		var ctx = this._setWebGLContext();
+		if (ctx) {
+			// Use WebGL.
+			this.draw(ctx, false);
+		} else {
+			// Use 2D.
+			ctx = this.canvas.getContext(&quot;2d&quot;);
+			ctx.save();
+			this.updateContext(ctx);
+			this.draw(ctx, false);
+			ctx.restore();
+		}
+		this.dispatchEvent(&quot;drawend&quot;);
+	};
+
+	/**
+	 * Clears the target canvas. Useful if {{#crossLink &quot;Stage/autoClear:property&quot;}}{{/crossLink}} is set to &#x60;false&#x60;.
+	 * @method clear
+	 **/
+	p.clear = function() {
+		if (!this.canvas) { return; }
+		var ctx = this._setWebGLContext();
+		if (ctx) {
+			// Use WebGL.
+			ctx.clear(ctx.COLOR_BUFFER_BIT);
+		} else {
+			// Use 2D.
+			ctx = this.canvas.getContext(&quot;2d&quot;);
+			ctx.setTransform(1, 0, 0, 1, 0, 0);
+			ctx.clearRect(0, 0, this.canvas.width + 1, this.canvas.height + 1);
+		}
+	};
+
+	/**
+	 * Draws the stage into the specified context (using WebGL) ignoring its visible, alpha, shadow, and transform.
+	 * If WebGL is not supported in the browser, it will default to a 2D context.
+	 * Returns true if the draw was handled (useful for overriding functionality).
+	 *
+	 * NOTE: This method is mainly for internal use, though it may be useful for advanced uses.
+	 * @method draw
+	 * @param {CanvasRenderingContext2D} ctx The canvas 2D context object to draw into.
+	 * @param {Boolean} [ignoreCache=false] Indicates whether the draw operation should ignore any current cache.
+	 * For example, used for drawing the cache (to prevent it from simply drawing an existing cache back
+	 * into itself).
+	 **/
+	p.draw = function(ctx, ignoreCache) {
+		if (typeof WebGLRenderingContext !== &#x27;undefined&#x27; &amp;&amp; (ctx === this._webGLContext || ctx instanceof WebGLRenderingContext)) {		
+			this._drawWebGLKids(this.children, ctx);
+			return true;
+		} else {
+			return this.Stage_draw(ctx, ignoreCache);
+		}
+	};
+
+	/**
+	 * Update the WebGL viewport. Note that this does NOT update the canvas element&#x27;s width/height.
+	 * @method updateViewport
+	 * @param {Number} width
+	 * @param {Number} height
+	 **/
+	p.updateViewport = function (width, height) {
+		this._viewportWidth = width;
+		this._viewportHeight = height;
+
+		if (this._webGLContext) {
+			this._webGLContext.viewport(0, 0, this._viewportWidth, this._viewportHeight);
+
+			if (!this._projectionMatrix) {
+				this._projectionMatrix = new Float32Array([0, 0, 0, 0, 0, 1, -1, 1, 1]);
+			}
+			this._projectionMatrix[0] = 2 / width;
+			this._projectionMatrix[4] = -2 / height;
+		}
+	};
+
+	/**
+	 * Clears an image&#x27;s texture to free it up for garbage collection.
+	 * @method clearImageTexture
+	 * @param  {HTMLImageElement} image
+	 **/
+	p.clearImageTexture = function(image) {
+		image.__easeljs_texture = null;
+	};
+
+	/**
+	 * Returns a string representation of this object.
+	 * @method toString
+	 * @return {String} a string representation of the instance.
+	 **/
+	p.toString = function() {
+		return &quot;[SpriteStage (name=&quot;+  this.name +&quot;)]&quot;;
+	};
+
+	// private methods:
+
+	/**
+	 * Initializes rendering with WebGL using the current canvas element.
+	 * @method _initializeWebGL
+	 * @protected
+	 **/
+	p._initializeWebGL = function() {
+		this._clearColor = { r: 0.0, g: 0.0, b: 0.0, a: 0.0 };
+
+		this._setWebGLContext();
+	};
+
+	/**
+	 * Sets the WebGL context to use for future draws.
+	 * @method _setWebGLContext
+	 * @return {WebGLRenderingContext}   The newly created context.
+	 * @protected
+	 **/
+	p._setWebGLContext = function() {
+		if (this.canvas) {
+			if (!this._webGLContext || this._webGLContext.canvas !== this.canvas) {
+				// A context hasn&#x27;t been defined yet,
+				// OR the defined context belongs to a different canvas, so reinitialize.
+				this._initializeWebGLContext();
+			}
+		} else {
+			this._webGLContext = null;
+		}
+		return this._webGLContext;
+	};
+
+	/**
+	 * Sets up the WebGL context for rendering.
+	 * @method _initializeWebGLContext
+	 * @protected
+	 **/
+	p._initializeWebGLContext = function() {
+		var options = {
+			depth: false, // Disable the depth buffer as it isn&#x27;t used.
+			alpha: true, // Make the canvas background transparent.
+			preserveDrawingBuffer: this._preserveDrawingBuffer,
+			antialias: this._antialias,
+			premultipliedAlpha: true // Assume the drawing buffer contains colors with premultiplied alpha.
+		};
+		var ctx = this._webGLContext = this.canvas.getContext(&quot;webgl&quot;, options) || this.canvas.getContext(&quot;experimental-webgl&quot;, options);
+
+		if (!ctx) {
+			// WebGL is not supported in this browser.
+			return;
+		}
+
+		// Enforcing 1 texture per draw for now until an optimized implementation for multiple textures is made:
+		this._maxTexturesPerDraw = 1; // ctx.getParameter(ctx.MAX_TEXTURE_IMAGE_UNITS);
+
+		// Set the default color the canvas should render when clearing:
+		this._setClearColor(this._clearColor.r, this._clearColor.g, this._clearColor.b, this._clearColor.a);
+
+		// Enable blending and set the blending functions that work with the premultiplied alpha settings:
+		ctx.enable(ctx.BLEND);
+		ctx.blendFuncSeparate(ctx.SRC_ALPHA, ctx.ONE_MINUS_SRC_ALPHA, ctx.ONE, ctx.ONE_MINUS_SRC_ALPHA);
+
+		// Do not premultiply textures&#x27; alpha channels when loading them in:
+		ctx.pixelStorei(ctx.UNPACK_PREMULTIPLY_ALPHA_WEBGL, false);
+
+		// Create the shader program that will be used for drawing:
+		this._createShaderProgram(ctx);
+
+		if (this._webGLErrorDetected) {
+			// Error detected during this._createShaderProgram().
+			this._webGLContext = null;
+			return;
+		}
+
+		// Create the vertices and indices buffers.
+		this._createBuffers(ctx);
+
+		// Update the viewport with the initial canvas dimensions:
+		this.updateViewport(this._viewportWidth || this.canvas.width || 0, this._viewportHeight || this.canvas.height || 0);
+	};
+
+	/**
+	 * Sets the color to use when the WebGL canvas has been cleared.
+	 * @method _setClearColor
+	 * @param {Number} r A number between 0 and 1.
+	 * @param {Number} g A number between 0 and 1.
+	 * @param {Number} b A number between 0 and 1.
+	 * @param {Number} a A number between 0 and 1.
+	 * @protected
+	 **/
+	p._setClearColor = function (r, g, b, a) {
+		this._clearColor.r = r;
+		this._clearColor.g = g;
+		this._clearColor.b = b;
+		this._clearColor.a = a;
+
+		if (this._webGLContext) {
+			this._webGLContext.clearColor(r, g, b, a);
+		}
+	};
+
+	/**
+	 * Creates the shader program that&#x27;s going to be used to draw everything.
+	 * @method _createShaderProgram
+	 * @param {WebGLRenderingContext} ctx
+	 * @protected
+	 **/
+	p._createShaderProgram = function(ctx) {
+
+
+		var fragmentShader = this._createShader(ctx, ctx.FRAGMENT_SHADER,
+			&quot;precision mediump float;&quot; +
+
+			&quot;uniform sampler2D uSampler0;&quot; +
+
+			&quot;varying vec3 vTextureCoord;&quot; +
+
+			&quot;void main(void) {&quot; +
+				&quot;vec4 color = texture2D(uSampler0, vTextureCoord.st);&quot; +
+				&quot;gl_FragColor = vec4(color.rgb, color.a * vTextureCoord.z);&quot; +
+			&quot;}&quot;
+		);
+
+		var vertexShader = this._createShader(ctx, ctx.VERTEX_SHADER,
+			&quot;attribute vec2 aVertexPosition;&quot; +
+			&quot;attribute vec3 aTextureCoord;&quot; +
+
+			&quot;uniform mat3 uPMatrix;&quot; +
+
+			&quot;varying vec3 vTextureCoord;&quot; +
+
+			&quot;void main(void) {&quot; +
+				&quot;vTextureCoord = aTextureCoord;&quot; +
+
+				&quot;gl_Position = vec4((uPMatrix * vec3(aVertexPosition, 1.0)).xy, 0.0, 1.0);&quot; +
+			&quot;}&quot;
+		);
+
+		if (this._webGLErrorDetected || !fragmentShader || !vertexShader) { return; }
+
+		var program = ctx.createProgram();
+		ctx.attachShader(program, fragmentShader);
+		ctx.attachShader(program, vertexShader);
+		ctx.linkProgram(program);
+
+		if(!ctx.getProgramParameter(program, ctx.LINK_STATUS)) {
+			// alert(&quot;Could not link program. &quot; + ctx.getProgramInfoLog(program));
+			this._webGLErrorDetected = true;
+			return;
+		}
+
+		program.vertexPositionAttribute = ctx.getAttribLocation(program, &quot;aVertexPosition&quot;);
+		program.textureCoordAttribute = ctx.getAttribLocation(program, &quot;aTextureCoord&quot;);
+
+		program.sampler0uniform = ctx.getUniformLocation(program, &quot;uSampler0&quot;);
+
+		ctx.enableVertexAttribArray(program.vertexPositionAttribute);
+		ctx.enableVertexAttribArray(program.textureCoordAttribute);
+
+		program.pMatrixUniform = ctx.getUniformLocation(program, &quot;uPMatrix&quot;);
+
+		ctx.useProgram(program);
+
+		this._shaderProgram = program;
+	};
+
+	/**
+	 * Creates a shader from the specified string.
+	 * @method _createShader
+	 * @param  {WebGLRenderingContext} ctx
+	 * @param  {Number} type               The type of shader to create.
+	 * @param  {String} str                The definition for the shader.
+	 * @return {WebGLShader}
+	 * @protected
+	 **/
+	p._createShader = function(ctx, type, str) {
+		var shader = ctx.createShader(type);
+		ctx.shaderSource(shader, str);
+		ctx.compileShader(shader);
+
+		if (!ctx.getShaderParameter(shader, ctx.COMPILE_STATUS)) {
+			// alert(&quot;Could not compile shader. &quot; + ctx.getShaderInfoLog(shader));
+			this._webGLErrorDetected = true;
+			return null;
+		}
+
+		return shader;
+	};
+
+	/**
+	 * Sets up the necessary vertices and indices buffers.
+	 * @method _createBuffers
+	 * @param {WebGLRenderingContext} ctx
+	 * @protected
+	 **/
+	p._createBuffers = function(ctx) {
+		this._verticesBuffer = ctx.createBuffer();
+		ctx.bindBuffer(ctx.ARRAY_BUFFER, this._verticesBuffer);
+
+		var byteCount = SpriteStage.NUM_VERTEX_PROPERTIES * 4; // ctx.FLOAT = 4 bytes
+		ctx.vertexAttribPointer(this._shaderProgram.vertexPositionAttribute, 2, ctx.FLOAT, ctx.FALSE, byteCount, 0);
+		ctx.vertexAttribPointer(this._shaderProgram.textureCoordAttribute, 3, ctx.FLOAT, ctx.FALSE, byteCount, 2 * 4);
+
+		this._indicesBuffer = ctx.createBuffer();
+
+		this._setMaxBoxesPoints(ctx, SpriteStage.MAX_BOXES_POINTS_INCREMENT);
+	};
+
+	/**
+	 * Updates the maximum total number of boxes points that can be defined per draw call,
+	 * and updates the buffers with the new array length sizes.
+	 * @method _setMaxBoxesPoints
+	 * @param {WebGLRenderingContext} ctx
+	 * @param {Number} value              The new this._maxBoxesPointsPerDraw value.
+	 * @protected
+	 **/
+	p._setMaxBoxesPoints = function (ctx, value) {
+		this._maxBoxesPointsPerDraw = value;
+		this._maxBoxesPerDraw = (this._maxBoxesPointsPerDraw / SpriteStage.POINTS_PER_BOX) | 0;
+		this._maxIndicesPerDraw = this._maxBoxesPerDraw * SpriteStage.INDICES_PER_BOX;
+
+		ctx.bindBuffer(ctx.ARRAY_BUFFER, this._verticesBuffer);
+		this._vertices = new Float32Array(this._maxBoxesPerDraw * SpriteStage.NUM_VERTEX_PROPERTIES_PER_BOX);
+		ctx.bufferData(ctx.ARRAY_BUFFER, this._vertices, ctx.DYNAMIC_DRAW);
+
+		// Set up indices for multiple boxes:
+		this._indices = new Uint16Array(this._maxIndicesPerDraw); // Indices are set once and reused.
+		for (var i = 0, l = this._indices.length; i &lt; l; i += SpriteStage.INDICES_PER_BOX) {
+			var j = i * SpriteStage.POINTS_PER_BOX / SpriteStage.INDICES_PER_BOX;
+
+			// Indices for the 2 triangles that make the box:
+			this._indices[i]     = j;
+			this._indices[i + 1] = j + 1;
+			this._indices[i + 2] = j + 2;
+			this._indices[i + 3] = j;
+			this._indices[i + 4] = j + 2;
+			this._indices[i + 5] = j + 3;
+		}
+		ctx.bindBuffer(ctx.ELEMENT_ARRAY_BUFFER, this._indicesBuffer);
+		ctx.bufferData(ctx.ELEMENT_ARRAY_BUFFER, this._indices, ctx.STATIC_DRAW);
+	};
+	
+	/**
+	 * Sets up an image&#x27;s WebGL texture.
+	 * @method _setupImageTexture
+	 * @param {WebGLRenderingContext} ctx The canvas WebGL context object to draw into.
+	 * @param {Object} image
+	 * @return {WebGLTexture}
+	 * @protected
+	 **/
+	p._setupImageTexture = function(ctx, image) {
+		if (image &amp;&amp; (image.naturalWidth || image.getContext || image.readyState &gt;= 2)) {
+			// Create and use a new texture for this image if it doesn&#x27;t already have one:
+			var texture = image.__easeljs_texture;
+			if (!texture) {
+				texture = image.__easeljs_texture = ctx.createTexture();
+				ctx.bindTexture(ctx.TEXTURE_2D, texture);
+				ctx.texImage2D(ctx.TEXTURE_2D, 0, ctx.RGBA, ctx.RGBA, ctx.UNSIGNED_BYTE, image);
+				ctx.texParameteri(ctx.TEXTURE_2D, ctx.TEXTURE_MIN_FILTER, ctx.NEAREST);
+				ctx.texParameteri(ctx.TEXTURE_2D, ctx.TEXTURE_MAG_FILTER, ctx.LINEAR);
+				ctx.texParameteri(ctx.TEXTURE_2D, ctx.TEXTURE_WRAP_S, ctx.CLAMP_TO_EDGE);
+				ctx.texParameteri(ctx.TEXTURE_2D, ctx.TEXTURE_WRAP_T, ctx.CLAMP_TO_EDGE);
+			}
+			return texture;
+		}
+	};
+
+	/**
+	 * Draw all the kids into the WebGL context.
+	 * @method _drawWebGLKids
+	 * @param {Array} kids                The list of kids to draw.
+	 * @param {WebGLRenderingContext} ctx The canvas WebGL context object to draw into.
+	 * @param {Matrix2D} parentMVMatrix   The parent&#x27;s global transformation matrix.
+	 * @protected
+	 **/
+	p._drawWebGLKids = function(kids, ctx, parentMVMatrix) {
+		var kid, mtx,
+			snapToPixelEnabled = this.snapToPixelEnabled,
+			image = null,
+			leftSide = 0, topSide = 0, rightSide = 0, bottomSide = 0,
+			vertices = this._vertices,
+			numVertexPropertiesPerBox = SpriteStage.NUM_VERTEX_PROPERTIES_PER_BOX,
+			maxIndexSize = SpriteStage.MAX_INDEX_SIZE,
+			maxBoxIndex = this._maxBoxesPerDraw - 1;
+
+		for (var i = 0, l = kids.length; i &lt; l; i++) {
+			kid = kids[i];
+			if (!kid.isVisible()) { continue; }
+			
+			// Get the texture for this display branch:
+			var image = kid.image || (kid.spriteSheet &amp;&amp; kid.spriteSheet._images[0]), texture = image.__easeljs_texture;
+			if (!texture &amp;&amp; !(texture = this._setupImageTexture(ctx, image))) { continue; } // no texture available (ex. may not be loaded yet).
+			
+			mtx = kid._props.matrix;
+
+			// Get the kid&#x27;s global matrix (relative to the stage):
+			mtx = (parentMVMatrix ? mtx.copy(parentMVMatrix) : mtx.identity()).appendTransform(kid.x, kid.y, kid.scaleX, kid.scaleY, kid.rotation, kid.skewX, kid.skewY, kid.regX, kid.regY);
+
+			// Set default texture coordinates:
+			var uStart = 0, uEnd = 1,
+				vStart = 0, vEnd = 1;
+
+			// Define the untransformed bounding box sides and get the kid&#x27;s image to use for textures:
+			if (kid._spritestage_compatibility === 4) {
+				leftSide = 0;
+				topSide = 0;
+				rightSide = image.width;
+				bottomSide = image.height;
+			} else if (kid._spritestage_compatibility === 2) {
+				var frame = kid.spriteSheet.getFrame(kid.currentFrame),
+					rect = frame.rect;
+
+				leftSide = -frame.regX;
+				topSide = -frame.regY;
+				rightSide = leftSide + rect.width;
+				bottomSide = topSide + rect.height;
+
+				uStart = rect.x / image.width;
+				vStart = rect.y / image.height;
+				uEnd = uStart + (rect.width / image.width);
+				vEnd = vStart + (rect.height / image.height);
+			} else {
+				image = null;
+
+				// Update BitmapText instances:
+				if (kid._spritestage_compatibility === 3) {
+					// TODO: this might change in the future to use a more general approach.
+					kid._updateText();
+				}
+			}
+
+			// Detect if this kid is a new display branch:
+			if (!parentMVMatrix &amp;&amp; kid._spritestage_compatibility &lt;= 4 &amp;&amp; texture !== this._drawTexture) {
+				// Draw to the GPU if a texture is already in use:
+				this._drawToGPU(ctx);
+				this._drawTexture = texture;
+			}
+
+			if (image !== null) {
+				// Set vertices&#x27; data:
+
+				var offset = ++this._currentBoxIndex * numVertexPropertiesPerBox,
+					a = mtx.a,
+					b = mtx.b,
+					c = mtx.c,
+					d = mtx.d,
+					tx = mtx.tx,
+					ty = mtx.ty;
+
+				if (snapToPixelEnabled &amp;&amp; kid.snapToPixel) {
+					tx = tx + (tx &lt; 0 ? -0.5 : 0.5) | 0;
+					ty = ty + (ty &lt; 0 ? -0.5 : 0.5) | 0;
+				}
+
+				// Positions (calculations taken from Matrix2D.transformPoint):
+				vertices[offset]      = leftSide  * a + topSide    * c + tx;
+				vertices[offset + 1]  = leftSide  * b + topSide    * d + ty;
+				vertices[offset + 5]  = leftSide  * a + bottomSide * c + tx;
+				vertices[offset + 6]  = leftSide  * b + bottomSide * d + ty;
+				vertices[offset + 10] = rightSide * a + bottomSide * c + tx;
+				vertices[offset + 11] = rightSide * b + bottomSide * d + ty;
+				vertices[offset + 15] = rightSide * a + topSide    * c + tx;
+				vertices[offset + 16] = rightSide * b + topSide    * d + ty;
+
+				// Texture coordinates:
+				vertices[offset + 2]  = vertices[offset + 7]  = uStart;
+				vertices[offset + 12] = vertices[offset + 17] = uEnd;
+				vertices[offset + 3]  = vertices[offset + 18] = vStart;
+				vertices[offset + 8]  = vertices[offset + 13] = vEnd;
+
+				// Alphas:
+				vertices[offset + 4] = vertices[offset + 9] = vertices[offset + 14] = vertices[offset + 19] = kid.alpha;
+
+				// Draw to the GPU if the maximum number of boxes per a draw has been reached:
+				if (this._currentBoxIndex === maxBoxIndex) {
+					this._drawToGPU(ctx);
+					this._drawTexture = texture;
+
+					// If possible, increase the amount of boxes that can be used per draw call:
+					if (this._maxBoxesPointsPerDraw &lt; maxIndexSize) {
+						this._setMaxBoxesPoints(ctx, this._maxBoxesPointsPerDraw + SpriteStage.MAX_BOXES_POINTS_INCREMENT);
+						maxBoxIndex = this._maxBoxesPerDraw - 1;
+					}
+				}
+			}
+
+			// Draw children:
+			if (kid.children) {
+				this._drawWebGLKids(kid.children, ctx, mtx);
+				maxBoxIndex = this._maxBoxesPerDraw - 1;
+			}
+		}
+		
+		// draw anything remaining, if this is the stage:
+		if (!parentMVMatrix) { this._drawToGPU(ctx); }
+	};
+
+	/**
+	 * Draws all the currently defined boxes to the GPU.
+	 * @method _drawToGPU
+	 * @param {WebGLRenderingContext} ctx The canvas WebGL context object to draw into.
+	 * @protected
+	 **/
+	p._drawToGPU = function(ctx) {
+		if (!this._drawTexture) { return; }
+		var numBoxes = this._currentBoxIndex + 1;
+		
+		ctx.activeTexture(ctx.TEXTURE0);
+		ctx.bindTexture(ctx.TEXTURE_2D, this._drawTexture);
+		ctx.uniform1i(this._shaderProgram.sampler0uniform, 0);
+
+		ctx.bindBuffer(ctx.ARRAY_BUFFER, this._verticesBuffer);
+
+		ctx.bindBuffer(ctx.ELEMENT_ARRAY_BUFFER, this._indicesBuffer);
+		ctx.uniformMatrix3fv(this._shaderProgram.pMatrixUniform, false, this._projectionMatrix);
+		ctx.bufferSubData(ctx.ARRAY_BUFFER, 0, this._vertices);
+		ctx.drawElements(ctx.TRIANGLES, numBoxes * SpriteStage.INDICES_PER_BOX, ctx.UNSIGNED_SHORT, 0);
+
+		// Reset draw vars:
+		this._currentBoxIndex = -1;
+		this._drawTexture = null;
+	};
+
+
+	createjs.SpriteStage = createjs.promote(SpriteStage, &quot;Stage&quot;);
+}());
+
+    </pre>
+</div>
+
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+<script src="../assets/vendor/prettify/prettify-min.js"></script>
+<script>prettyPrint();</script>
+<script src="../assets/js/yui-prettify.js"></script>
+<script src="../assets/../api.js"></script>
+<script src="../assets/js/api-filter.js"></script>
+<script src="../assets/js/api-list.js"></script>
+<script src="../assets/js/api-search.js"></script>
+<script src="../assets/js/apidocs.js"></script>
+</body>
+</html>

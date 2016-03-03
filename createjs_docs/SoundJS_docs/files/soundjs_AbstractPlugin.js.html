@@ -1,0 +1,475 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="utf-8">
+    <link rel="stylesheet" href="../assets/css/yui-cssgrids-min.css">
+    <link rel="stylesheet" href="../assets/vendor/prettify/prettify-min.css">
+    <link rel="stylesheet" href="../assets/css/main.css" id="site_styles">
+    <link rel="shortcut icon" type="image/x-icon" href="../assets/favicon.ico">
+    <script src="../assets/js/yui-source.js"></script>
+	<title>SoundJS v0.6.2 API Documentation : soundjs/AbstractPlugin.js</title>
+</head>
+<body class="yui3-skin-sam">
+
+<div id="doc">
+    <div id="hd" class="yui3-g header">
+        <div class="yui3-u-3-4">
+            
+                <h1><a href="http://www.createjs.com/soundjs"><img src="../assets/docs-icon-SoundJS.png" title="SoundJS"></a></h1>
+            
+        </div>
+        <div class="yui3-u-1-4 version">
+            <em>API Documentation for: 0.6.2</em>
+        </div>
+    </div>
+    <div id="bd" class="yui3-g">
+
+        <div class="yui3-u-1-4">
+            <div id="docs-sidebar" class="sidebar apidocs">
+                <div id="api-list">
+    <h2 class="off-left">APIs</h2>
+    <div id="api-tabview" class="tabview">
+        <ul class="tabs">
+            <li><a href="#api-classes">Classes</a></li>
+        </ul>
+
+        <div id="api-tabview-filter">
+            <input type="search" id="api-filter" placeholder="Type to filter APIs">
+        </div>
+
+        <div id="api-tabview-panel">
+            <ul id="api-classes" class="apis classes">
+            
+                <li><a href="../classes/AbstractPlugin.html">AbstractPlugin</a></li>
+            
+                <li><a href="../classes/AbstractSoundInstance.html">AbstractSoundInstance</a></li>
+            
+                <li><a href="../classes/AudioSprite.html">AudioSprite</a></li>
+            
+                <li><a href="../classes/CordovaAudioLoader.html">CordovaAudioLoader</a></li>
+            
+                <li><a href="../classes/CordovaAudioPlugin.html">CordovaAudioPlugin</a></li>
+            
+                <li><a href="../classes/CordovaAudioSoundInstance.html">CordovaAudioSoundInstance</a></li>
+            
+                <li><a href="../classes/ErrorEvent.html">ErrorEvent</a></li>
+            
+                <li><a href="../classes/Event.html">Event</a></li>
+            
+                <li><a href="../classes/EventDispatcher.html">EventDispatcher</a></li>
+            
+                <li><a href="../classes/FlashAudioLoader.html">FlashAudioLoader</a></li>
+            
+                <li><a href="../classes/FlashAudioPlugin.html">FlashAudioPlugin</a></li>
+            
+                <li><a href="../classes/FlashAudioSoundInstance.html">FlashAudioSoundInstance</a></li>
+            
+                <li><a href="../classes/HTMLAudioPlugin.html">HTMLAudioPlugin</a></li>
+            
+                <li><a href="../classes/HTMLAudioSoundInstance.html">HTMLAudioSoundInstance</a></li>
+            
+                <li><a href="../classes/HTMLAudioTagPool.html">HTMLAudioTagPool</a></li>
+            
+                <li><a href="../classes/PlayPropsConfig.html">PlayPropsConfig</a></li>
+            
+                <li><a href="../classes/Sound.html">Sound</a></li>
+            
+                <li><a href="../classes/SoundJS.html">SoundJS</a></li>
+            
+                <li><a href="../classes/Utility Methods.html">Utility Methods</a></li>
+            
+                <li><a href="../classes/WebAudioLoader.html">WebAudioLoader</a></li>
+            
+                <li><a href="../classes/WebAudioPlugin.html">WebAudioPlugin</a></li>
+            
+                <li><a href="../classes/WebAudioSoundInstance.html">WebAudioSoundInstance</a></li>
+            
+            </ul>
+
+            <ul id="api-modules" class="apis modules">
+            
+                <li><a href="../modules/CreateJS.html">CreateJS</a></li>
+            
+                <li><a href="../modules/SoundJS.html">SoundJS</a></li>
+            
+            </ul>
+        </div>
+    </div>
+</div>
+
+            </div>
+        </div>
+        <div class="yui3-u-3-4">
+            <div id="api-options">
+        Show:
+        <label for="api-show-inherited">
+            <input type="checkbox" id="api-show-inherited" checked>
+            Inherited
+        </label>
+
+        <label for="api-show-protected">
+            <input type="checkbox" id="api-show-protected">
+            Protected
+        </label>
+
+        <label for="api-show-private">
+            <input type="checkbox" id="api-show-private">
+            Private
+        </label>
+        <label for="api-show-deprecated">
+            <input type="checkbox" id="api-show-deprecated">
+            Deprecated
+        </label>
+
+    </div>
+            <div class="apidocs">
+                <div id="docs-main">
+                    <div class="content">
+                        <script>
+	var name = soundjs/AbstractPlugin.js      
+</script>
+<h1 class="file-heading">File:AbstractPlugin.js</h1>
+
+<div class="file">
+    <pre class="code prettyprint linenums">
+/*
+ * AbstractPlugin
+ * Visit http://createjs.com/ for documentation, updates and examples.
+ *
+ *
+ * Copyright (c) 2012 gskinner.com, inc.
+ *
+ * Permission is hereby granted, free of charge, to any person
+ * obtaining a copy of this software and associated documentation
+ * files (the &quot;Software&quot;), to deal in the Software without
+ * restriction, including without limitation the rights to use,
+ * copy, modify, merge, publish, distribute, sublicense, and/or sell
+ * copies of the Software, and to permit persons to whom the
+ * Software is furnished to do so, subject to the following
+ * conditions:
+ *
+ * The above copyright notice and this permission notice shall be
+ * included in all copies or substantial portions of the Software.
+ *
+ * THE SOFTWARE IS PROVIDED &quot;AS IS&quot;, WITHOUT WARRANTY OF ANY KIND,
+ * EXPRESS OR IMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES
+ * OF MERCHANTABILITY, FITNESS FOR A PARTICULAR PURPOSE AND
+ * NONINFRINGEMENT. IN NO EVENT SHALL THE AUTHORS OR COPYRIGHT
+ * HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER LIABILITY,
+ * WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING
+ * FROM, OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR
+ * OTHER DEALINGS IN THE SOFTWARE.
+ */
+
+// namespace:
+this.createjs = this.createjs || {};
+
+(function () {
+	&quot;use strict&quot;;
+
+
+// constructor:
+ 	/**
+	 * A default plugin class used as a base for all other plugins.
+	 * @class AbstractPlugin
+	 * @constructor
+	 * @since 0.6.0
+	 */
+
+	var AbstractPlugin = function () {
+	// private properties:
+		/**
+		 * The capabilities of the plugin.
+		 * method and is used internally.
+		 * @property _capabilities
+		 * @type {Object}
+		 * @default null
+		 * @protected
+		 * @static
+		 */
+		this._capabilities = null;
+
+		/**
+		 * Object hash indexed by the source URI of all created loaders, used to properly destroy them if sources are removed.
+		 * @type {Object}
+		 * @protected
+		 */
+		this._loaders = {};
+
+		/**
+		 * Object hash indexed by the source URI of each file to indicate if an audio source has begun loading,
+		 * is currently loading, or has completed loading.  Can be used to store non boolean data after loading
+		 * is complete (for example arrayBuffers for web audio).
+		 * @property _audioSources
+		 * @type {Object}
+		 * @protected
+		 */
+		this._audioSources = {};
+
+		/**
+		 * Object hash indexed by the source URI of all created SoundInstances, updates the playbackResource if it loads after they are created,
+		 * and properly destroy them if sources are removed
+		 * @type {Object}
+		 * @protected
+		 */
+		this._soundInstances = {};
+
+		/**
+		 * The internal master volume value of the plugin.
+		 * @property _volume
+		 * @type {Number}
+		 * @default 1
+		 * @protected
+		 */
+		this._volume = 1;
+
+		/**
+		 * A reference to a loader class used by a plugin that must be set.
+		 * @type {Object}
+		 * @protected
+		 */
+		this._loaderClass;
+
+		/**
+		 * A reference to an AbstractSoundInstance class used by a plugin that must be set.
+		 * @type {Object}
+		 * @protected;
+		 */
+		this._soundInstanceClass;
+	};
+	var p = AbstractPlugin.prototype;
+
+	/**
+	 * &lt;strong&gt;REMOVED&lt;/strong&gt;. Removed in favor of using &#x60;MySuperClass_constructor&#x60;.
+	 * See {{#crossLink &quot;Utility Methods/extend&quot;}}{{/crossLink}} and {{#crossLink &quot;Utility Methods/promote&quot;}}{{/crossLink}}
+	 * for details.
+	 *
+	 * There is an inheritance tutorial distributed with EaselJS in /tutorials/Inheritance.
+	 *
+	 * @method initialize
+	 * @protected
+	 * @deprecated
+	 */
+	// p.initialize = function() {}; // searchable for devs wondering where it is.
+
+
+// Static Properties:
+// NOTE THESE PROPERTIES NEED TO BE ADDED TO EACH PLUGIN
+	/**
+	 * The capabilities of the plugin. This is generated via the _generateCapabilities method and is used internally.
+	 * @property _capabilities
+	 * @type {Object}
+	 * @default null
+	 * @protected
+	 * @static
+	 */
+	AbstractPlugin._capabilities = null;
+
+	/**
+	 * Determine if the plugin can be used in the current browser/OS.
+	 * @method isSupported
+	 * @return {Boolean} If the plugin can be initialized.
+	 * @static
+	 */
+	AbstractPlugin.isSupported = function () {
+		return true;
+	};
+
+
+// public methods:
+	/**
+	 * Pre-register a sound for preloading and setup. This is called by {{#crossLink &quot;Sound&quot;}}{{/crossLink}}.
+	 * Note all plugins provide a &lt;code&gt;Loader&lt;/code&gt; instance, which &lt;a href=&quot;http://preloadjs.com&quot; target=&quot;_blank&quot;&gt;PreloadJS&lt;/a&gt;
+	 * can use to assist with preloading.
+	 * @method register
+	 * @param {String} loadItem An Object containing the source of the audio
+	 * Note that not every plugin will manage this value.
+	 * @return {Object} A result object, containing a &quot;tag&quot; for preloading purposes.
+	 */
+	p.register = function (loadItem) {
+		var loader = this._loaders[loadItem.src];
+		if(loader &amp;&amp; !loader.canceled) {return this._loaders[loadItem.src];}	// already loading/loaded this, so don&#x27;t load twice
+		// OJR potential issue that we won&#x27;t be firing loaded event, might need to trigger if this is already loaded?
+		this._audioSources[loadItem.src] = true;
+		this._soundInstances[loadItem.src] = [];
+		loader = new this._loaderClass(loadItem);
+		loader.on(&quot;complete&quot;, this._handlePreloadComplete, this);
+		this._loaders[loadItem.src] = loader;
+		return loader;
+	};
+
+	// note sound calls register before calling preload
+	/**
+	 * Internally preload a sound.
+	 * @method preload
+	 * @param {Loader} loader The sound URI to load.
+	 */
+	p.preload = function (loader) {
+		loader.on(&quot;error&quot;, this._handlePreloadError, this);
+		loader.load();
+	};
+
+	/**
+	 * Checks if preloading has started for a specific source. If the source is found, we can assume it is loading,
+	 * or has already finished loading.
+	 * @method isPreloadStarted
+	 * @param {String} src The sound URI to check.
+	 * @return {Boolean}
+	 */
+	p.isPreloadStarted = function (src) {
+		return (this._audioSources[src] != null);
+	};
+
+	/**
+	 * Checks if preloading has finished for a specific source.
+	 * @method isPreloadComplete
+	 * @param {String} src The sound URI to load.
+	 * @return {Boolean}
+	 */
+	p.isPreloadComplete = function (src) {
+		return (!(this._audioSources[src] == null || this._audioSources[src] == true));
+	};
+
+	/**
+	 * Remove a sound added using {{#crossLink &quot;WebAudioPlugin/register&quot;}}{{/crossLink}}. Note this does not cancel a preload.
+	 * @method removeSound
+	 * @param {String} src The sound URI to unload.
+	 */
+	p.removeSound = function (src) {
+		if (!this._soundInstances[src]) { return; }
+		for (var i = this._soundInstances[src].length; i--; ) {
+			var item = this._soundInstances[src][i];
+			item.destroy();
+		}
+		delete(this._soundInstances[src]);
+		delete(this._audioSources[src]);
+		if(this._loaders[src]) { this._loaders[src].destroy(); }
+		delete(this._loaders[src]);
+	};
+
+	/**
+	 * Remove all sounds added using {{#crossLink &quot;WebAudioPlugin/register&quot;}}{{/crossLink}}. Note this does not cancel a preload.
+	 * @method removeAllSounds
+	 * @param {String} src The sound URI to unload.
+	 */
+	p.removeAllSounds = function () {
+		for(var key in this._audioSources) {
+			this.removeSound(key);
+		}
+	};
+
+	/**
+	 * Create a sound instance. If the sound has not been preloaded, it is internally preloaded here.
+	 * @method create
+	 * @param {String} src The sound source to use.
+	 * @param {Number} startTime Audio sprite property used to apply an offset, in milliseconds.
+	 * @param {Number} duration Audio sprite property used to set the time the clip plays for, in milliseconds.
+	 * @return {AbstractSoundInstance} A sound instance for playback and control.
+	 */
+	p.create = function (src, startTime, duration) {
+		if (!this.isPreloadStarted(src)) {
+			this.preload(this.register(src));
+		}
+		var si = new this._soundInstanceClass(src, startTime, duration, this._audioSources[src]);
+		this._soundInstances[src].push(si);
+		return si;
+	};
+
+	// if a plugin does not support volume and mute, it should set these to null
+	/**
+	 * Set the master volume of the plugin, which affects all SoundInstances.
+	 * @method setVolume
+	 * @param {Number} value The volume to set, between 0 and 1.
+	 * @return {Boolean} If the plugin processes the setVolume call (true). The Sound class will affect all the
+	 * instances manually otherwise.
+	 */
+	p.setVolume = function (value) {
+		this._volume = value;
+		this._updateVolume();
+		return true;
+	};
+
+	/**
+	 * Get the master volume of the plugin, which affects all SoundInstances.
+	 * @method getVolume
+	 * @return {Number} The volume level, between 0 and 1.
+	 */
+	p.getVolume = function () {
+		return this._volume;
+	};
+
+	/**
+	 * Mute all sounds via the plugin.
+	 * @method setMute
+	 * @param {Boolean} value If all sound should be muted or not. Note that plugin-level muting just looks up
+	 * the mute value of Sound {{#crossLink &quot;Sound/getMute&quot;}}{{/crossLink}}, so this property is not used here.
+	 * @return {Boolean} If the mute call succeeds.
+	 */
+	p.setMute = function (value) {
+		this._updateVolume();
+		return true;
+	};
+
+	// plugins should overwrite this method
+	p.toString = function () {
+		return &quot;[AbstractPlugin]&quot;;
+	};
+
+
+// private methods:
+	/**
+	 * Handles internal preload completion.
+	 * @method _handlePreloadComplete
+	 * @protected
+	 */
+	p._handlePreloadComplete = function (event) {
+		var src = event.target.getItem().src;
+		this._audioSources[src] = event.result;
+		for (var i = 0, l = this._soundInstances[src].length; i &lt; l; i++) {
+			var item = this._soundInstances[src][i];
+			item.setPlaybackResource(this._audioSources[src]);
+			// ToDo consider adding play call here if playstate == playfailed
+		}
+	};
+
+	/**
+	 * Handles internal preload erros
+	 * @method _handlePreloadError
+	 * @param event
+	 * @protected
+	 */
+	p._handlePreloadError = function(event) {
+		//delete(this._audioSources[src]);
+	};
+
+	/**
+	 * Set the gain value for master audio. Should not be called externally.
+	 * @method _updateVolume
+	 * @protected
+	 */
+	p._updateVolume = function () {
+		// Plugin Specific code
+	};
+
+	createjs.AbstractPlugin = AbstractPlugin;
+}());
+
+    </pre>
+</div>
+
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+<script src="../assets/vendor/prettify/prettify-min.js"></script>
+<script>prettyPrint();</script>
+<script src="../assets/js/yui-prettify.js"></script>
+<script src="../assets/../api.js"></script>
+<script src="../assets/js/api-filter.js"></script>
+<script src="../assets/js/api-list.js"></script>
+<script src="../assets/js/api-search.js"></script>
+<script src="../assets/js/apidocs.js"></script>
+</body>
+</html>

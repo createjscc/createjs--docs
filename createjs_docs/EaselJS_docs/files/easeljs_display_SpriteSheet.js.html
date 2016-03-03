@@ -1,0 +1,845 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="utf-8">
+    <link rel="stylesheet" href="../assets/css/yui-cssgrids-min.css">
+    <link rel="stylesheet" href="../assets/vendor/prettify/prettify-min.css">
+    <link rel="stylesheet" href="../assets/css/main.css" id="site_styles">
+    <link rel="shortcut icon" type="image/x-icon" href="../assets/favicon.ico">
+    <script src="../assets/js/yui-source.js"></script>
+	<title>EaselJS v0.8.2 API Documentation : easeljs/display/SpriteSheet.js</title>
+</head>
+<body class="yui3-skin-sam">
+
+<div id="doc">
+    <div id="hd" class="yui3-g header">
+        <div class="yui3-u-3-4">
+            
+                <h1><a href="http://www.createjs.com/easeljs"><img src="../assets/docs-icon-EaselJS.png" title="EaselJS"></a></h1>
+            
+        </div>
+        <div class="version">
+            <em>API Documentation for: 0.8.2</em>
+        </div>
+    </div>
+    <div id="bd" class="yui3-g">
+
+        <div class="yui3-u-1-4">
+            <div id="docs-sidebar" class="sidebar apidocs">
+                <div id="api-list">
+    <h2 class="off-left">APIs</h2>
+    <div id="api-tabview" class="tabview">
+        <ul class="tabs">
+            <li><a href="#api-classes">Classes</a></li>
+        </ul>
+
+        <div id="api-tabview-filter">
+            <input type="search" id="api-filter" placeholder="Type to filter APIs">
+        </div>
+
+        <div id="api-tabview-panel">
+            <ul id="api-classes" class="apis classes">
+            
+                <li><a href="../classes/AlphaMapFilter.html">AlphaMapFilter</a></li>
+            
+                <li><a href="../classes/AlphaMaskFilter.html">AlphaMaskFilter</a></li>
+            
+                <li><a href="../classes/Bitmap.html">Bitmap</a></li>
+            
+                <li><a href="../classes/BitmapText.html">BitmapText</a></li>
+            
+                <li><a href="../classes/BlurFilter.html">BlurFilter</a></li>
+            
+                <li><a href="../classes/ButtonHelper.html">ButtonHelper</a></li>
+            
+                <li><a href="../classes/ColorFilter.html">ColorFilter</a></li>
+            
+                <li><a href="../classes/ColorMatrix.html">ColorMatrix</a></li>
+            
+                <li><a href="../classes/ColorMatrixFilter.html">ColorMatrixFilter</a></li>
+            
+                <li><a href="../classes/Container.html">Container</a></li>
+            
+                <li><a href="../classes/DisplayObject.html">DisplayObject</a></li>
+            
+                <li><a href="../classes/DisplayProps.html">DisplayProps</a></li>
+            
+                <li><a href="../classes/DOMElement.html">DOMElement</a></li>
+            
+                <li><a href="../classes/EaselJS.html">EaselJS</a></li>
+            
+                <li><a href="../classes/Event.html">Event</a></li>
+            
+                <li><a href="../classes/EventDispatcher.html">EventDispatcher</a></li>
+            
+                <li><a href="../classes/Filter.html">Filter</a></li>
+            
+                <li><a href="../classes/Graphics.html">Graphics</a></li>
+            
+                <li><a href="../classes/Graphics.Arc.html">Graphics.Arc</a></li>
+            
+                <li><a href="../classes/Graphics.ArcTo.html">Graphics.ArcTo</a></li>
+            
+                <li><a href="../classes/Graphics.BeginPath.html">Graphics.BeginPath</a></li>
+            
+                <li><a href="../classes/Graphics.BezierCurveTo.html">Graphics.BezierCurveTo</a></li>
+            
+                <li><a href="../classes/Graphics.Circle.html">Graphics.Circle</a></li>
+            
+                <li><a href="../classes/Graphics.ClosePath.html">Graphics.ClosePath</a></li>
+            
+                <li><a href="../classes/Graphics.Ellipse.html">Graphics.Ellipse</a></li>
+            
+                <li><a href="../classes/Graphics.Fill.html">Graphics.Fill</a></li>
+            
+                <li><a href="../classes/Graphics.LineTo.html">Graphics.LineTo</a></li>
+            
+                <li><a href="../classes/Graphics.MoveTo.html">Graphics.MoveTo</a></li>
+            
+                <li><a href="../classes/Graphics.PolyStar.html">Graphics.PolyStar</a></li>
+            
+                <li><a href="../classes/Graphics.QuadraticCurveTo.html">Graphics.QuadraticCurveTo</a></li>
+            
+                <li><a href="../classes/Graphics.Rect.html">Graphics.Rect</a></li>
+            
+                <li><a href="../classes/Graphics.RoundRect.html">Graphics.RoundRect</a></li>
+            
+                <li><a href="../classes/Graphics.Stroke.html">Graphics.Stroke</a></li>
+            
+                <li><a href="../classes/Graphics.StrokeDash.html">Graphics.StrokeDash</a></li>
+            
+                <li><a href="../classes/Graphics.StrokeStyle.html">Graphics.StrokeStyle</a></li>
+            
+                <li><a href="../classes/Matrix2D.html">Matrix2D</a></li>
+            
+                <li><a href="../classes/MouseEvent.html">MouseEvent</a></li>
+            
+                <li><a href="../classes/MovieClip.html">MovieClip</a></li>
+            
+                <li><a href="../classes/MovieClipPlugin.html">MovieClipPlugin</a></li>
+            
+                <li><a href="../classes/Point.html">Point</a></li>
+            
+                <li><a href="../classes/Rectangle.html">Rectangle</a></li>
+            
+                <li><a href="../classes/Shadow.html">Shadow</a></li>
+            
+                <li><a href="../classes/Shape.html">Shape</a></li>
+            
+                <li><a href="../classes/Sprite.html">Sprite</a></li>
+            
+                <li><a href="../classes/SpriteContainer.html">SpriteContainer</a></li>
+            
+                <li><a href="../classes/SpriteSheet.html">SpriteSheet</a></li>
+            
+                <li><a href="../classes/SpriteSheetBuilder.html">SpriteSheetBuilder</a></li>
+            
+                <li><a href="../classes/SpriteSheetUtils.html">SpriteSheetUtils</a></li>
+            
+                <li><a href="../classes/SpriteStage.html">SpriteStage</a></li>
+            
+                <li><a href="../classes/Stage.html">Stage</a></li>
+            
+                <li><a href="../classes/Text.html">Text</a></li>
+            
+                <li><a href="../classes/Ticker.html">Ticker</a></li>
+            
+                <li><a href="../classes/Touch.html">Touch</a></li>
+            
+                <li><a href="../classes/UID.html">UID</a></li>
+            
+                <li><a href="../classes/Utility Methods.html">Utility Methods</a></li>
+            
+            </ul>
+
+            <ul id="api-modules" class="apis modules">
+            
+                <li><a href="../modules/CreateJS.html">CreateJS</a></li>
+            
+                <li><a href="../modules/EaselJS.html">EaselJS</a></li>
+            
+            </ul>
+        </div>
+    </div>
+</div>
+
+            </div>
+        </div>
+        <div class="yui3-u-3-4">
+            <div id="api-options">
+        Show:
+        <label for="api-show-inherited">
+            <input type="checkbox" id="api-show-inherited" checked>
+            Inherited
+        </label>
+
+        <label for="api-show-protected">
+            <input type="checkbox" id="api-show-protected">
+            Protected
+        </label>
+
+        <label for="api-show-private">
+            <input type="checkbox" id="api-show-private">
+            Private
+        </label>
+        <label for="api-show-deprecated">
+            <input type="checkbox" id="api-show-deprecated">
+            Deprecated
+        </label>
+
+    </div>
+            <div class="apidocs">
+                <div id="docs-main">
+                    <div class="content">
+                        <script>
+	var name = easeljs/display/SpriteSheet.js      
+</script>
+<h1 class="file-heading">File:SpriteSheet.js</h1>
+
+<div class="file">
+    <pre class="code prettyprint linenums">
+/*
+ * SpriteSheet
+ * Visit http://createjs.com/ for documentation, updates and examples.
+ *
+ * Copyright (c) 2010 gskinner.com, inc.
+ *
+ * Permission is hereby granted, free of charge, to any person
+ * obtaining a copy of this software and associated documentation
+ * files (the &quot;Software&quot;), to deal in the Software without
+ * restriction, including without limitation the rights to use,
+ * copy, modify, merge, publish, distribute, sublicense, and/or sell
+ * copies of the Software, and to permit persons to whom the
+ * Software is furnished to do so, subject to the following
+ * conditions:
+ *
+ * The above copyright notice and this permission notice shall be
+ * included in all copies or substantial portions of the Software.
+ *
+ * THE SOFTWARE IS PROVIDED &quot;AS IS&quot;, WITHOUT WARRANTY OF ANY KIND,
+ * EXPRESS OR IMPliED, INCLUDING BUT NOT liMITED TO THE WARRANTIES
+ * OF MERCHANTABIliTY, FITNESS FOR A PARTICULAR PURPOSE AND
+ * NONINFRINGEMENT. IN NO EVENT SHALL THE AUTHORS OR COPYRIGHT
+ * HolDERS BE liABLE FOR ANY CLAIM, DAMAGES OR OTHER liABIliTY,
+ * WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING
+ * FROM, OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR
+ * OTHER DEAliNGS IN THE SOFTWARE.
+ */
+
+/**
+ * @module EaselJS
+ */
+
+// namespace:
+this.createjs = this.createjs||{};
+
+(function() {
+	&quot;use strict&quot;;
+
+
+// constructor:
+	/**
+	 * Encapsulates the properties and methods associated with a sprite sheet. A sprite sheet is a series of images (usually
+	 * animation frames) combined into a larger image (or images). For example, an animation consisting of eight 100x100
+	 * images could be combined into a single 400x200 sprite sheet (4 frames across by 2 high).
+	 *
+	 * The data passed to the SpriteSheet constructor defines:
+	 * &lt;ol&gt;
+	 * 	&lt;li&gt; The source image or images to use.&lt;/li&gt;
+	 * 	&lt;li&gt; The positions of individual image frames.&lt;/li&gt;
+	 * 	&lt;li&gt; Sequences of frames that form named animations. Optional.&lt;/li&gt;
+	 * 	&lt;li&gt; The target playback framerate. Optional.&lt;/li&gt;
+	 * &lt;/ol&gt;
+	 * &lt;h3&gt;SpriteSheet Format&lt;/h3&gt;
+	 * SpriteSheets are an object with two required properties (&#x60;images&#x60; and &#x60;frames&#x60;), and two optional properties
+	 * (&#x60;framerate&#x60; and &#x60;animations&#x60;). This makes them easy to define in javascript code, or in JSON.
+	 *
+	 * &lt;h4&gt;images&lt;/h4&gt;
+	 * An array of source images. Images can be either an HTMlimage
+	 * instance, or a uri to an image. The former is recommended to control preloading.
+	 *
+	 * 	images: [image1, &quot;path/to/image2.png&quot;],
+	 *
+	 * &lt;h4&gt;frames&lt;/h4&gt;
+	 * Defines the individual frames. There are two supported formats for frame data:
+	 * When all of the frames are the same size (in a grid), use an object with &#x60;width&#x60;, &#x60;height&#x60;, &#x60;regX&#x60;, &#x60;regY&#x60;,
+	 * and &#x60;count&#x60; properties.
+	 *
+	 * &lt;ul&gt;
+	 *  &lt;li&gt;&#x60;width&#x60; &amp; &#x60;height&#x60; are required and specify the dimensions of the frames&lt;/li&gt;
+	 *  &lt;li&gt;&#x60;regX&#x60; &amp; &#x60;regY&#x60; indicate the registration point or &quot;origin&quot; of the frames&lt;/li&gt;
+	 *  &lt;li&gt;&#x60;spacing&#x60; indicate the spacing between frames&lt;/li&gt;
+	 *  &lt;li&gt;&#x60;margin&#x60; specify the margin around the image(s)&lt;/li&gt;
+	 *  &lt;li&gt;&#x60;count&#x60; allows you to specify the total number of frames in the spritesheet; if omitted, this will
+	 *  be calculated based on the dimensions of the source images and the frames. Frames will be assigned
+	 *  indexes based on their position in the source images (left to right, top to bottom).&lt;/li&gt;
+	 * &lt;/ul&gt;
+	 *
+	 *  	frames: {width:64, height:64, count:20, regX: 32, regY:64, spacing:0, margin:0}
+	 *
+	 * If the frames are of different sizes, use an array of frame definitions. Each definition is itself an array
+	 * with 4 required and 3 optional entries, in the order:
+	 *
+	 * &lt;ul&gt;
+	 *  &lt;li&gt;The first four, &#x60;x&#x60;, &#x60;y&#x60;, &#x60;width&#x60;, and &#x60;height&#x60; are required and define the frame rectangle.&lt;/li&gt;
+	 *  &lt;li&gt;The fifth, &#x60;imageIndex&#x60;, specifies the index of the source image (defaults to 0)&lt;/li&gt;
+	 *  &lt;li&gt;The last two, &#x60;regX&#x60; and &#x60;regY&#x60; specify the registration point of the frame&lt;/li&gt;
+	 * &lt;/ul&gt;
+	 *
+	 * 	frames: [
+	 * 		// x, y, width, height, imageIndex*, regX*, regY*
+	 * 		[64, 0, 96, 64],
+	 * 		[0, 0, 64, 64, 1, 32, 32]
+	 * 		// etc.
+	 * 	]
+	 *
+	 * &lt;h4&gt;animations&lt;/h4&gt;
+	 * Optional. An object defining sequences of frames to play as named animations. Each property corresponds to an
+	 * animation of the same name. Each animation must specify the frames to play, and may
+	 * also include a relative playback &#x60;speed&#x60; (ex. 2 would playback at double speed, 0.5 at half), and
+	 * the name of the &#x60;next&#x60; animation to sequence to after it completes.
+	 *
+	 * There are three formats supported for defining the frames in an animation, which can be mixed and matched as appropriate:
+	 * &lt;ol&gt;
+	 * 	&lt;li&gt;for a single frame animation, you can simply specify the frame index
+	 *
+	 * 		animations: {
+	 * 			sit: 7
+	 * 		}
+	 *
+	 * &lt;/li&gt;
+	 * &lt;li&gt;
+	 *      for an animation of consecutive frames, you can use an array with two required, and two optional entries
+	 * 		in the order: &#x60;start&#x60;, &#x60;end&#x60;, &#x60;next&#x60;, and &#x60;speed&#x60;. This will play the frames from start to end inclusive.
+	 *
+	 * 		animations: {
+	 * 			// start, end, next*, speed*
+	 * 			run: [0, 8],
+	 * 			jump: [9, 12, &quot;run&quot;, 2]
+	 * 		}
+	 *
+	 *  &lt;/li&gt;
+	 *  &lt;li&gt;
+	 *     for non-consecutive frames, you can use an object with a &#x60;frames&#x60; property defining an array of frame
+	 *     indexes to play in order. The object can also specify &#x60;next&#x60; and &#x60;speed&#x60; properties.
+	 *
+	 * 		animations: {
+	 * 			walk: {
+	 * 				frames: [1,2,3,3,2,1]
+	 * 			},
+	 * 			shoot: {
+	 * 				frames: [1,4,5,6],
+	 * 				next: &quot;walk&quot;,
+	 * 				speed: 0.5
+	 * 			}
+	 * 		}
+	 *
+	 *  &lt;/li&gt;
+	 * &lt;/ol&gt;
+	 * &lt;strong&gt;Note:&lt;/strong&gt; the &#x60;speed&#x60; property was added in EaselJS 0.7.0. Earlier versions had a &#x60;frequency&#x60;
+	 * property instead, which was the inverse of &#x60;speed&#x60;. For example, a value of &quot;4&quot; would be 1/4 normal speed in
+	 * earlier versions, but is 4x normal speed in EaselJS 0.7.0+.
+	 *
+	 * &lt;h4&gt;framerate&lt;/h4&gt;
+	 * Optional. Indicates the default framerate to play this spritesheet at in frames per second. See
+	 * {{#crossLink &quot;SpriteSheet/framerate:property&quot;}}{{/crossLink}} for more information.
+	 *
+	 * 		framerate: 20
+	 *
+	 * Note that the Sprite framerate will only work if the stage update method is provided with the {{#crossLink &quot;Ticker/tick:event&quot;}}{{/crossLink}}
+	 * event generated by the {{#crossLink &quot;Ticker&quot;}}{{/crossLink}}.
+	 *
+	 * 		createjs.Ticker.on(&quot;tick&quot;, handleTick);
+	 * 		function handleTick(event) {
+	 *			stage.update(event);
+	 *		}
+	 *
+	 * &lt;h3&gt;Example&lt;/h3&gt;
+	 * To define a simple sprite sheet, with a single image &quot;sprites.jpg&quot; arranged in a regular 50x50 grid with three
+	 * animations: &quot;stand&quot; showing the first frame, &quot;run&quot; looping frame 1-5 inclusive, and &quot;jump&quot; playing frame 6-8 and
+	 * sequencing back to run.
+	 *
+	 * 		var data = {
+	 * 			images: [&quot;sprites.jpg&quot;],
+	 * 			frames: {width:50, height:50},
+	 * 			animations: {
+	 * 				stand:0,
+	 * 				run:[1,5],
+	 * 				jump:[6,8,&quot;run&quot;]
+	 * 			}
+	 * 		};
+	 * 		var spriteSheet = new createjs.SpriteSheet(data);
+	 * 		var animation = new createjs.Sprite(spriteSheet, &quot;run&quot;);
+	 *
+	 * &lt;h3&gt;Generating SpriteSheet Images&lt;/h3&gt;
+	 * Spritesheets can be created manually by combining images in PhotoShop, and specifying the frame size or
+	 * coordinates manually, however there are a number of tools that facilitate this.
+	 * &lt;ul&gt;
+	 *     &lt;li&gt;Exporting SpriteSheets or HTML5 content from Flash Pro supports the EaselJS SpriteSheet format.&lt;/li&gt;
+	 *     &lt;li&gt;The popular &lt;a href=&quot;https://www.codeandweb.com/texturepacker/easeljs&quot; target=&quot;_blank&quot;&gt;Texture Packer&lt;/a&gt; has
+	 *     EaselJS support.
+	 *     &lt;li&gt;SWF animations in Flash can be exported to SpriteSheets using &lt;a href=&quot;http://createjs.com/zoe&quot; target=&quot;_blank&quot;&gt;&lt;/a&gt;&lt;/li&gt;
+	 * &lt;/ul&gt;
+	 *
+	 * &lt;h3&gt;Cross Origin Issues&lt;/h3&gt;
+	 * &lt;strong&gt;Warning:&lt;/strong&gt; Images loaded cross-origin will throw cross-origin security errors when interacted with
+	 * using:
+	 * &lt;ul&gt;
+	 *     &lt;li&gt;a mouse&lt;/li&gt;
+	 *     &lt;li&gt;methods such as {{#crossLink &quot;Container/getObjectUnderPoint&quot;}}{{/crossLink}}&lt;/li&gt;
+	 *     &lt;li&gt;Filters (see {{#crossLink &quot;Filter&quot;}}{{/crossLink}})&lt;/li&gt;
+	 *     &lt;li&gt;caching (see {{#crossLink &quot;DisplayObject/cache&quot;}}{{/crossLink}})&lt;/li&gt;
+	 * &lt;/ul&gt;
+	 * You can get around this by setting &#x60;crossOrigin&#x60; property on your images before passing them to EaselJS, or
+	 * setting the &#x60;crossOrigin&#x60; property on PreloadJS&#x27; LoadQueue or LoadItems.
+	 *
+	 * 		var image = new Image();
+	 * 		img.crossOrigin=&quot;Anonymous&quot;;
+	 * 		img.src = &quot;http://server-with-CORS-support.com/path/to/image.jpg&quot;;
+	 *
+	 * If you pass string paths to SpriteSheets, they will not work cross-origin. The server that stores the image must
+	 * support cross-origin requests, or this will not work. For more information, check out
+	 * &lt;a href=&quot;https://developer.mozilla.org/en-US/docs/Web/HTTP/Access_control_CORS&quot; target=&quot;_blank&quot;&gt;CORS overview on MDN&lt;/a&gt;.
+	 *
+	 * @class SpriteSheet
+	 * @constructor
+	 * @param {Object} data An object describing the SpriteSheet data.
+	 * @extends EventDispatcher
+	 **/
+	function SpriteSheet(data) {
+		this.EventDispatcher_constructor();
+
+
+		// public properties:
+		/**
+		 * Indicates whether all images are finished loading.
+		 * @property complete
+		 * @type Boolean
+		 * @readonly
+		 **/
+		this.complete = true;
+
+		/**
+		 * Specifies the framerate to use by default for Sprite instances using the SpriteSheet. See the Sprite class
+		 * {{#crossLink &quot;Sprite/framerate:property&quot;}}{{/crossLink}} for more information.
+		 * @property framerate
+		 * @type Number
+		 **/
+		this.framerate = 0;
+
+
+		// private properties:
+		/**
+		 * @property _animations
+		 * @protected
+		 * @type Array
+		 **/
+		this._animations = null;
+
+		/**
+		 * @property _frames
+		 * @protected
+		 * @type Array
+		 **/
+		this._frames = null;
+
+		/**
+		 * @property _images
+		 * @protected
+		 * @type Array
+		 **/
+		this._images = null;
+
+		/**
+		 * @property _data
+		 * @protected
+		 * @type Object
+		 **/
+		this._data = null;
+
+		/**
+		 * @property _loadCount
+		 * @protected
+		 * @type Number
+		 **/
+		this._loadCount = 0;
+
+		// only used for simple frame defs:
+		/**
+		 * @property _frameHeight
+		 * @protected
+		 * @type Number
+		 **/
+		this._frameHeight = 0;
+
+		/**
+		 * @property _frameWidth
+		 * @protected
+		 * @type Number
+		 **/
+		this._frameWidth = 0;
+
+		/**
+		 * @property _numFrames
+		 * @protected
+		 * @type Number
+		 **/
+		this._numFrames = 0;
+
+		/**
+		 * @property _regX
+		 * @protected
+		 * @type Number
+		 **/
+		this._regX = 0;
+
+		/**
+		 * @property _regY
+		 * @protected
+		 * @type Number
+		 **/
+		this._regY = 0;
+
+		/**
+		 * @property _spacing
+		 * @protected
+		 * @type Number
+		 **/
+		this._spacing = 0;
+
+		/**
+		 * @property _margin
+		 * @protected
+		 * @type Number
+		 **/
+		this._margin = 0;
+
+		// setup:
+		this._parseData(data);
+	}
+	var p = createjs.extend(SpriteSheet, createjs.EventDispatcher);
+
+	// TODO: deprecated
+	// p.initialize = function() {}; // searchable for devs wondering where it is. REMOVED. See docs for details.
+
+
+// events:
+	/**
+	 * Dispatched when all images are loaded.  Note that this only fires if the images
+	 * were not fully loaded when the sprite sheet was initialized. You should check the complete property
+	 * to prior to adding a listener. Ex.
+	 *
+	 * 	var sheet = new createjs.SpriteSheet(data);
+	 * 	if (!sheet.complete) {
+	 * 		// not preloaded, listen for the complete event:
+	 * 		sheet.addEventListener(&quot;complete&quot;, handler);
+	 * 	}
+	 *
+	 * @event complete
+	 * @param {Object} target The object that dispatched the event.
+	 * @param {String} type The event type.
+	 * @since 0.6.0
+	 */
+
+	/**
+	 * Dispatched when getFrame is called with a valid frame index. This is primarily intended for use by {{#crossLink &quot;SpriteSheetBuilder&quot;}}{{/crossLink}}
+	 * when doing on-demand rendering.
+	 * @event getframe
+	 * @param {Number} index The frame index.
+	 * @param {Object} frame The frame object that getFrame will return.
+	 */
+
+	/**
+	 * Dispatched when an image encounters an error. A SpriteSheet will dispatch an error event for each image that
+	 * encounters an error, and will still dispatch a {{#crossLink &quot;SpriteSheet/complete:event&quot;}}{{/crossLink}}
+	 * event once all images are finished processing, even if an error is encountered.
+	 * @event error
+	 * @param {String} src The source of the image that failed to load.
+	 * @since 0.8.2
+	 */
+
+
+// getter / setters:
+	/**
+	 * Use the {{#crossLink &quot;SpriteSheet/animations:property&quot;}}{{/crossLink}} property instead.
+	 * @method getAnimations
+	 * @return {Array}
+	 * @deprecated
+	 **/
+	p.getAnimations = function() {
+		return this._animations.slice();
+	};
+
+	/**
+	 * Returns an array of all available animation names available on this sprite sheet as strings.
+	 * @property animations
+	 * @type {Array}
+	 * @readonly
+	 **/
+	try {
+		Object.defineProperties(p, {
+			animations: { get: p.getAnimations }
+		});
+	} catch (e) {}
+
+
+// public methods:
+	/**
+	 * Returns the total number of frames in the specified animation, or in the whole sprite
+	 * sheet if the animation param is omitted. Returns 0 if the spritesheet relies on calculated frame counts, and
+	 * the images have not been fully loaded.
+	 * @method getNumFrames
+	 * @param {String} animation The name of the animation to get a frame count for.
+	 * @return {Number} The number of frames in the animation, or in the entire sprite sheet if the animation param is omitted.
+	 */
+	p.getNumFrames = function(animation) {
+		if (animation == null) {
+			return this._frames ? this._frames.length : this._numFrames || 0;
+		} else {
+			var data = this._data[animation];
+			if (data == null) { return 0; }
+			else { return data.frames.length; }
+		}
+	};
+
+	/**
+	 * Returns an object defining the specified animation. The returned object contains:&lt;UL&gt;
+	 * 	&lt;li&gt;frames: an array of the frame ids in the animation&lt;/li&gt;
+	 * 	&lt;li&gt;speed: the playback speed for this animation&lt;/li&gt;
+	 * 	&lt;li&gt;name: the name of the animation&lt;/li&gt;
+	 * 	&lt;li&gt;next: the default animation to play next. If the animation loops, the name and next property will be the
+	 * 	same.&lt;/li&gt;
+	 * &lt;/UL&gt;
+	 * @method getAnimation
+	 * @param {String} name The name of the animation to get.
+	 * @return {Object} a generic object with frames, speed, name, and next properties.
+	 **/
+	p.getAnimation = function(name) {
+		return this._data[name];
+	};
+
+	/**
+	 * Returns an object specifying the image and source rect of the specified frame. The returned object has:&lt;UL&gt;
+	 * 	&lt;li&gt;an image property holding a reference to the image object in which the frame is found&lt;/li&gt;
+	 * 	&lt;li&gt;a rect property containing a Rectangle instance which defines the boundaries for the frame within that
+	 * 	image.&lt;/li&gt;
+	 * 	&lt;li&gt; A regX and regY property corresponding to the regX/Y values for the frame.
+	 * &lt;/UL&gt;
+	 * @method getFrame
+	 * @param {Number} frameIndex The index of the frame.
+	 * @return {Object} a generic object with image and rect properties. Returns null if the frame does not exist.
+	 **/
+	p.getFrame = function(frameIndex) {
+		var frame;
+		if (this._frames &amp;&amp; (frame=this._frames[frameIndex])) { return frame; }
+		return null;
+	};
+
+	/**
+	 * Returns a {{#crossLink &quot;Rectangle&quot;}}{{/crossLink}} instance defining the bounds of the specified frame relative
+	 * to the origin. For example, a 90 x 70 frame with a regX of 50 and a regY of 40 would return:
+	 *
+	 * 	[x=-50, y=-40, width=90, height=70]
+	 *
+	 * @method getFrameBounds
+	 * @param {Number} frameIndex The index of the frame.
+	 * @param {Rectangle} [rectangle] A Rectangle instance to copy the values into. By default a new instance is created.
+	 * @return {Rectangle} A Rectangle instance. Returns null if the frame does not exist, or the image is not fully loaded.
+	 **/
+	p.getFrameBounds = function(frameIndex, rectangle) {
+		var frame = this.getFrame(frameIndex);
+		return frame ? (rectangle||new createjs.Rectangle()).setValues(-frame.regX, -frame.regY, frame.rect.width, frame.rect.height) : null;
+	};
+
+	/**
+	 * Returns a string representation of this object.
+	 * @method toString
+	 * @return {String} a string representation of the instance.
+	 **/
+	p.toString = function() {
+		return &quot;[SpriteSheet]&quot;;
+	};
+
+	/**
+	 * SpriteSheet cannot be cloned. A SpriteSheet can be shared by multiple Sprite instances without cloning it.
+	 * @method clone
+	 **/
+	p.clone = function() {
+		throw(&quot;SpriteSheet cannot be cloned.&quot;)
+	};
+
+// private methods:
+	/**
+	 * @method _parseData
+	 * @param {Object} data An object describing the SpriteSheet data.
+	 * @protected
+	 **/
+	p._parseData = function(data) {
+		var i,l,o,a;
+		if (data == null) { return; }
+
+		this.framerate = data.framerate||0;
+
+		// parse images:
+		if (data.images &amp;&amp; (l=data.images.length) &gt; 0) {
+			a = this._images = [];
+			for (i=0; i&lt;l; i++) {
+				var img = data.images[i];
+				if (typeof img == &quot;string&quot;) {
+					var src = img;
+					img = document.createElement(&quot;img&quot;);
+					img.src = src;
+				}
+				a.push(img);
+				if (!img.getContext &amp;&amp; !img.naturalWidth) {
+					this._loadCount++;
+					this.complete = false;
+					(function(o, src) { img.onload = function() { o._handleImageLoad(src); } })(this, src);
+					(function(o, src) { img.onerror = function() { o._handleImageError(src); } })(this, src);
+				}
+			}
+		}
+
+		// parse frames:
+		if (data.frames == null) { // nothing
+		} else if (Array.isArray(data.frames)) {
+			this._frames = [];
+			a = data.frames;
+			for (i=0,l=a.length;i&lt;l;i++) {
+				var arr = a[i];
+				this._frames.push({image:this._images[arr[4]?arr[4]:0], rect:new createjs.Rectangle(arr[0],arr[1],arr[2],arr[3]), regX:arr[5]||0, regY:arr[6]||0 });
+			}
+		} else {
+			o = data.frames;
+			this._frameWidth = o.width;
+			this._frameHeight = o.height;
+			this._regX = o.regX||0;
+			this._regY = o.regY||0;
+			this._spacing = o.spacing||0;
+			this._margin = o.margin||0;
+			this._numFrames = o.count;
+			if (this._loadCount == 0) { this._calculateFrames(); }
+		}
+
+		// parse animations:
+		this._animations = [];
+		if ((o=data.animations) != null) {
+			this._data = {};
+			var name;
+			for (name in o) {
+				var anim = {name:name};
+				var obj = o[name];
+				if (typeof obj == &quot;number&quot;) { // single frame
+					a = anim.frames = [obj];
+				} else if (Array.isArray(obj)) { // simple
+					if (obj.length == 1) { anim.frames = [obj[0]]; }
+					else {
+						anim.speed = obj[3];
+						anim.next = obj[2];
+						a = anim.frames = [];
+						for (i=obj[0];i&lt;=obj[1];i++) {
+							a.push(i);
+						}
+					}
+				} else { // complex
+					anim.speed = obj.speed;
+					anim.next = obj.next;
+					var frames = obj.frames;
+					a = anim.frames = (typeof frames == &quot;number&quot;) ? [frames] : frames.slice(0);
+				}
+				if (anim.next === true || anim.next === undefined) { anim.next = name; } // loop
+				if (anim.next === false || (a.length &lt; 2 &amp;&amp; anim.next == name)) { anim.next = null; } // stop
+				if (!anim.speed) { anim.speed = 1; }
+				this._animations.push(name);
+				this._data[name] = anim;
+			}
+		}
+	};
+
+	/**
+	 * @method _handleImageLoad
+	 * @protected
+	 **/
+	p._handleImageLoad = function(src) {
+		if (--this._loadCount == 0) {
+			this._calculateFrames();
+			this.complete = true;
+			this.dispatchEvent(&quot;complete&quot;);
+		}
+	};
+
+	/**
+	 * @method _handleImageError
+	 * @protected
+	 */
+	p._handleImageError = function (src) {
+		var errorEvent = new createjs.Event(&quot;error&quot;);
+		errorEvent.src = src;
+		this.dispatchEvent(errorEvent);
+
+		// Complete is still dispatched.
+		if (--this._loadCount == 0) {
+			this.dispatchEvent(&quot;complete&quot;);
+		}
+	};
+
+	/**
+	 * @method _calculateFrames
+	 * @protected
+	 **/
+	p._calculateFrames = function() {
+		if (this._frames || this._frameWidth == 0) { return; }
+
+		this._frames = [];
+
+		var maxFrames = this._numFrames || 100000; // if we go over this, something is wrong.
+		var frameCount = 0, frameWidth = this._frameWidth, frameHeight = this._frameHeight;
+		var spacing = this._spacing, margin = this._margin;
+		
+		imgLoop:
+		for (var i=0, imgs=this._images; i&lt;imgs.length; i++) {
+			var img = imgs[i], imgW = img.width, imgH = img.height;
+
+			var y = margin;
+			while (y &lt;= imgH-margin-frameHeight) {
+				var x = margin;
+				while (x &lt;= imgW-margin-frameWidth) {
+					if (frameCount &gt;= maxFrames) { break imgLoop; }
+					frameCount++;
+					this._frames.push({
+							image: img,
+							rect: new createjs.Rectangle(x, y, frameWidth, frameHeight),
+							regX: this._regX,
+							regY: this._regY
+						});
+					x += frameWidth+spacing;
+				}
+				y += frameHeight+spacing;
+			}
+		}
+		this._numFrames = frameCount;
+	};
+
+
+	createjs.SpriteSheet = createjs.promote(SpriteSheet, &quot;EventDispatcher&quot;);
+}());
+
+    </pre>
+</div>
+
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+<script src="../assets/vendor/prettify/prettify-min.js"></script>
+<script>prettyPrint();</script>
+<script src="../assets/js/yui-prettify.js"></script>
+<script src="../assets/../api.js"></script>
+<script src="../assets/js/api-filter.js"></script>
+<script src="../assets/js/api-list.js"></script>
+<script src="../assets/js/api-search.js"></script>
+<script src="../assets/js/apidocs.js"></script>
+</body>
+</html>

@@ -1,0 +1,3419 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="utf-8">
+    <link rel="stylesheet" href="../assets/css/yui-cssgrids-min.css">
+    <link rel="stylesheet" href="../assets/vendor/prettify/prettify-min.css">
+    <link rel="stylesheet" href="../assets/css/main.css" id="site_styles">
+    <link rel="shortcut icon" type="image/x-icon" href="../assets/favicon.ico">
+    <script src="../assets/js/yui-source.js"></script>
+    <title>TweenJS v0.6.2 API文档 : Timeline</title>
+</head>
+<body class="yui3-skin-sam">
+
+<div id="doc">
+<div id="hd" class="yui3-g header">
+    <div class="yui3-u-3-4">
+
+        <h1><a href="http://www.createjs.com/tweenjs"><img src="../assets/docs-icon-TweenJS.png" title="TweenJS"></a>
+        </h1>
+
+    </div>
+    <div class="yui3-u-1-4 version">
+        <em>API文档: 0.6.2</em>
+    </div>
+</div>
+<div id="bd" class="yui3-g">
+
+<div class="yui3-u-1-4">
+    <div id="docs-sidebar" class="sidebar apidocs">
+        <div id="api-list">
+            <h2 class="off-left">APIs</h2>
+
+            <div id="api-tabview" class="tabview">
+                <ul class="tabs">
+                    <li><a href="#api-classes">Classes</a></li>
+                </ul>
+
+                <div id="api-tabview-filter">
+                    <input type="search" id="api-filter" placeholder="Type to filter APIs">
+                </div>
+
+                <div id="api-tabview-panel">
+                    <ul id="api-classes" class="apis classes">
+
+                        <li><a href="../classes/CSSPlugin.html">CSSPlugin</a></li>
+
+                        <li><a href="../classes/Ease.html">Ease</a></li>
+
+                        <li><a href="../classes/Event.html">Event</a></li>
+
+                        <li><a href="../classes/EventDispatcher.html">EventDispatcher</a></li>
+
+                        <li><a href="../classes/MotionGuidePlugin.html">MotionGuidePlugin</a></li>
+
+                        <li><a href="../classes/SamplePlugin.html">SamplePlugin</a></li>
+
+                        <li><a href="../classes/Ticker.html">Ticker</a></li>
+
+                        <li><a href="../classes/Timeline.html">Timeline</a></li>
+
+                        <li><a href="../classes/Tween.html">Tween</a></li>
+
+                        <li><a href="../classes/TweenJS.html">TweenJS</a></li>
+
+                        <li><a href="../classes/Utility Methods.html">Utility Methods</a></li>
+
+                    </ul>
+
+                    <ul id="api-modules" class="apis modules">
+
+                        <li><a href="../modules/CreateJS.html">CreateJS</a></li>
+
+                        <li><a href="../modules/TweenJS.html">TweenJS</a></li>
+
+                    </ul>
+                </div>
+            </div>
+        </div>
+
+    </div>
+</div>
+<div class="yui3-u-3-4">
+<div id="api-options">
+    显示:
+    <label for="api-show-inherited">
+        <input type="checkbox" id="api-show-inherited" checked>
+        继承
+    </label>
+
+    <label for="api-show-protected">
+        <input type="checkbox" id="api-show-protected">
+        受保护的
+    </label>
+
+    <label for="api-show-private">
+        <input type="checkbox" id="api-show-private">
+        私有的
+    </label>
+    <label for="api-show-deprecated">
+        <input type="checkbox" id="api-show-deprecated">
+        弃用的
+    </label>
+
+</div>
+<div class="apidocs">
+<div id="docs-main">
+<div class="content">
+<h1>Timeline类</h1>
+
+<div class="box meta">
+
+
+    <div class="extends">
+        继承自 <a href="../classes/EventDispatcher.html" class="crosslink">EventDispatcher</a>
+    </div>
+
+
+    <div class="foundat">
+        定义于: <a href="../files/tweenjs_Timeline.js.html#l42"><code>Timeline:42</code></a>
+    </div>
+
+
+    模型: <a href="../modules/TweenJS.html">TweenJS</a>
+
+
+</div>
+
+
+<div class="box intro">
+    <p>这个Timeline类同步多个(tweens)渐变并允许它们作为一个整体被控制。请注意如果一个timeline(时间轴)是循环的，发过这个tweeen设置的"loop"属性为flase也可能出现循环现象。</p>
+
+</div>
+
+
+<div class="constructor">
+    <h2>构造函数</h2>
+
+    <div id="method_Timeline" class="method item">
+        <h3 class="name"><code>Timeline</code></h3>
+
+
+        <div class="args">
+            <span class="paren">(</span>
+            <ul class="args-list inline commas">
+
+                <li class="arg">
+
+                    <code>tweens</code>
+
+                </li>
+
+                <li class="arg">
+
+                    <code>labels</code>
+
+                </li>
+
+                <li class="arg">
+
+                    <code>props</code>
+
+                </li>
+
+            </ul>
+            <span class="paren">)</span>
+        </div>
+
+
+        <div class="meta">
+
+
+            <p>
+
+                定义于
+
+
+                <a href="../files/tweenjs_Timeline.js.html#l42"><code>Timeline:42</code></a>
+
+            </p>
+
+
+        </div>
+
+        <div class="description">
+
+        </div>
+
+
+        <div class="params">
+            <h4>参数:</h4>
+
+            <ul class="params-list">
+
+                <li class="param">
+
+                    <code class="param-name">tweens</code>
+                    <span class="type"><a
+                            href="https://developer.mozilla.org/en/JavaScript/Reference/Global_Objects/Array"
+                            class="crosslink external" target="_blank">数组型</a></span>
+
+
+                    <div class="param-description">
+                        <p>一个添加到时间轴上的Tweens数组。查看 <a href="../classes/Timeline.html#method_addTween" class="crosslink">addTween</a>
+                            获取更多信息。</p>
+                    </div>
+
+
+                </li>
+
+                <li class="param">
+
+                    <code class="param-name">labels</code>
+                    <span class="type"><a
+                            href="https://developer.mozilla.org/en/JavaScript/Reference/Global_Objects/Object"
+                            class="crosslink external" target="_blank">对象</a></span>
+
+
+                    <div class="param-description">
+                        <p>一个定义标签对象使用 <a href="../classes/Timeline.html#method_gotoAndPlay" class="crosslink">gotoAndPlay</a>/<a
+                                href="../classes/Timeline.html#method_gotoAndStop" class="crosslink">gotoAndStop</a>。
+                            看到 <a href="../classes/Timeline.html#method_setLabels" class="crosslink">setLabels</a>
+                            获取详细信息。</p>
+
+                    </div>
+
+
+                </li>
+
+                <li class="param">
+
+                    <code class="param-name">props</code>
+                    <span class="type"><a
+                            href="https://developer.mozilla.org/en/JavaScript/Reference/Global_Objects/Object"
+                            class="crosslink external" target="_blank">对象</a></span>
+
+
+                    <div class="param-description">
+                        <p>适用于这个渐变实例的配置属性(ex. <code>{loop:true}</code>)。 所有属性默认值为false。支持的道具:
+                        <UL>
+                            <LI> loop: 在这个渐变循环,设置循环属性。.</LI>
+                            <LI> useTicks: 使用节拍时间,而不是毫秒.</LI>
+                            <LI> ignoreGlobalPause:在这个渐变中设置ignoreGlobalPause（忽略间歇）属性</LI>
+                            <LI> paused: 表明是否开始补间停了下来</LI>
+                            <LI> position:表示时间轴的初始位置。</LI>
+                            <LI> onChange: 指定一个侦听器来添加的 <a href="../classes/Timeline.html#event_change"
+                                                          class="crosslink">change</a> 事件。
+                            </LI>
+                        </UL>
+                        </p>
+
+                    </div>
+
+
+                </li>
+
+            </ul>
+        </div>
+
+
+    </div>
+
+</div>
+
+
+<div id="classdocs" class="tabview">
+<ul class="api-class-tabs">
+    <li class="api-class-tab index"><a href="#index">索引</a></li>
+
+
+    <li class="api-class-tab methods"><a href="#methods">方法</a></li>
+
+
+    <li class="api-class-tab properties"><a href="#properties">属性</a></li>
+
+
+    <li class="api-class-tab events"><a href="#events">事件</a></li>
+
+</ul>
+
+<div>
+<div id="index" class="api-class-tabpanel index">
+<h2 class="off-left">索引项</h2>
+
+
+<div class="index-section methods">
+    <h3>方法</h3>
+
+    <ul class="index-list methods extends">
+
+        <li class="index-item method protected">
+            <a href="#method__calcPosition">_calcPosition</a>
+
+
+        </li>
+
+        <li class="index-item method protected inherited">
+            <a href="#method__dispatchEvent">_dispatchEvent</a>
+
+
+        </li>
+
+        <li class="index-item method protected">
+            <a href="#method__goto">_goto</a>
+
+
+        </li>
+
+        <li class="index-item method inherited">
+            <a href="#method_addEventListener">addEventListener</a>
+
+
+        </li>
+
+        <li class="index-item method">
+            <a href="#method_addLabel">addLabel</a>
+
+
+        </li>
+
+        <li class="index-item method">
+            <a href="#method_addTween">addTween</a>
+
+
+        </li>
+
+        <li class="index-item method protected">
+            <a href="#method_clone">clone</a>
+
+
+        </li>
+
+        <li class="index-item method inherited">
+            <a href="#method_dispatchEvent">dispatchEvent</a>
+
+
+        </li>
+
+        <li class="index-item method">
+            <a href="#method_getCurrentLabel">getCurrentLabel</a>
+
+
+        </li>
+
+        <li class="index-item method">
+            <a href="#method_getLabels">getLabels</a>
+
+
+        </li>
+
+        <li class="index-item method">
+            <a href="#method_gotoAndPlay">gotoAndPlay</a>
+
+
+        </li>
+
+        <li class="index-item method">
+            <a href="#method_gotoAndStop">gotoAndStop</a>
+
+
+        </li>
+
+        <li class="index-item method inherited">
+            <a href="#method_hasEventListener">hasEventListener</a>
+
+
+        </li>
+
+        <li class="index-item method protected deprecated inherited">
+            <a href="#method_initialize">initialize</a>
+
+
+            <span class="flag deprecated">deprecated</span>
+
+        </li>
+
+        <li class="index-item method inherited">
+            <a href="#method_off">off</a>
+
+
+        </li>
+
+        <li class="index-item method inherited">
+            <a href="#method_on">on</a>
+
+
+        </li>
+
+        <li class="index-item method inherited">
+            <a href="#method_removeAllEventListeners">removeAllEventListeners</a>
+
+
+        </li>
+
+        <li class="index-item method inherited">
+            <a href="#method_removeEventListener">removeEventListener</a>
+
+
+        </li>
+
+        <li class="index-item method">
+            <a href="#method_removeTween">removeTween</a>
+
+
+        </li>
+
+        <li class="index-item method">
+            <a href="#method_resolve">resolve</a>
+
+
+        </li>
+
+        <li class="index-item method">
+            <a href="#method_setLabels">setLabels</a>
+
+
+        </li>
+
+        <li class="index-item method">
+            <a href="#method_setPaused">setPaused</a>
+
+
+        </li>
+
+        <li class="index-item method">
+            <a href="#method_setPosition">setPosition</a>
+
+
+        </li>
+
+        <li class="index-item method">
+            <a href="#method_tick">tick</a>
+
+
+        </li>
+
+        <li class="index-item method inherited">
+            <a href="#method_toString">toString</a>
+
+
+        </li>
+
+        <li class="index-item method">
+            <a href="#method_updateDuration">updateDuration</a>
+
+
+        </li>
+
+        <li class="index-item method inherited">
+            <a href="#method_willTrigger">willTrigger</a>
+
+
+        </li>
+
+    </ul>
+</div>
+
+
+<div class="index-section properties">
+    <h3>属性</h3>
+
+    <ul class="index-list properties extends">
+
+        <li class="index-item property protected inherited">
+            <a href="#property__captureListeners">_captureListeners</a>
+
+
+        </li>
+
+        <li class="index-item property protected">
+            <a href="#property__labelList">_labelList</a>
+
+
+        </li>
+
+        <li class="index-item property protected">
+            <a href="#property__labels">_labels</a>
+
+
+        </li>
+
+        <li class="index-item property protected inherited">
+            <a href="#property__listeners">_listeners</a>
+
+
+        </li>
+
+        <li class="index-item property protected">
+            <a href="#property__paused">_paused</a>
+
+
+        </li>
+
+        <li class="index-item property protected">
+            <a href="#property__prevPos">_prevPos</a>
+
+
+        </li>
+
+        <li class="index-item property protected">
+            <a href="#property__prevPosition">_prevPosition</a>
+
+
+        </li>
+
+        <li class="index-item property protected">
+            <a href="#property__registered">_registered</a>
+
+
+        </li>
+
+        <li class="index-item property protected">
+            <a href="#property__tweens">_tweens</a>
+
+
+        </li>
+
+        <li class="index-item property protected">
+            <a href="#property__useTicks">_useTicks</a>
+
+
+        </li>
+
+        <li class="index-item property">
+            <a href="#property_duration">duration</a>
+
+
+        </li>
+
+        <li class="index-item property">
+            <a href="#property_ignoreGlobalPause">ignoreGlobalPause</a>
+
+
+        </li>
+
+        <li class="index-item property">
+            <a href="#property_loop">loop</a>
+
+
+        </li>
+
+        <li class="index-item property">
+            <a href="#property_position">position</a>
+
+
+        </li>
+
+    </ul>
+</div>
+
+
+<div class="index-section events">
+    <h3>事件</h3>
+
+    <ul class="index-list events extends">
+
+        <li class="index-item event">
+            <a href="#event_change">change</a>
+
+
+        </li>
+
+    </ul>
+</div>
+
+</div>
+
+
+<div id="methods" class="api-class-tabpanel">
+<h2 class="off-left">方法</h2>
+
+
+<div id="method__calcPosition" class="method item protected">
+    <h3 class="name"><code>_calcPosition</code></h3>
+
+
+    <div class="args">
+        <span class="paren">(</span>
+        <ul class="args-list inline commas">
+
+            <li class="arg">
+
+                <code>value</code>
+
+            </li>
+
+        </ul>
+        <span class="paren">)</span>
+    </div>
+    
+
+    
+        <span class="returns-inline">
+            <span class="type"><a href="https://developer.mozilla.org/en/JavaScript/Reference/Global_Objects/Number"
+                                  class="crosslink external" target="_blank">数值型</a></span>
+        </span>
+
+
+    <span class="flag protected">受保护的</span>
+
+
+    <div class="meta">
+
+
+        <p>
+
+            定义于
+
+
+            <a href="../files/tweenjs_Timeline.js.html#l430"><code>_calcPosition:430</code></a>
+
+        </p>
+
+
+    </div>
+
+    <div class="description">
+
+    </div>
+
+
+    <div class="params">
+        <h4>参数:</h4>
+
+        <ul class="params-list">
+
+            <li class="param">
+
+                <code class="param-name">value</code>
+                <span class="type"><a href="https://developer.mozilla.org/en/JavaScript/Reference/Global_Objects/Number"
+                                      class="crosslink external" target="_blank">数值型</a></span>
+
+
+                <div class="param-description">
+
+                </div>
+
+
+            </li>
+
+        </ul>
+    </div>
+
+
+    <div class="returns">
+        <h4>返回:</h4>
+
+        <div class="returns-description">
+
+
+            <span class="type"><a href="https://developer.mozilla.org/en/JavaScript/Reference/Global_Objects/Number"
+                                  class="crosslink external" target="_blank">数值型</a></span>:
+
+
+        </div>
+    </div>
+
+
+</div>
+
+
+<div id="method__dispatchEvent" class="method item protected inherited">
+    <h3 class="name"><code>_dispatchEvent</code></h3>
+
+
+    <div class="args">
+        <span class="paren">(</span>
+        <ul class="args-list inline commas">
+
+            <li class="arg">
+
+                <code>eventObj</code>
+
+            </li>
+
+            <li class="arg">
+
+                <code>eventPhase</code>
+
+            </li>
+
+        </ul>
+        <span class="paren">)</span>
+    </div>
+
+
+    <span class="flag protected">受保护的</span>
+
+
+    <div class="meta">
+
+
+        <p>继承自
+            <a href="../classes/EventDispatcher.html#method__dispatchEvent">EventDispatcher</a>:
+
+
+            <a href="../files/createjs_events_EventDispatcher.js.html#l394"><code>_dispatchEvent:394</code></a>
+
+        </p>
+
+
+    </div>
+
+    <div class="description">
+
+    </div>
+
+
+    <div class="params">
+        <h4>参数:</h4>
+
+        <ul class="params-list">
+
+            <li class="param">
+
+                <code class="param-name">eventObj</code>
+                <span class="type"><a href="https://developer.mozilla.org/en/JavaScript/Reference/Global_Objects/Object"
+                                      class="crosslink external" target="_blank">对象</a> | <a
+                        href="https://developer.mozilla.org/en/JavaScript/Reference/Global_Objects/String"
+                        class="crosslink external" target="_blank">字符串</a> | <a href="../classes/Event.html"
+                                                                                   class="crosslink">事件</a></span>
+
+
+                <div class="param-description">
+
+                </div>
+
+
+            </li>
+
+            <li class="param">
+
+                <code class="param-name">eventPhase</code>
+                <span class="type"><a href="https://developer.mozilla.org/en/JavaScript/Reference/Global_Objects/Object"
+                                      class="crosslink external" target="_blank">对象</a></span>
+
+
+                <div class="param-description">
+
+                </div>
+
+
+            </li>
+
+        </ul>
+    </div>
+
+
+</div>
+
+
+<div id="method__goto" class="method item protected">
+    <h3 class="name"><code>_goto</code></h3>
+
+
+    <div class="args">
+        <span class="paren">(</span>
+        <ul class="args-list inline commas">
+
+            <li class="arg">
+
+                <code>positionOrLabel</code>
+
+            </li>
+
+        </ul>
+        <span class="paren">)</span>
+    </div>
+
+
+    <span class="flag protected">受保护的</span>
+
+
+    <div class="meta">
+
+
+        <p>
+
+            定义于
+
+
+            <a href="../files/tweenjs_Timeline.js.html#l420"><code>_goto:420</code></a>
+
+        </p>
+
+
+    </div>
+
+    <div class="description">
+
+    </div>
+
+
+    <div class="params">
+        <h4>参数:</h4>
+
+        <ul class="params-list">
+
+            <li class="param">
+
+                <code class="param-name">positionOrLabel</code>
+                <span class="type"><a href="https://developer.mozilla.org/en/JavaScript/Reference/Global_Objects/String"
+                                      class="crosslink external" target="_blank">字符型</a> | <a
+                        href="https://developer.mozilla.org/en/JavaScript/Reference/Global_Objects/Number"
+                        class="crosslink external" target="_blank">数值型</a></span>
+
+
+                <div class="param-description">
+
+                </div>
+
+
+            </li>
+
+        </ul>
+    </div>
+
+
+</div>
+
+
+<div id="method_addEventListener" class="method item inherited">
+    <h3 class="name"><code>addEventListener</code></h3>
+
+
+    <div class="args">
+        <span class="paren">(</span>
+        <ul class="args-list inline commas">
+
+            <li class="arg">
+
+                <code>type</code>
+
+            </li>
+
+            <li class="arg">
+
+                <code>listener</code>
+
+            </li>
+
+            <li class="arg">
+
+                <code class="optional">[useCapture]</code>
+
+            </li>
+
+        </ul>
+        <span class="paren">)</span>
+    </div>
+    
+
+    
+        <span class="returns-inline">
+            <span class="type"><a href="https://developer.mozilla.org/en/JavaScript/Reference/Global_Objects/Function"
+                                  class="crosslink external" target="_blank">函数</a> | <a
+                    href="https://developer.mozilla.org/en/JavaScript/Reference/Global_Objects/Object"
+                    class="crosslink external" target="_blank">对象</a></span>
+        </span>
+
+
+    <div class="meta">
+
+
+        <p>继承自
+            <a href="../classes/EventDispatcher.html#method_addEventListener">EventDispatcher</a>:
+
+
+            <a href="../files/createjs_events_EventDispatcher.js.html#l154"><code>addEventListener:154</code></a>
+
+        </p>
+
+
+    </div>
+
+    <div class="description">
+        <p>
+
+        <p>添加指定的事件监听器。 注意,添加多个监听器相同的函数将导致多个回调被解雇。</p>
+       </p>
+        <h4>例如</h4>
+
+<pre class="code prettyprint"><code> displayObject.addEventListener("click", handleClick);
+    function handleClick(event) {
+    // 单击发生。
+    }</code></pre>
+
+    </div>
+
+
+    <div class="params">
+        <h4>参数:</h4>
+
+        <ul class="params-list">
+
+            <li class="param">
+
+                <code class="param-name">type</code>
+                <span class="type"><a href="https://developer.mozilla.org/en/JavaScript/Reference/Global_Objects/String"
+                                      class="crosslink external" target="_blank">字符型</a></span>
+
+
+                <div class="param-description">
+                    <p>字符串类型的事件。.</p>
+
+                </div>
+
+
+            </li>
+
+            <li class="param">
+
+                <code class="param-name">listener</code>
+                <span class="type"><a
+                        href="https://developer.mozilla.org/en/JavaScript/Reference/Global_Objects/Function"
+                        class="crosslink external" target="_blank">函数</a> | <a
+                        href="https://developer.mozilla.org/en/JavaScript/Reference/Global_Objects/Object"
+                        class="crosslink external" target="_blank">对象</a></span>
+
+
+                <div class="param-description">
+                    <p>一个有handleEvent方法的对象,或一个事件被注册时将会被调用的函数。</p>
+
+                </div>
+
+
+            </li>
+
+            <li class="param">
+
+                <code class="param-name optional">[useCapture]</code>
+                <span class="type"><a
+                        href="https://developer.mozilla.org/en/JavaScript/Reference/Global_Objects/Boolean"
+                        class="crosslink external" target="_blank">布尔型</a></span>
+                <span class="flag optional" title="This parameter is optional.">可选的</span>
+
+
+                <div class="param-description">
+                    <p>对于冒泡的事件,表明是否侦听事件捕获目标或冒泡阶段。</p>
+                </div>
+
+
+            </li>
+
+        </ul>
+    </div>
+
+
+    <div class="returns">
+        <h4>返回:</h4>
+
+        <div class="returns-description">
+
+
+            <span class="type"><a href="https://developer.mozilla.org/en/JavaScript/Reference/Global_Objects/Function"
+                                  class="crosslink external" target="_blank">函数</a> | <a
+                    href="https://developer.mozilla.org/en/JavaScript/Reference/Global_Objects/Object"
+                    class="crosslink external" target="_blank">对象</a></span>:
+
+            <p>返回链接的侦听器或任务。</p>
+
+
+        </div>
+    </div>
+
+
+</div>
+
+
+<div id="method_addLabel" class="method item">
+    <h3 class="name"><code>addLabel</code></h3>
+
+
+    <div class="args">
+        <span class="paren">(</span>
+        <ul class="args-list inline commas">
+
+            <li class="arg">
+
+                <code>label</code>
+
+            </li>
+
+            <li class="arg">
+
+                <code>position</code>
+
+            </li>
+
+        </ul>
+        <span class="paren">)</span>
+    </div>
+
+
+    <div class="meta">
+
+
+        <p>
+
+            定义于
+
+
+            <a href="../files/tweenjs_Timeline.js.html#l244"><code>addLabel:244</code></a>
+
+        </p>
+
+
+    </div>
+
+    <div class="description">
+        <p>添加一个标签,可以使用 <a href="../classes/Timeline.html#method_gotoAndPlay" class="crosslink">gotoAndPlay</a>/<a
+                href="../classes/Timeline.html#method_gotoAndStop" class="crosslink">gotoAndStop</a>。 </p>
+
+    </div>
+
+
+    <div class="params">
+        <h4>参数:</h4>
+
+        <ul class="params-list">
+
+            <li class="param">
+
+                <code class="param-name">label</code>
+                <span class="type"><a href="https://developer.mozilla.org/en/JavaScript/Reference/Global_Objects/String"
+                                      class="crosslink external" target="_blank">字符型</a></span>
+
+
+                <div class="param-description">
+                    <p>标签的名字。.</p>
+
+                </div>
+
+
+            </li>
+
+            <li class="param">
+
+                <code class="param-name">position</code>
+                <span class="type"><a href="https://developer.mozilla.org/en/JavaScript/Reference/Global_Objects/Number"
+                                      class="crosslink external" target="_blank">数值型</a></span>
+
+
+                <div class="param-description">
+                    <p>这个标签代表的位置。</p>
+
+                </div>
+
+
+            </li>
+
+        </ul>
+    </div>
+
+
+</div>
+
+
+<div id="method_addTween" class="method item">
+    <h3 class="name"><code>addTween</code></h3>
+
+
+    <div class="args">
+        <span class="paren">(</span>
+        <ul class="args-list inline commas">
+
+            <li class="arg">
+
+                <code>...tween</code>
+
+            </li>
+
+        </ul>
+        <span class="paren">)</span>
+    </div>
+    
+
+    
+        <span class="returns-inline">
+            <span class="type"><a href="../classes/Tween.html" class="crosslink">Tween</a></span>
+        </span>
+
+
+    <div class="meta">
+
+
+        <p>
+
+            定义于
+
+
+            <a href="../files/tweenjs_Timeline.js.html#l194"><code>addTween:194</code></a>
+
+        </p>
+
+
+    </div>
+
+    <div class="description">
+        <p>添加一个或多个补间动画(或时间)到这个时间表。补间动画将被暂停(移除它们正常的定时系统),由这个时间表来管理。
+            添加一个渐变到多个时间将导致 意想不到的行为。
+          </p>
+    </div>
+
+
+    <div class="params">
+        <h4>参数:</h4>
+
+        <ul class="params-list">
+
+            <li class="param">
+
+                <code class="param-name">...tween</code>
+                <span class="type"><a href="../classes/Tween.html" class="crosslink">Tween</a></span>
+
+
+                <div class="param-description">
+                    <p>添加渐变。接受多个参数。</p>
+
+                </div>
+
+
+            </li>
+
+        </ul>
+    </div>
+
+
+    <div class="returns">
+        <h4>返回:</h4>
+
+        <div class="returns-description">
+
+
+            <span class="type"><a href="../classes/Tween.html" class="crosslink">Tween</a></span>:
+
+            <p>被通过的第一个渐变。</p>
+
+
+        </div>
+    </div>
+
+
+</div>
+
+
+<div id="method_clone" class="method item protected">
+    <h3 class="name"><code>clone</code></h3>
+
+
+    <span class="paren">()</span>
+
+
+    <span class="flag protected">受保护的</span>
+
+
+    <div class="meta">
+
+
+        <p>
+
+            定义于
+
+
+            <a href="../files/tweenjs_Timeline.js.html#l411"><code>clone:411</code></a>
+
+        </p>
+
+
+    </div>
+
+    <div class="description">
+
+    </div>
+
+
+</div>
+
+
+<div id="method_dispatchEvent" class="method item inherited">
+    <h3 class="name"><code>dispatchEvent</code></h3>
+
+
+    <div class="args">
+        <span class="paren">(</span>
+        <ul class="args-list inline commas">
+
+            <li class="arg">
+
+                <code>eventObj</code>
+
+            </li>
+
+            <li class="arg">
+
+                <code class="optional">[bubbles]</code>
+
+            </li>
+
+            <li class="arg">
+
+                <code class="optional">[cancelable]</code>
+
+            </li>
+
+        </ul>
+        <span class="paren">)</span>
+    </div>
+    
+
+    
+        <span class="returns-inline">
+            <span class="type"><a href="https://developer.mozilla.org/en/JavaScript/Reference/Global_Objects/Boolean"
+                                  class="crosslink external" target="_blank">布尔型</a></span>
+        </span>
+
+
+    <div class="meta">
+
+
+        <p>继承自
+            <a href="../classes/EventDispatcher.html#method_dispatchEvent">EventDispatcher</a>:
+
+
+            <a href="../files/createjs_events_EventDispatcher.js.html#l299"><code>dispatchEvent:299</code></a>
+
+        </p>
+
+
+    </div>
+
+    <div class="description">
+        <p>
+
+        <p>给所有的监听器指定的特定的事件。</p></p>
+        <h4>例如</h4>
+
+<pre class="code prettyprint"><code> // 使用一个字符串事件
+    this.dispatchEvent("complete");
+
+    // 使用一个事件实例
+    var event = new createjs.Event("progress");
+    this.dispatchEvent(event);</code></pre>
+
+    </div>
+
+
+    <div class="params">
+        <h4>参数:</h4>
+
+        <ul class="params-list">
+
+            <li class="param">
+
+                <code class="param-name">eventObj</code>
+                <span class="type"><a href="https://developer.mozilla.org/en/JavaScript/Reference/Global_Objects/Object"
+                                      class="crosslink external" target="_blank">对象</a> | <a
+                        href="https://developer.mozilla.org/en/JavaScript/Reference/Global_Objects/String"
+                        class="crosslink external" target="_blank">字符型</a> | <a href="../classes/Event.html"
+                                                                                   class="crosslink">事件</a></span>
+
+
+                <div class="param-description">
+                    <p>一个伴有“type”属性的对象,或一个字符串类型。 通用对象将工作时,建议使用CreateJS事件实例。
+                        如果使用一个字符串, 如果有必要dispatchEvent会建造一个特定类型的事件实例。
+                        这后一种方法可以被用来避免可能没有任何监听器的non-bubbling事件对象实例化事件。</p>
+
+                </div>
+
+
+            </li>
+
+            <li class="param">
+
+                <code class="param-name optional">[bubbles]</code>
+                <span class="type"><a
+                        href="https://developer.mozilla.org/en/JavaScript/Reference/Global_Objects/Boolean"
+                        class="crosslink external" target="_blank">布尔型</a></span>
+                <span class="flag optional" title="This parameter is optional.">可选的</span>
+
+
+                <div class="param-description">
+                    <p>当一个字符串传递给eventObj指定了<code>bubbles</code>(冒泡)值。</p>
+
+                </div>
+
+
+            </li>
+
+            <li class="param">
+
+                <code class="param-name optional">[cancelable]</code>
+                <span class="type"><a
+                        href="https://developer.mozilla.org/en/JavaScript/Reference/Global_Objects/Boolean"
+                        class="crosslink external" target="_blank">布尔型</a></span>
+                <span class="flag optional" title="This parameter is optional.">可选的</span>
+
+
+                <div class="param-description">
+                    <p>当一个字符串传递给eventObj指定了<code>cancelable</code>(可取消的)值.</p>
+
+                </div>
+
+
+            </li>
+
+        </ul>
+    </div>
+
+
+    <div class="returns">
+        <h4>返回:</h4>
+
+        <div class="returns-description">
+
+
+            <span class="type"><a href="https://developer.mozilla.org/en/JavaScript/Reference/Global_Objects/Boolean"
+                                  class="crosslink external" target="_blank">Boolean</a></span>:
+
+            <p>如果 <code>preventDefault()</code> 在一个可取消的事件中被调用，返回flase,否则为true.</p>
+
+
+        </div>
+    </div>
+
+
+</div>
+
+
+<div id="method_getCurrentLabel" class="method item">
+    <h3 class="name"><code>getCurrentLabel</code></h3>
+
+
+    <span class="paren">()</span>
+    
+
+    
+        <span class="returns-inline">
+            <span class="type"><a href="https://developer.mozilla.org/en/JavaScript/Reference/Global_Objects/String"
+                                  class="crosslink external" target="_blank">字符型</a></span>
+        </span>
+
+
+    <div class="meta">
+
+
+        <p>
+
+            定义于
+
+
+            <a href="../files/tweenjs_Timeline.js.html#l287"><code>getCurrentLabel:287</code></a>
+
+        </p>
+
+
+    </div>
+
+    <div class="description">
+        <p>立即返回标签的名称或所在当前位置。 例如,给定一个有两个标签的时间轴,“first”在帧索引4上,和“second”在帧索引8上，
+            getCurrentLabel将返回:</p>
+        <UL>
+            <LI>如果当前位置是2为空.</LI>
+            <LI>如果当前位置是4为"first" .</LI>
+            <LI>如果当前位置是7为"first".</LI>
+            <LI>如果当前位置是15为"second".</LI>
+        </UL>
+    </div>
+
+
+    <div class="returns">
+        <h4>Returns:</h4>
+
+        <div class="returns-description">
+
+
+            <span class="type"><a href="https://developer.mozilla.org/en/JavaScript/Reference/Global_Objects/String"
+                                  class="crosslink external" target="_blank">字符型</a></span>:
+
+            <p>当前的名称标签或如果没有标签为null。</p>
+
+
+        </div>
+    </div>
+
+
+</div>
+
+
+<div id="method_getLabels" class="method item">
+    <h3 class="name"><code>getLabels</code></h3>
+
+
+    <span class="paren">()</span>
+    
+
+    
+        <span class="returns-inline">
+            <span class="type">ArrayObject</span>
+        </span>
+
+
+    <div class="meta">
+
+
+        <p>
+
+            定义于
+
+
+            <a href="../files/tweenjs_Timeline.js.html#l269"><code>getLabels:269</code></a>
+
+        </p>
+
+
+    </div>
+
+    <div class="description">
+        <p>返回一个定义在这个时间表的排序的标签列表。</p>
+
+    </div>
+
+
+    <div class="returns">
+        <h4>返回:</h4>
+
+        <div class="returns-description">
+
+
+            <span class="type">ArrayObject</span>:
+
+            <p>一个对象的标签和属性的排序数组。</p>
+
+
+        </div>
+    </div>
+
+
+</div>
+
+
+<div id="method_gotoAndPlay" class="method item">
+    <h3 class="name"><code>gotoAndPlay</code></h3>
+
+
+    <div class="args">
+        <span class="paren">(</span>
+        <ul class="args-list inline commas">
+
+            <li class="arg">
+
+                <code>positionOrLabel</code>
+
+            </li>
+
+        </ul>
+        <span class="paren">)</span>
+    </div>
+
+
+    <div class="meta">
+
+
+        <p>
+
+            定义于
+
+
+            <a href="../files/tweenjs_Timeline.js.html#l310"><code>gotoAndPlay:310</code></a>
+
+        </p>
+
+
+    </div>
+
+    <div class="description">
+        <p>这个时间表没有停顿的跳转到指定的位置或标签</p>
+
+    </div>
+
+
+    <div class="params">
+        <h4>参数:</h4>
+
+        <ul class="params-list">
+
+            <li class="param">
+
+                <code class="param-name">positionOrLabel</code>
+                <span class="type"><a href="https://developer.mozilla.org/en/JavaScript/Reference/Global_Objects/String"
+                                      class="crosslink external" target="_blank">字符型</a> | <a
+                        href="https://developer.mozilla.org/en/JavaScript/Reference/Global_Objects/Number"
+                        class="crosslink external" target="_blank">数值型</a></span>
+
+
+                <div class="param-description">
+                    <p>以毫秒为单位的位置(或ticks，如果useTicks是true的话) 或跳转到标签。</p>
+
+                </div>
+
+
+            </li>
+
+        </ul>
+    </div>
+
+
+</div>
+
+
+<div id="method_gotoAndStop" class="method item">
+    <h3 class="name"><code>gotoAndStop</code></h3>
+
+
+    <div class="args">
+        <span class="paren">(</span>
+        <ul class="args-list inline commas">
+
+            <li class="arg">
+
+                <code>positionOrLabel</code>
+
+            </li>
+
+        </ul>
+        <span class="paren">)</span>
+    </div>
+
+
+    <div class="meta">
+
+
+        <p>
+
+            定义于
+
+
+            <a href="../files/tweenjs_Timeline.js.html#l321"><code>gotoAndStop:321</code></a>
+
+        </p>
+
+
+    </div>
+
+    <div class="description">
+        <p>暂停这个时间表,跳转到指定的位置或标签。</p>
+
+    </div>
+
+
+    <div class="params">
+        <h4>参数:</h4>
+
+        <ul class="params-list">
+
+            <li class="param">
+
+                <code class="param-name">positionOrLabel</code>
+                <span class="type"><a href="https://developer.mozilla.org/en/JavaScript/Reference/Global_Objects/String"
+                                      class="crosslink external" target="_blank">字符型</a> | <a
+                        href="https://developer.mozilla.org/en/JavaScript/Reference/Global_Objects/Number"
+                        class="crosslink external" target="_blank">数值型</a></span>
+
+
+                <div class="param-description">
+                    <p>以毫秒为单位的位置(或ticks，如果useTicks是true的话) 或跳转到标签。</p>
+
+                </div>
+
+
+            </li>
+
+        </ul>
+    </div>
+
+
+</div>
+
+
+<div id="method_hasEventListener" class="method item inherited">
+    <h3 class="name"><code>hasEventListener</code></h3>
+
+
+    <div class="args">
+        <span class="paren">(</span>
+        <ul class="args-list inline commas">
+
+            <li class="arg">
+
+                <code>type</code>
+
+            </li>
+
+        </ul>
+        <span class="paren">)</span>
+    </div>
+    
+
+    
+        <span class="returns-inline">
+            <span class="type"><a href="https://developer.mozilla.org/en/JavaScript/Reference/Global_Objects/Boolean"
+                                  class="crosslink external" target="_blank">布尔型</a></span>
+        </span>
+
+
+    <div class="meta">
+
+
+        <p>继承自
+            <a href="../classes/EventDispatcher.html#method_hasEventListener">EventDispatcher</a>:
+
+
+            <a href="../files/createjs_events_EventDispatcher.js.html#l353"><code>hasEventListener:353</code></a>
+
+        </p>
+
+
+    </div>
+
+    <div class="description">
+        <p>指示是否至少有一个指定的事件类型的侦听器。</p>
+
+    </div>
+
+
+    <div class="params">
+        <h4>参数:</h4>
+
+        <ul class="params-list">
+
+            <li class="param">
+
+                <code class="param-name">type</code>
+                <span class="type"><a href="https://developer.mozilla.org/en/JavaScript/Reference/Global_Objects/String"
+                                      class="crosslink external" target="_blank">字符型</a></span>
+
+
+                <div class="param-description">
+                    <p>字符串类型的事件。</p>
+
+                </div>
+
+
+            </li>
+
+        </ul>
+    </div>
+
+
+    <div class="returns">
+        <h4>返回:</h4>
+
+        <div class="returns-description">
+
+
+            <span class="type"><a href="https://developer.mozilla.org/en/JavaScript/Reference/Global_Objects/Boolean"
+                                  class="crosslink external" target="_blank">布尔型</a></span>:
+
+            <p>如果至少有一个为指定的事件侦听器，返回true,</p>
+
+
+        </div>
+    </div>
+
+
+</div>
+
+
+<div id="method_initialize" class="method item protected deprecated inherited">
+    <h3 class="name"><code>initialize</code></h3>
+
+
+    <span class="paren">()</span>
+
+
+    <span class="flag deprecated">弃用</span>
+
+
+    <span class="flag protected">受保护的</span>
+
+
+    <div class="meta">
+
+
+        <p>继承自
+            <a href="../classes/EventDispatcher.html#method_initialize">EventDispatcher</a>:
+
+
+            <a href="../files/createjs_events_EventDispatcher.js.html#l115"><code>initialize:115</code></a>
+
+        </p>
+
+
+    </div>
+
+    <div class="description">
+        <p><strong>REMOVED</strong>.赞成使用 <code>MySuperClass_constructor</code>。 看<a href="../classes/Utility Methods.html#method_extend" class="crosslink">extend</a> 和 <a
+                href="../classes/Utility Methods.html#method_promote" class="crosslink">promote</a>获取详细信息。</p>
+
+        <p>有一个继承与EaselJS教程分布式/教程/继承。</p>
+
+    </div>
+
+
+</div>
+
+
+<div id="method_off" class="method item inherited">
+    <h3 class="name"><code>off</code></h3>
+
+
+    <div class="args">
+        <span class="paren">(</span>
+        <ul class="args-list inline commas">
+
+            <li class="arg">
+
+                <code>type</code>
+
+            </li>
+
+            <li class="arg">
+
+                <code>listener</code>
+
+            </li>
+
+            <li class="arg">
+
+                <code class="optional">[useCapture]</code>
+
+            </li>
+
+        </ul>
+        <span class="paren">)</span>
+    </div>
+
+
+    <div class="meta">
+
+
+        <p>继承自
+            <a href="../classes/EventDispatcher.html#method_off">EventDispatcher</a>:
+
+
+            <a href="../files/createjs_events_EventDispatcher.js.html#l263"><code>off:263</code></a>
+
+        </p>
+
+
+    </div>
+
+    <div class="description">
+        <p>removeEventListener方法的一个快捷方法,使用相同的参数和返回值。 这是一个伴随着on的方法。</p>
+
+        <p><b>重要的是:</b> 删除一个添加了<code>on</code>方法的侦听器,你必须通过侦听器返回的包装器函数。
+            看一个关于 <a href="../classes/EventDispatcher.html#method_on" class="crosslink">on</a> 的例子. </p>
+
+    </div>
+
+
+    <div class="params">
+        <h4>参数:</h4>
+
+        <ul class="params-list">
+
+            <li class="param">
+
+                <code class="param-name">type</code>
+                <span class="type"><a href="https://developer.mozilla.org/en/JavaScript/Reference/Global_Objects/String"
+                                      class="crosslink external" target="_blank">字符型</a></span>
+
+
+                <div class="param-description">
+                    <p>字符串类型的事件.</p>
+
+                </div>
+
+
+            </li>
+
+            <li class="param">
+
+                <code class="param-name">listener</code>
+                <span class="type"><a
+                        href="https://developer.mozilla.org/en/JavaScript/Reference/Global_Objects/Function"
+                        class="crosslink external" target="_blank">函数</a> | <a
+                        href="https://developer.mozilla.org/en/JavaScript/Reference/Global_Objects/Object"
+                        class="crosslink external" target="_blank">对象</a></span>
+
+
+                <div class="param-description">
+                    <p>侦听器函数或对象。</p>
+
+                </div>
+
+
+            </li>
+
+            <li class="param">
+
+                <code class="param-name optional">[useCapture]</code>
+                <span class="type"><a
+                        href="https://developer.mozilla.org/en/JavaScript/Reference/Global_Objects/Boolean"
+                        class="crosslink external" target="_blank">布尔型</a></span>
+                <span class="flag optional" title="This parameter is optional.">可选的</span>
+
+
+                <div class="param-description">
+                    <p>对于泡沫的事件,表明是否侦听事件捕获目标或冒泡阶段。</p>
+
+                </div>
+
+
+            </li>
+
+        </ul>
+    </div>
+
+
+</div>
+
+
+<div id="method_on" class="method item inherited">
+<h3 class="name"><code>on</code></h3>
+
+
+<div class="args">
+    <span class="paren">(</span>
+    <ul class="args-list inline commas">
+
+        <li class="arg">
+
+            <code>type</code>
+
+        </li>
+
+        <li class="arg">
+
+            <code>listener</code>
+
+        </li>
+
+        <li class="arg">
+
+            <code class="optional">[scope]</code>
+
+        </li>
+
+        <li class="arg">
+
+            <code class="optional">[once=false]</code>
+
+        </li>
+
+        <li class="arg">
+
+            <code class="optional">[data]</code>
+
+        </li>
+
+        <li class="arg">
+
+            <code class="optional">[useCapture=false]</code>
+
+        </li>
+
+    </ul>
+    <span class="paren">)</span>
+</div>
+    
+
+    
+        <span class="returns-inline">
+            <span class="type"><a href="https://developer.mozilla.org/en/JavaScript/Reference/Global_Objects/Function"
+                                  class="crosslink external" target="_blank">函数</a></span>
+        </span>
+
+
+<div class="meta">
+
+
+    <p>继承自
+        <a href="../classes/EventDispatcher.html#method_on">EventDispatcher</a>:
+
+
+        <a href="../files/createjs_events_EventDispatcher.js.html#l187"><code>on:187</code></a>
+
+    </p>
+
+
+</div>
+
+<div class="description">
+    <p>
+
+    <p>使用addEventListener方法的一个快捷方式,可以更容易地指定一个执行范围,有一个侦听器只运行一次,将任意数据作为侦听器的参数,和删除这个侦听器。</p></p>
+    <p>
+
+    <p>这种方法是通过创建一个匿名的包装函数和用addEventListener订阅它。 使用的包装函数返回<code>removeEventListener</code>(或者 <code>off</code>)。</p></p>
+    <p>
+
+    <p><b>IMPORTANT:</b>使用<code>on</code>删除一个侦听器,你必须通过包装器函数返回侦听器,或使用<a href="../classes/Event.html#method_remove" class="crosslink">remove</a>。
+    同样地,每一次调用<code>on</code>一个新的包装器函数将被订阅,所以用相同的参数多个调用<code>on</code>将创建多个侦听器。
+    </p></p>
+    <h4>例如</h4>
+
+<pre class="code prettyprint"><code> var listener = myBtn.on("click", handleClick, null, false, {count:3});
+    function handleClick(evt, data) {
+    data.count -= 1;
+    console.log(this == myBtn); // true——默认值为调度范围
+    if (data.count == 0) {
+    alert("clicked 3 times!");
+    myBtn.off("click", listener);
+    // 替换: evt.remove();
+    }
+    }</code></pre>
+
+</div>
+
+
+<div class="params">
+    <h4>参数:</h4>
+
+    <ul class="params-list">
+
+        <li class="param">
+
+            <code class="param-name">type</code>
+            <span class="type"><a href="https://developer.mozilla.org/en/JavaScript/Reference/Global_Objects/String"
+                                  class="crosslink external" target="_blank">字符型</a></span>
+
+
+            <div class="param-description">
+                <p>字符串类型的事件。</p>
+
+            </div>
+
+
+        </li>
+
+        <li class="param">
+
+            <code class="param-name">listener</code>
+            <span class="type"><a href="https://developer.mozilla.org/en/JavaScript/Reference/Global_Objects/Function"
+                                  class="crosslink external" target="_blank">函数</a> | <a
+                    href="https://developer.mozilla.org/en/JavaScript/Reference/Global_Objects/Object"
+                    class="crosslink external" target="_blank">对象</a></span>
+
+
+            <div class="param-description">
+                <p>一个有handleEvent方法对象,或一个在事件注册时被回调的函数。</p>
+
+            </div>
+
+
+        </li>
+
+        <li class="param">
+
+            <code class="param-name optional">[scope]</code>
+            <span class="type"><a href="https://developer.mozilla.org/en/JavaScript/Reference/Global_Objects/Object"
+                                  class="crosslink external" target="_blank">函数</a></span>
+            <span class="flag optional" title="This parameter is optional.">可选的</span>
+
+
+            <div class="param-description">
+                <p>执行侦听器的范围。 默认值为dispatcher/ currentTarget函数监听器,和侦听器本身为对象的监听器(ie:使用handleEvent)。</p>
+
+            </div>
+
+
+        </li>
+
+        <li class="param">
+
+            <code class="param-name optional">[once=false]</code>
+            <span class="type"><a href="https://developer.mozilla.org/en/JavaScript/Reference/Global_Objects/Boolean"
+                                  class="crosslink external" target="_blank">布尔型</a></span>
+            <span class="flag optional" title="This parameter is optional.">可选的</span>
+
+
+            <div class="param-description">
+                <p>如果为true,这个监听器在第一次触发后移除自己。</p>
+
+            </div>
+
+
+        </li>
+
+        <li class="param">
+
+            <code class="param-name optional">[data]</code>
+            <span class="type"></span>
+            <span class="flag optional" title="This parameter is optional.">可选的</span>
+
+
+            <div class="param-description">
+                <p>任意的数据将作为第二个参数调用侦听器。</p>
+
+            </div>
+
+
+        </li>
+
+        <li class="param">
+
+            <code class="param-name optional">[useCapture=false]</code>
+            <span class="type"><a href="https://developer.mozilla.org/en/JavaScript/Reference/Global_Objects/Boolean"
+                                  class="crosslink external" target="_blank">布尔型</a></span>
+            <span class="flag optional" title="This parameter is optional.">可选的</span>
+
+
+            <div class="param-description">
+                <p>对于冒泡的事件,表明是否侦听事件捕获目标或冒泡阶段。</p>
+
+            </div>
+
+
+        </li>
+
+    </ul>
+</div>
+
+
+<div class="returns">
+    <h4>返回:</h4>
+
+    <div class="returns-description">
+
+
+        <span class="type"><a href="https://developer.mozilla.org/en/JavaScript/Reference/Global_Objects/Function"
+                              class="crosslink external" target="_blank">函数</a></span>:
+
+        <p>返回的匿名函数作为侦听器被创建并分配。这使用之后需要用.removeEventListener删除侦听器。</p>
+
+
+    </div>
+</div>
+
+
+</div>
+
+
+<div id="method_removeAllEventListeners" class="method item inherited">
+    <h3 class="name"><code>removeAllEventListeners</code></h3>
+
+
+    <div class="args">
+        <span class="paren">(</span>
+        <ul class="args-list inline commas">
+
+            <li class="arg">
+
+                <code class="optional">[type]</code>
+
+            </li>
+
+        </ul>
+        <span class="paren">)</span>
+    </div>
+
+
+    <div class="meta">
+
+
+        <p>继承自
+            <a href="../classes/EventDispatcher.html#method_removeAllEventListeners">EventDispatcher</a>:
+
+
+            <a href="../files/createjs_events_EventDispatcher.js.html#l277"><code>removeAllEventListeners:277</code></a>
+
+        </p>
+
+
+    </div>
+
+    <div class="description">
+        <p>
+
+        <p>删除指定类型的所有监听器,或所有监听类型。</p></p>
+        <h4>例如</h4>
+
+<pre class="code prettyprint"><code> // 移除所有的监听器
+    displayObject.removeAllEventListeners();
+
+    // 移除所有的监听器
+    displayObject.removeAllEventListeners("click");</code></pre>
+
+    </div>
+
+
+    <div class="params">
+        <h4>参数:</h4>
+
+        <ul class="params-list">
+
+            <li class="param">
+
+                <code class="param-name optional">[type]</code>
+                <span class="type"><a href="https://developer.mozilla.org/en/JavaScript/Reference/Global_Objects/String"
+                                      class="crosslink external" target="_blank">字符型</a></span>
+                <span class="flag optional" title="This parameter is optional.">可选的</span>
+
+
+                <div class="param-description">
+                    <p>字符串类型的事件。 如果省略了,所有的监听类型将被删除</p>
+
+                </div>
+
+
+            </li>
+
+        </ul>
+    </div>
+
+
+</div>
+
+
+<div id="method_removeEventListener" class="method item inherited">
+    <h3 class="name"><code>removeEventListener</code></h3>
+
+
+    <div class="args">
+        <span class="paren">(</span>
+        <ul class="args-list inline commas">
+
+            <li class="arg">
+
+                <code>type</code>
+
+            </li>
+
+            <li class="arg">
+
+                <code>listener</code>
+
+            </li>
+
+            <li class="arg">
+
+                <code class="optional">[useCapture]</code>
+
+            </li>
+
+        </ul>
+        <span class="paren">)</span>
+    </div>
+
+
+    <div class="meta">
+
+
+        <p>继承自
+            <a href="../classes/EventDispatcher.html#method_removeEventListener">EventDispatcher</a>:
+
+
+            <a href="../files/createjs_events_EventDispatcher.js.html#l233"><code>removeEventListener:233</code></a>
+
+        </p>
+
+
+    </div>
+
+    <div class="description">
+        <p>
+
+        <p>移除指定的监听</p></p>
+        <p>
+
+        <p><b>重要的是:</b> 你必须通过具体的函数添加事件参考使用。 如果一个引用函数,或者函数作为回调函数被关闭,必须使用proxy（引用）/closure（关闭）— 一个新的proxy（引用）/closure（关闭）将不会工作</p></p>
+        <h4>例如</h4>
+
+        <pre class="code prettyprint"><code> displayObject.removeEventListener("click", handleClick);</code></pre>
+
+    </div>
+
+
+    <div class="params">
+        <h4>参数:</h4>
+
+        <ul class="params-list">
+
+            <li class="param">
+
+                <code class="param-name">type</code>
+                <span class="type"><a href="https://developer.mozilla.org/en/JavaScript/Reference/Global_Objects/String"
+                                      class="crosslink external" target="_blank">字符型</a></span>
+
+
+                <div class="param-description">
+                    <p>字符串类型的事件。</p>
+
+                </div>
+
+
+            </li>
+
+            <li class="param">
+
+                <code class="param-name">listener</code>
+                <span class="type"><a
+                        href="https://developer.mozilla.org/en/JavaScript/Reference/Global_Objects/Function"
+                        class="crosslink external" target="_blank">函数</a> | <a
+                        href="https://developer.mozilla.org/en/JavaScript/Reference/Global_Objects/Object"
+                        class="crosslink external" target="_blank">对象</a></span>
+
+
+                <div class="param-description">
+                    <p>侦听器函数或对象。</p>
+
+                </div>
+
+
+            </li>
+
+            <li class="param">
+
+                <code class="param-name optional">[useCapture]</code>
+                <span class="type"><a
+                        href="https://developer.mozilla.org/en/JavaScript/Reference/Global_Objects/Boolean"
+                        class="crosslink external" target="_blank">布尔型</a></span>
+                <span class="flag optional" title="This parameter is optional.">可选的</span>
+
+
+                <div class="param-description">
+                    <p>对于冒泡的事件,表明是否侦听事件捕获目标或冒泡阶段。</p>
+
+                </div>
+
+
+            </li>
+
+        </ul>
+    </div>
+
+
+</div>
+
+
+<div id="method_removeTween" class="method item">
+    <h3 class="name"><code>removeTween</code></h3>
+
+
+    <div class="args">
+        <span class="paren">(</span>
+        <ul class="args-list inline commas">
+
+            <li class="arg">
+
+                <code>...tween</code>
+
+            </li>
+
+        </ul>
+        <span class="paren">)</span>
+    </div>
+    
+
+    
+        <span class="returns-inline">
+            <span class="type"></span>
+        </span>
+
+
+    <div class="meta">
+
+
+        <p>
+
+            定义于
+
+
+            <a href="../files/tweenjs_Timeline.js.html#l218"><code>removeTween:218</code></a>
+
+        </p>
+
+
+    </div>
+
+    <div class="description">
+        <p>删除一个或多个渐变从这个时间表。</p>
+
+    </div>
+
+
+    <div class="params">
+        <h4>参数:</h4>
+
+        <ul class="params-list">
+
+            <li class="param">
+
+                <code class="param-name">...tween</code>
+                <span class="type"><a href="../classes/Tween.html" class="crosslink">Tween</a></span>
+
+
+                <div class="param-description">
+                    <p>删除的渐变(s)。 接受多个参数。</p>
+
+                </div>
+
+
+            </li>
+
+        </ul>
+    </div>
+
+
+    <div class="returns">
+        <h4>返回:</h4>
+
+        <div class="returns-description">
+
+
+            <p>布尔型:如果所有的渐变被成功删除，返回 <code>true</code>。</p>
+
+
+        </div>
+    </div>
+
+
+</div>
+
+
+<div id="method_resolve" class="method item">
+    <h3 class="name"><code>resolve</code></h3>
+
+
+    <div class="args">
+        <span class="paren">(</span>
+        <ul class="args-list inline commas">
+
+            <li class="arg">
+
+                <code>positionOrLabel</code>
+
+            </li>
+
+        </ul>
+        <span class="paren">)</span>
+    </div>
+
+
+    <div class="meta">
+
+
+        <p>
+
+            定义于
+
+
+            <a href="../files/tweenjs_Timeline.js.html#l390"><code>resolve:390</code></a>
+
+        </p>
+
+
+    </div>
+
+    <div class="description">
+        <p>如果一个数字的位置是通过,返回不变。 如果传递一个字符串的位置 相应的帧标签将返回,或<code>null</code> 如果没有定义一个匹配的标签。</p>
+
+    </div>
+
+
+    <div class="params">
+        <h4>参数:</h4>
+
+        <ul class="params-list">
+
+            <li class="param">
+
+                <code class="param-name">positionOrLabel</code>
+                <span class="type"><a href="https://developer.mozilla.org/en/JavaScript/Reference/Global_Objects/String"
+                                      class="crosslink external" target="_blank">字符型</a> | <a
+                        href="https://developer.mozilla.org/en/JavaScript/Reference/Global_Objects/Number"
+                        class="crosslink external" target="_blank">数值型</a></span>
+
+
+                <div class="param-description">
+                    <p>一个数字的位置或标签。</p>
+
+                </div>
+
+
+            </li>
+
+        </ul>
+    </div>
+
+
+</div>
+
+
+<div id="method_setLabels" class="method item">
+    <h3 class="name"><code>setLabels</code></h3>
+
+
+    <div class="args">
+        <span class="paren">(</span>
+        <ul class="args-list inline commas">
+
+            <li class="arg">
+
+                <code>o</code>
+
+            </li>
+
+        </ul>
+        <span class="paren">)</span>
+    </div>
+
+
+    <div class="meta">
+
+
+        <p>
+
+            定义于
+
+
+            <a href="../files/tweenjs_Timeline.js.html#l259"><code>setLabels:259</code></a>
+
+        </p>
+
+
+    </div>
+
+    <div class="description">
+        <p>定义了使用gotoAndPlay/Stop标签。覆盖任何先前设置标签。</p>
+
+    </div>
+
+
+    <div class="params">
+        <h4>参数:</h4>
+
+        <ul class="params-list">
+
+            <li class="param">
+
+                <code class="param-name">o</code>
+                <span class="type"><a href="https://developer.mozilla.org/en/JavaScript/Reference/Global_Objects/Object"
+                                      class="crosslink external" target="_blank">对象</a></span>
+
+
+                <div class="param-description">
+                    <p>一个对象定义标签使用 <a href="../classes/Timeline.html#method_gotoAndPlay"
+                                     class="crosslink">gotoAndPlay</a>/<a
+                            href="../classes/Timeline.html#method_gotoAndStop" class="crosslink">gotoAndStop</a>
+                        在表单中 <code>{labelName:time}</code> 时间以毫秒为单位(或ticks，如果<code>useTicks</code>是 <code>true</code>的话)。
+                     </p>
+
+                </div>
+
+
+            </li>
+
+        </ul>
+    </div>
+
+
+</div>
+
+
+<div id="method_setPaused" class="method item">
+    <h3 class="name"><code>setPaused</code></h3>
+
+
+    <div class="args">
+        <span class="paren">(</span>
+        <ul class="args-list inline commas">
+
+            <li class="arg">
+
+                <code>value</code>
+
+            </li>
+
+        </ul>
+        <span class="paren">)</span>
+    </div>
+
+
+    <div class="meta">
+
+
+        <p>
+
+            定义于
+
+
+            <a href="../files/tweenjs_Timeline.js.html#l356"><code>setPaused:356</code></a>
+
+        </p>
+
+
+    </div>
+
+    <div class="description">
+        <p>暂停或播放这个时间表。</p>
+
+    </div>
+
+
+    <div class="params">
+        <h4>参数:</h4>
+
+        <ul class="params-list">
+
+            <li class="param">
+
+                <code class="param-name">value</code>
+                <span class="type"><a
+                        href="https://developer.mozilla.org/en/JavaScript/Reference/Global_Objects/Boolean"
+                        class="crosslink external" target="_blank">布尔型</a></span>
+
+
+                <div class="param-description">
+                    <p>表明这个渐变是被暂停 (<code>true</code>) 还是播放（<code>false</code>） </p>
+                </div>
+
+
+            </li>
+
+        </ul>
+    </div>
+
+
+</div>
+
+
+<div id="method_setPosition" class="method item">
+    <h3 class="name"><code>setPosition</code></h3>
+
+
+    <div class="args">
+        <span class="paren">(</span>
+        <ul class="args-list inline commas">
+
+            <li class="arg">
+
+                <code>value</code>
+
+            </li>
+
+            <li class="arg">
+
+                <code class="optional">[actionsMode]</code>
+
+            </li>
+
+        </ul>
+        <span class="paren">)</span>
+    </div>
+    
+
+    
+        <span class="returns-inline">
+            <span class="type"><a href="https://developer.mozilla.org/en/JavaScript/Reference/Global_Objects/Boolean"
+                                  class="crosslink external" target="_blank">布尔型</a></span>
+        </span>
+
+
+    <div class="meta">
+
+
+        <p>
+
+            定义于
+
+
+            <a href="../files/tweenjs_Timeline.js.html#l332"><code>setPosition:332</code></a>
+
+        </p>
+
+
+    </div>
+
+    <div class="description">
+        <p>提前这个时间轴到指定的位置。</p>
+
+    </div>
+
+
+    <div class="params">
+        <h4>参数:</h4>
+
+        <ul class="params-list">
+
+            <li class="param">
+
+                <code class="param-name">value</code>
+                <span class="type"><a href="https://developer.mozilla.org/en/JavaScript/Reference/Global_Objects/Number"
+                                      class="crosslink external" target="_blank">数值型</a></span>
+
+
+                <div class="param-description">
+                    <p>这个位置以毫秒寻找(或ticks，如果<code>useTicks</code>是true)。.
+                    </p>
+
+                </div>
+
+
+            </li>
+
+            <li class="param">
+
+                <code class="param-name optional">[actionsMode]</code>
+                <span class="type"><a href="https://developer.mozilla.org/en/JavaScript/Reference/Global_Objects/Number"
+                                      class="crosslink external" target="_blank">数值型</a></span>
+                <span class="flag optional" title="This parameter is optional.">可选的</span>
+
+
+                <div class="param-description">
+                    <p>参数指定行为的处理方式。 看tween的<a
+                            href="../classes/Tween.html#method_setPosition" class="crosslink">setPosition</a>获得更多细节的方法。</p>
+
+                </div>
+
+
+            </li>
+
+        </ul>
+    </div>
+
+
+    <div class="returns">
+        <h4>返回:</h4>
+
+        <div class="returns-description">
+
+
+            <span class="type"><a href="https://developer.mozilla.org/en/JavaScript/Reference/Global_Objects/Boolean"
+                                  class="crosslink external" target="_blank">布尔型</a></span>:
+
+            <p>如果这个时间轴完成了返回true(ie.这个完整的时间轴运行，这个<a
+                    href="../classes/Timeline.html#property_loop" class="crosslink">loop</a>为 <code>false</code>)
+              </p>
+        </div>
+    </div>
+
+
+</div>
+
+
+<div id="method_tick" class="method item">
+    <h3 class="name"><code>tick</code></h3>
+
+
+    <div class="args">
+        <span class="paren">(</span>
+        <ul class="args-list inline commas">
+
+            <li class="arg">
+
+                <code>delta</code>
+
+            </li>
+
+        </ul>
+        <span class="paren">)</span>
+    </div>
+
+
+    <div class="meta">
+
+
+        <p>
+
+            定义于
+
+
+            <a href="../files/tweenjs_Timeline.js.html#l379"><code>tick:379</code></a>
+
+        </p>
+
+
+    </div>
+
+    <div class="description">
+        <p>提出这个timeline以毫秒为单位指定的时间(或ticks，如果<code>useTicks</code>是<code>true</code>)。
+            这是通常被称为自动渐变的引擎(通过Tween/tick:event事件),但暴露于高级使用。</p>
+
+    </div>
+
+
+    <div class="params">
+        <h4>参数:</h4>
+
+        <ul class="params-list">
+
+            <li class="param">
+
+                <code class="param-name">delta</code>
+                <span class="type"><a href="https://developer.mozilla.org/en/JavaScript/Reference/Global_Objects/Number"
+                                      class="crosslink external" target="_blank">数值型</a></span>
+
+
+                <div class="param-description">
+                    <p>时间在毫秒(或ticks,如果useTicks是true的话)。</p>
+
+                </div>
+
+
+            </li>
+
+        </ul>
+    </div>
+
+
+</div>
+
+
+<div id="method_toString" class="method item">
+    <h3 class="name"><code>toString</code></h3>
+
+
+    <span class="paren">()</span>
+    
+
+    
+        <span class="returns-inline">
+            <span class="type"><a href="https://developer.mozilla.org/en/JavaScript/Reference/Global_Objects/String"
+                                  class="crosslink external" target="_blank">字符型</a></span>
+        </span>
+
+
+    <div class="meta">
+
+        <p>继承自
+            <a href="../classes/EventDispatcher.html#method_toString">
+                EventDispatcher
+            </a>
+
+            但覆盖在
+
+
+            <a href="../files/tweenjs_Timeline.js.html#l402"><code>toString:402</code></a>
+
+        </p>
+
+
+    </div>
+
+    <div class="description">
+        <p>返回该对象的字符串表示。</p>
+
+    </div>
+
+
+    <div class="returns">
+        <h4>返回:</h4>
+
+        <div class="returns-description">
+
+
+            <span class="type"><a href="https://developer.mozilla.org/en/JavaScript/Reference/Global_Objects/String"
+                                  class="crosslink external" target="_blank">字符型</a></span>:
+
+            <p>实例的一个字符串表示。</p>
+
+
+        </div>
+    </div>
+
+
+</div>
+
+
+<div id="method_updateDuration" class="method item">
+    <h3 class="name"><code>updateDuration</code></h3>
+
+
+    <span class="paren">()</span>
+
+
+    <div class="meta">
+
+
+        <p>
+
+            定义于
+
+
+            <a href="../files/tweenjs_Timeline.js.html#l366"><code>updateDuration:366</code></a>
+
+        </p>
+
+
+    </div>
+
+    <div class="description">
+        <p>重新计算这个timeline的持续时间。 当tweens类添加或删除时时间自动更新, 但如果一个tween添加到时间轴后你修改这个tween是有效的。</p>
+
+    </div>
+
+
+</div>
+
+
+<div id="method_willTrigger" class="method item inherited">
+    <h3 class="name"><code>willTrigger</code></h3>
+
+
+    <div class="args">
+        <span class="paren">(</span>
+        <ul class="args-list inline commas">
+
+            <li class="arg">
+
+                <code>type</code>
+
+            </li>
+
+        </ul>
+        <span class="paren">)</span>
+    </div>
+    
+
+    
+        <span class="returns-inline">
+            <span class="type"><a href="https://developer.mozilla.org/en/JavaScript/Reference/Global_Objects/Boolean"
+                                  class="crosslink external" target="_blank">布尔型</a></span>
+        </span>
+
+
+    <div class="meta">
+
+
+        <p>继承自
+            <a href="../classes/EventDispatcher.html#method_willTrigger">EventDispatcher</a>:
+
+
+            <a href="../files/createjs_events_EventDispatcher.js.html#l364"><code>willTrigger:364</code></a>
+
+        </p>
+
+
+    </div>
+
+    <div class="description">
+        <p>表明是否至少有一个监听器为指定的对象或它的任何事件类型祖先(父母,父母的父母,等等)。 返回的true值表明这个对象一个冒泡事分派了指定的类型,它将触发至少一个侦听器。</p>
+
+        <p>这类似于<a href="../classes/EventDispatcher.html#method_hasEventListener" class="crosslink">hasEventListener</a>,但它搜索整个事件流下的侦听器,而不仅仅这个对象。</p>
+
+    </div>
+
+
+    <div class="params">
+        <h4>参数:</h4>
+
+        <ul class="params-list">
+
+            <li class="param">
+
+                <code class="param-name">type</code>
+                <span class="type"><a href="https://developer.mozilla.org/en/JavaScript/Reference/Global_Objects/String"
+                                      class="crosslink external" target="_blank">字符型</a></span>
+
+
+                <div class="param-description">
+                    <p>字符串类型的事件。</p>
+
+                </div>
+
+
+            </li>
+
+        </ul>
+    </div>
+
+
+    <div class="returns">
+        <h4>返回:</h4>
+
+        <div class="returns-description">
+
+
+            <span class="type"><a href="https://developer.mozilla.org/en/JavaScript/Reference/Global_Objects/Boolean"
+                                  class="crosslink external" target="_blank">布尔型</a></span>:
+
+            <p>如果至少有一个为指定事件侦听器，返回true。</p>
+
+
+        </div>
+    </div>
+
+
+</div>
+
+
+</div>
+
+
+<div id="properties" class="api-class-tabpanel">
+<h2 class="off-left">属性</h2>
+
+
+<div id="property__captureListeners" class="property item protected inherited">
+    <h3 class="name"><code>_captureListeners</code></h3>
+    <span class="type"><a href="https://developer.mozilla.org/en/JavaScript/Reference/Global_Objects/Object"
+                          class="crosslink external" target="_blank">对象</a></span>
+
+
+    <span class="flag protected">受保护的</span>
+
+
+    <div class="meta">
+
+
+        <p>继承自
+            <a href="../classes/EventDispatcher.html#property__captureListeners">EventDispatcher</a>:
+
+
+            <a href="../files/createjs_events_EventDispatcher.js.html#l106"><code>_captureListeners:106</code></a>
+
+        </p>
+
+
+    </div>
+
+    <div class="description">
+
+    </div>
+
+
+</div>
+
+
+<div id="property__labelList" class="property item protected">
+    <h3 class="name"><code>_labelList</code></h3>
+    <span class="type">ArrayObject</span>
+
+
+    <span class="flag protected">受保护的</span>
+
+
+    <div class="meta">
+
+
+        <p>
+
+            定义于
+
+
+            <a href="../files/tweenjs_Timeline.js.html#l124"><code>_labelList:124</code></a>
+
+        </p>
+
+
+    </div>
+
+    <div class="description">
+
+    </div>
+
+
+</div>
+
+
+<div id="property__labels" class="property item protected">
+    <h3 class="name"><code>_labels</code></h3>
+    <span class="type"><a href="https://developer.mozilla.org/en/JavaScript/Reference/Global_Objects/Object"
+                          class="crosslink external" target="_blank">对象</a></span>
+
+
+    <span class="flag protected">受保护的</span>
+
+
+    <div class="meta">
+
+
+        <p>
+
+            定义于
+
+
+            <a href="../files/tweenjs_Timeline.js.html#l117"><code>_labels:117</code></a>
+
+        </p>
+
+
+    </div>
+
+    <div class="description">
+
+    </div>
+
+
+</div>
+
+
+<div id="property__listeners" class="property item protected inherited">
+    <h3 class="name"><code>_listeners</code></h3>
+    <span class="type"><a href="https://developer.mozilla.org/en/JavaScript/Reference/Global_Objects/Object"
+                          class="crosslink external" target="_blank">对象</a></span>
+
+
+    <span class="flag protected">受保护的</span>
+
+
+    <div class="meta">
+
+
+        <p>继承自
+            <a href="../classes/EventDispatcher.html#property__listeners">EventDispatcher</a>:
+
+
+            <a href="../files/createjs_events_EventDispatcher.js.html#l99"><code>_listeners:99</code></a>
+
+        </p>
+
+
+    </div>
+
+    <div class="description">
+
+    </div>
+
+
+</div>
+
+
+<div id="property__paused" class="property item protected">
+    <h3 class="name"><code>_paused</code></h3>
+    <span class="type"><a href="https://developer.mozilla.org/en/JavaScript/Reference/Global_Objects/Boolean"
+                          class="crosslink external" target="_blank">布尔型</a></span>
+
+
+    <span class="flag protected">受保护的</span>
+
+
+    <div class="meta">
+
+
+        <p>
+
+            定义于
+
+
+            <a href="../files/tweenjs_Timeline.js.html#l103"><code>_paused:103</code></a>
+
+        </p>
+
+
+    </div>
+
+    <div class="description">
+
+    </div>
+
+
+</div>
+
+
+<div id="property__prevPos" class="property item protected">
+    <h3 class="name"><code>_prevPos</code></h3>
+    <span class="type"><a href="https://developer.mozilla.org/en/JavaScript/Reference/Global_Objects/Number"
+                          class="crosslink external" target="_blank">数值型</a></span>
+
+
+    <span class="flag protected">受保护的</span>
+
+
+    <div class="meta">
+
+
+        <p>
+
+            定义于
+
+
+            <a href="../files/tweenjs_Timeline.js.html#l139"><code>_prevPos:139</code></a>
+
+        </p>
+
+
+    </div>
+
+    <div class="description">
+
+    </div>
+
+
+    <p><strong>默认值:</strong> -1</p>
+
+
+</div>
+
+
+<div id="property__prevPosition" class="property item protected">
+    <h3 class="name"><code>_prevPosition</code></h3>
+    <span class="type"><a href="https://developer.mozilla.org/en/JavaScript/Reference/Global_Objects/Number"
+                          class="crosslink external" target="_blank">数值型</a></span>
+
+
+    <span class="flag protected">受保护的</span>
+
+
+    <div class="meta">
+
+
+        <p>
+
+            定义于
+
+
+            <a href="../files/tweenjs_Timeline.js.html#l131"><code>_prevPosition:131</code></a>
+
+        </p>
+
+
+    </div>
+
+    <div class="description">
+
+    </div>
+
+
+    <p><strong>默认值:</strong> 0</p>
+
+
+</div>
+
+
+<div id="property__registered" class="property item protected">
+    <h3 class="name"><code>_registered</code></h3>
+    <span class="type"><a href="https://developer.mozilla.org/en/JavaScript/Reference/Global_Objects/Boolean"
+                          class="crosslink external" target="_blank">布尔型</a></span>
+
+
+    <span class="flag protected">受保护的</span>
+
+
+    <div class="meta">
+
+
+        <p>
+
+            定义于
+
+
+            <a href="../files/tweenjs_Timeline.js.html#l155"><code>_registered:155</code></a>
+
+        </p>
+
+
+    </div>
+
+    <div class="description">
+        <p>表示时间轴目前是否注册渐变。</p>
+
+    </div>
+
+
+    <p><strong>默认值:</strong> false</p>
+
+
+</div>
+
+
+<div id="property__tweens" class="property item protected">
+    <h3 class="name"><code>_tweens</code></h3>
+    <span class="type">ArrayTween</span>
+
+
+    <span class="flag protected">受保护的</span>
+
+
+    <div class="meta">
+
+
+        <p>
+
+            定义于
+
+
+            <a href="../files/tweenjs_Timeline.js.html#l110"><code>_tweens:110</code></a>
+
+        </p>
+
+
+    </div>
+
+    <div class="description">
+
+    </div>
+
+
+</div>
+
+
+<div id="property__useTicks" class="property item protected">
+    <h3 class="name"><code>_useTicks</code></h3>
+    <span class="type"><a href="https://developer.mozilla.org/en/JavaScript/Reference/Global_Objects/Boolean"
+                          class="crosslink external" target="_blank">布尔型</a></span>
+
+
+    <span class="flag protected">protected</span>
+
+
+    <div class="meta">
+
+
+        <p>
+
+            定义于
+
+
+            <a href="../files/tweenjs_Timeline.js.html#l147"><code>_useTicks:147</code></a>
+
+        </p>
+
+
+    </div>
+
+    <div class="description">
+
+    </div>
+
+
+    <p><strong>默认值:</strong> false</p>
+
+
+</div>
+
+
+<div id="property_duration" class="property item">
+    <h3 class="name"><code>duration</code></h3>
+    <span class="type"><a href="https://developer.mozilla.org/en/JavaScript/Reference/Global_Objects/Number"
+                          class="crosslink external" target="_blank">数值型</a></span>
+
+
+    <span class="flag readonly">只读</span>
+
+
+    <div class="meta">
+
+
+        <p>
+
+            定义于
+
+
+            <a href="../files/tweenjs_Timeline.js.html#l74"><code>duration:74</code></a>
+
+        </p>
+
+
+    </div>
+
+    <div class="description">
+        <p>这个时间轴的总持续时间以毫秒为单位(或ticks，如果useTicks是true的话)。
+            这个值通常是自动更新修改时间表。看 <a
+                    href="../classes/Timeline.html#method_updateDuration" class="crosslink">updateDuration</a>
+            获取更多的信息</p>
+
+    </div>
+
+
+    <p><strong>默认值:</strong> 0</p>
+
+
+</div>
+
+
+<div id="property_ignoreGlobalPause" class="property item">
+    <h3 class="name"><code>ignoreGlobalPause</code></h3>
+    <span class="type"><a href="https://developer.mozilla.org/en/JavaScript/Reference/Global_Objects/Boolean"
+                          class="crosslink external" target="_blank">布尔型</a></span>
+
+
+    <div class="meta">
+
+
+        <p>
+
+            定义于
+
+
+            <a href="../files/tweenjs_Timeline.js.html#l67"><code>ignoreGlobalPause:67</code></a>
+
+        </p>
+
+
+    </div>
+
+    <div class="description">
+        <p>当一个总体的暂停是有效的，将导致这个时间表继续运作。</p>
+
+    </div>
+
+
+</div>
+
+
+<div id="property_loop" class="property item">
+    <h3 class="name"><code>loop</code></h3>
+    <span class="type"><a href="https://developer.mozilla.org/en/JavaScript/Reference/Global_Objects/Boolean"
+                          class="crosslink external" target="_blank">布尔型</a></span>
+
+
+    <div class="meta">
+
+
+        <p>
+
+            定义于
+
+
+            <a href="../files/tweenjs_Timeline.js.html#l85"><code>loop:85</code></a>
+
+        </p>
+
+
+    </div>
+
+    <div class="description">
+        <p>如果设置为true,这个时间轴将循环到结束时。可以通过道具设置参数。</p>
+
+    </div>
+
+
+</div>
+
+
+<div id="property_position" class="property item">
+    <h3 class="name"><code>position</code></h3>
+    <span class="type"><a href="https://developer.mozilla.org/en/JavaScript/Reference/Global_Objects/Object"
+                          class="crosslink external" target="_blank">对象</a></span>
+
+
+    <span class="flag readonly">只读</span>
+
+
+    <div class="meta">
+
+
+        <p>
+
+            定义于
+
+
+            <a href="../files/tweenjs_Timeline.js.html#l92"><code>position:92</code></a>
+
+        </p>
+
+
+    </div>
+
+    <div class="description">
+        <p>当前的标准化时间轴的位置。这将永远是一个值介于0到<a href="../classes/Timeline.html#property_duration" class="crosslink">duration（持续时间）</a>。 直接改变这个属性将没有影响。</p>
+
+    </div>
+
+
+</div>
+
+
+</div>
+
+
+<div id="events" class="api-class-tabpanel">
+    <h2 class="off-left">Events</h2>
+
+
+    <div id="event_change" class="events item">
+        <h3 class="name"><code>change</code></h3>
+        <span class="type"></span>
+
+
+        <div class="meta">
+
+
+            <p>
+
+                定义于
+
+
+                <a href="../files/tweenjs_Timeline.js.html#l186"><code>change:186</code></a>
+
+            </p>
+
+
+            <p>可用于0.5.0以后</p>
+
+        </div>
+
+        <div class="description">
+            <p>只要时间轴的位置发生变化就调用。</p>
+
+        </div>
+
+
+    </div>
+
+
+</div>
+
+</div>
+</div>
+
+</div>
+</div>
+</div>
+</div>
+</div>
+</div>
+<script src="../assets/vendor/prettify/prettify-min.js"></script>
+<script>prettyPrint();</script>
+<script src="../assets/js/yui-prettify.js"></script>
+<script src="../assets/../api.js"></script>
+<script src="../assets/js/api-filter.js"></script>
+<script src="../assets/js/api-list.js"></script>
+<script src="../assets/js/api-search.js"></script>
+<script src="../assets/js/apidocs.js"></script>
+</body>
+</html>

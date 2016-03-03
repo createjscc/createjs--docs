@@ -1,0 +1,224 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="utf-8">
+    <link rel="stylesheet" href="../assets/css/yui-cssgrids-min.css">
+    <link rel="stylesheet" href="../assets/vendor/prettify/prettify-min.css">
+    <link rel="stylesheet" href="../assets/css/main.css" id="site_styles">
+    <link rel="shortcut icon" type="image/x-icon" href="../assets/favicon.ico">
+    <script src="../assets/js/yui-source.js"></script>
+	<title>TweenJS v0.6.2 API文档 : TweenJS</title>
+</head>
+<body class="yui3-skin-sam">
+
+<div id="doc">
+    <div id="hd" class="yui3-g header">
+        <div class="yui3-u-3-4">
+            
+                <h1><a href="http://www.createjs.com/tweenjs"><img src="../assets/docs-icon-TweenJS.png" title="TweenJS"></a></h1>
+            
+        </div>
+        <div class="yui3-u-1-4 version">
+            <em>API文档: 0.6.2</em>
+        </div>
+    </div>
+    <div id="bd" class="yui3-g">
+
+        <div class="yui3-u-1-4">
+            <div id="docs-sidebar" class="sidebar apidocs">
+                <div id="api-list">
+    <h2 class="off-left">APIs</h2>
+    <div id="api-tabview" class="tabview">
+        <ul class="tabs">
+            <li><a href="#api-classes">Classes</a></li>
+        </ul>
+
+        <div id="api-tabview-filter">
+            <input type="search" id="api-filter" placeholder="Type to filter APIs">
+        </div>
+
+        <div id="api-tabview-panel">
+            <ul id="api-classes" class="apis classes">
+            
+                <li><a href="../classes/CSSPlugin.html">CSSPlugin</a></li>
+            
+                <li><a href="../classes/Ease.html">Ease</a></li>
+            
+                <li><a href="../classes/Event.html">Event</a></li>
+            
+                <li><a href="../classes/EventDispatcher.html">EventDispatcher</a></li>
+            
+                <li><a href="../classes/MotionGuidePlugin.html">MotionGuidePlugin</a></li>
+            
+                <li><a href="../classes/SamplePlugin.html">SamplePlugin</a></li>
+            
+                <li><a href="../classes/Ticker.html">Ticker</a></li>
+            
+                <li><a href="../classes/Timeline.html">Timeline</a></li>
+            
+                <li><a href="../classes/Tween.html">Tween</a></li>
+            
+                <li><a href="../classes/TweenJS.html">TweenJS</a></li>
+            
+                <li><a href="../classes/Utility Methods.html">Utility Methods</a></li>
+            
+            </ul>
+
+            <ul id="api-modules" class="apis modules">
+            
+                <li><a href="../modules/CreateJS.html">CreateJS</a></li>
+            
+                <li><a href="../modules/TweenJS.html">TweenJS</a></li>
+            
+            </ul>
+        </div>
+    </div>
+</div>
+
+            </div>
+        </div>
+        <div class="yui3-u-3-4">
+            <div id="api-options">
+        显示:
+        <label for="api-show-inherited">
+            <input type="checkbox" id="api-show-inherited" checked>
+            继承
+        </label>
+
+        <label for="api-show-protected">
+            <input type="checkbox" id="api-show-protected">
+            受保护的
+        </label>
+
+        <label for="api-show-private">
+            <input type="checkbox" id="api-show-private">
+            私有的
+        </label>
+        <label for="api-show-deprecated">
+            <input type="checkbox" id="api-show-deprecated">
+            弃用
+        </label>
+
+    </div>
+            <div class="apidocs">
+                <div id="docs-main">
+                    <div class="content">
+                        <h1>TweenJS模块</h1>
+<div class="box clearfix meta">
+    
+
+    
+
+    
+        <div class="foundat">
+            定义于: <a href="../files/tweenjs_version.js.html#l9"><code>TweenJS:9</code></a>
+        </div>
+    
+
+    
+</div>
+
+
+
+<div class="box intro">
+    <p>TweenJS Javascript库提供了一个简单但强大的渐变界面。它支持渐变的数字对象属性&CSS样式属性,并允许您链接补间动画和行动结合起来,创造出复杂的序列。</p>
+<p><h4>简单的补间动画</h4>
+    这个渐变将渐变目标alpha属性用一秒从0渐变到1,然后调用<code>handleComplete</code>函数。</p>
+<pre class="code prettyprint"><code>    target.alpha = 0;
+    createjs.Tween.get(target).to({alpha:1}, 1000).call(handleComplete);
+    function handleComplete() {
+        //渐变完成执行
+    }</code></pre>
+<p><strong>参数和范围</strong>
+    Tween总是提供一个<code>call()</code>伴随着参数和/或一个范围。如果没有传递范围,那么称为匿名函数(正常JavaScript行为)。
+    在面向对象的风格发展，范围是有用的维护范围。</p>
+<pre class="code prettyprint"><code> createjs.Tween.get(target).to({alpha:0})
+     .call(handleComplete, [argument1, argument2], this);</code></pre>
+<p><h4>可链式编程的补间动画</h4>
+    这个渐变将会先等待0.5秒，渐变目标的alpha属性从0到1，并且visible属性从true变为false，这个过程用时1秒，最后调用<code>handleComplete</code>函数。</p>
+<pre class="code prettyprint"><code>    target.alpha = 1;
+    createjs.Tween.get(target).wait(500).to({alpha:0, visible:false}, 1000).call(handleComplete);
+    function handleComplete() {
+        //渐变完成执行
+    }</code></pre>
+<p><h4>浏览器支持</h4>
+    TweenJS会在现代浏览器工作。TweenJS在IE8或者更早的版本上,使用一个旧版本的PreloadJS(0.4.1和更早的版本)。</p>
+
+</div>
+
+
+
+<div class="yui3-g">
+    <div class="yui3-u-1-2">
+        
+            <p>这个模块提供了以下类:</p>
+
+            <ul class="module-classes">
+            
+                <li class="module-class">
+                    <a href="../classes/CSSPlugin.html">
+                        CSSPlugin
+                    </a>
+                </li>
+            
+                <li class="module-class">
+                    <a href="../classes/Ease.html">
+                        Ease
+                    </a>
+                </li>
+            
+                <li class="module-class">
+                    <a href="../classes/MotionGuidePlugin.html">
+                        MotionGuidePlugin
+                    </a>
+                </li>
+            
+                <li class="module-class">
+                    <a href="../classes/SamplePlugin.html">
+                        SamplePlugin
+                    </a>
+                </li>
+            
+                <li class="module-class">
+                    <a href="../classes/Timeline.html">
+                        Timeline
+                    </a>
+                </li>
+            
+                <li class="module-class">
+                    <a href="../classes/Tween.html">
+                        Tween
+                    </a>
+                </li>
+            
+                <li class="module-class">
+                    <a href="../classes/TweenJS.html">
+                        TweenJS
+                    </a>
+                </li>
+            
+            </ul>
+        
+    </div>
+
+    <div class="yui3-u-1-2">
+        
+    </div>
+</div>
+
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+<script src="../assets/vendor/prettify/prettify-min.js"></script>
+<script>prettyPrint();</script>
+<script src="../assets/js/yui-prettify.js"></script>
+<script src="../assets/../api.js"></script>
+<script src="../assets/js/api-filter.js"></script>
+<script src="../assets/js/api-list.js"></script>
+<script src="../assets/js/api-search.js"></script>
+<script src="../assets/js/apidocs.js"></script>
+</body>
+</html>

@@ -1,0 +1,1086 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="utf-8">
+    <link rel="stylesheet" href="../assets/css/yui-cssgrids-min.css">
+    <link rel="stylesheet" href="../assets/vendor/prettify/prettify-min.css">
+    <link rel="stylesheet" href="../assets/css/main.css" id="site_styles">
+    <link rel="shortcut icon" type="image/x-icon" href="../assets/favicon.ico">
+    <script src="../assets/js/yui-source.js"></script>
+	<title>SoundJS v0.6.2 API Documentation : soundjs/AbstractSoundInstance.js</title>
+</head>
+<body class="yui3-skin-sam">
+
+<div id="doc">
+    <div id="hd" class="yui3-g header">
+        <div class="yui3-u-3-4">
+            
+                <h1><a href="http://www.createjs.com/soundjs"><img src="../assets/docs-icon-SoundJS.png" title="SoundJS"></a></h1>
+            
+        </div>
+        <div class="yui3-u-1-4 version">
+            <em>API Documentation for: 0.6.2</em>
+        </div>
+    </div>
+    <div id="bd" class="yui3-g">
+
+        <div class="yui3-u-1-4">
+            <div id="docs-sidebar" class="sidebar apidocs">
+                <div id="api-list">
+    <h2 class="off-left">APIs</h2>
+    <div id="api-tabview" class="tabview">
+        <ul class="tabs">
+            <li><a href="#api-classes">Classes</a></li>
+        </ul>
+
+        <div id="api-tabview-filter">
+            <input type="search" id="api-filter" placeholder="Type to filter APIs">
+        </div>
+
+        <div id="api-tabview-panel">
+            <ul id="api-classes" class="apis classes">
+            
+                <li><a href="../classes/AbstractPlugin.html">AbstractPlugin</a></li>
+            
+                <li><a href="../classes/AbstractSoundInstance.html">AbstractSoundInstance</a></li>
+            
+                <li><a href="../classes/AudioSprite.html">AudioSprite</a></li>
+            
+                <li><a href="../classes/CordovaAudioLoader.html">CordovaAudioLoader</a></li>
+            
+                <li><a href="../classes/CordovaAudioPlugin.html">CordovaAudioPlugin</a></li>
+            
+                <li><a href="../classes/CordovaAudioSoundInstance.html">CordovaAudioSoundInstance</a></li>
+            
+                <li><a href="../classes/ErrorEvent.html">ErrorEvent</a></li>
+            
+                <li><a href="../classes/Event.html">Event</a></li>
+            
+                <li><a href="../classes/EventDispatcher.html">EventDispatcher</a></li>
+            
+                <li><a href="../classes/FlashAudioLoader.html">FlashAudioLoader</a></li>
+            
+                <li><a href="../classes/FlashAudioPlugin.html">FlashAudioPlugin</a></li>
+            
+                <li><a href="../classes/FlashAudioSoundInstance.html">FlashAudioSoundInstance</a></li>
+            
+                <li><a href="../classes/HTMLAudioPlugin.html">HTMLAudioPlugin</a></li>
+            
+                <li><a href="../classes/HTMLAudioSoundInstance.html">HTMLAudioSoundInstance</a></li>
+            
+                <li><a href="../classes/HTMLAudioTagPool.html">HTMLAudioTagPool</a></li>
+            
+                <li><a href="../classes/PlayPropsConfig.html">PlayPropsConfig</a></li>
+            
+                <li><a href="../classes/Sound.html">Sound</a></li>
+            
+                <li><a href="../classes/SoundJS.html">SoundJS</a></li>
+            
+                <li><a href="../classes/Utility Methods.html">Utility Methods</a></li>
+            
+                <li><a href="../classes/WebAudioLoader.html">WebAudioLoader</a></li>
+            
+                <li><a href="../classes/WebAudioPlugin.html">WebAudioPlugin</a></li>
+            
+                <li><a href="../classes/WebAudioSoundInstance.html">WebAudioSoundInstance</a></li>
+            
+            </ul>
+
+            <ul id="api-modules" class="apis modules">
+            
+                <li><a href="../modules/CreateJS.html">CreateJS</a></li>
+            
+                <li><a href="../modules/SoundJS.html">SoundJS</a></li>
+            
+            </ul>
+        </div>
+    </div>
+</div>
+
+            </div>
+        </div>
+        <div class="yui3-u-3-4">
+            <div id="api-options">
+        Show:
+        <label for="api-show-inherited">
+            <input type="checkbox" id="api-show-inherited" checked>
+            Inherited
+        </label>
+
+        <label for="api-show-protected">
+            <input type="checkbox" id="api-show-protected">
+            Protected
+        </label>
+
+        <label for="api-show-private">
+            <input type="checkbox" id="api-show-private">
+            Private
+        </label>
+        <label for="api-show-deprecated">
+            <input type="checkbox" id="api-show-deprecated">
+            Deprecated
+        </label>
+
+    </div>
+            <div class="apidocs">
+                <div id="docs-main">
+                    <div class="content">
+                        <script>
+	var name = soundjs/AbstractSoundInstance.js      
+</script>
+<h1 class="file-heading">File:AbstractSoundInstance.js</h1>
+
+<div class="file">
+    <pre class="code prettyprint linenums">
+/*
+ * AbstractSoundInstance
+ * Visit http://createjs.com/ for documentation, updates and examples.
+ *
+ *
+ * Copyright (c) 2012 gskinner.com, inc.
+ *
+ * Permission is hereby granted, free of charge, to any person
+ * obtaining a copy of this software and associated documentation
+ * files (the &quot;Software&quot;), to deal in the Software without
+ * restriction, including without limitation the rights to use,
+ * copy, modify, merge, publish, distribute, sublicense, and/or sell
+ * copies of the Software, and to permit persons to whom the
+ * Software is furnished to do so, subject to the following
+ * conditions:
+ *
+ * The above copyright notice and this permission notice shall be
+ * included in all copies or substantial portions of the Software.
+ *
+ * THE SOFTWARE IS PROVIDED &quot;AS IS&quot;, WITHOUT WARRANTY OF ANY KIND,
+ * EXPRESS OR IMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES
+ * OF MERCHANTABILITY, FITNESS FOR A PARTICULAR PURPOSE AND
+ * NONINFRINGEMENT. IN NO EVENT SHALL THE AUTHORS OR COPYRIGHT
+ * HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER LIABILITY,
+ * WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING
+ * FROM, OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR
+ * OTHER DEALINGS IN THE SOFTWARE.
+ */
+
+// namespace:
+this.createjs = this.createjs || {};
+
+/**
+ * A AbstractSoundInstance is created when any calls to the Sound API method {{#crossLink &quot;Sound/play&quot;}}{{/crossLink}} or
+ * {{#crossLink &quot;Sound/createInstance&quot;}}{{/crossLink}} are made. The AbstractSoundInstance is returned by the active plugin
+ * for control by the user.
+ *
+ * &lt;h4&gt;Example&lt;/h4&gt;
+ *
+ *      var myInstance = createjs.Sound.play(&quot;myAssetPath/mySrcFile.mp3&quot;);
+ *
+ * A number of additional parameters provide a quick way to determine how a sound is played. Please see the Sound
+ * API method {{#crossLink &quot;Sound/play&quot;}}{{/crossLink}} for a list of arguments.
+ *
+ * Once a AbstractSoundInstance is created, a reference can be stored that can be used to control the audio directly through
+ * the AbstractSoundInstance. If the reference is not stored, the AbstractSoundInstance will play out its audio (and any loops), and
+ * is then de-referenced from the {{#crossLink &quot;Sound&quot;}}{{/crossLink}} class so that it can be cleaned up. If audio
+ * playback has completed, a simple call to the {{#crossLink &quot;AbstractSoundInstance/play&quot;}}{{/crossLink}} instance method
+ * will rebuild the references the Sound class need to control it.
+ *
+ *      var myInstance = createjs.Sound.play(&quot;myAssetPath/mySrcFile.mp3&quot;, {loop:2});
+ *      myInstance.on(&quot;loop&quot;, handleLoop);
+ *      function handleLoop(event) {
+ *          myInstance.volume = myInstance.volume * 0.5;
+ *      }
+ *
+ * Events are dispatched from the instance to notify when the sound has completed, looped, or when playback fails
+ *
+ *      var myInstance = createjs.Sound.play(&quot;myAssetPath/mySrcFile.mp3&quot;);
+ *      myInstance.on(&quot;complete&quot;, handleComplete);
+ *      myInstance.on(&quot;loop&quot;, handleLoop);
+ *      myInstance.on(&quot;failed&quot;, handleFailed);
+ *
+ *
+ * @class AbstractSoundInstance
+ * @param {String} src The path to and file name of the sound.
+ * @param {Number} startTime Audio sprite property used to apply an offset, in milliseconds.
+ * @param {Number} duration Audio sprite property used to set the time the clip plays for, in milliseconds.
+ * @param {Object} playbackResource Any resource needed by plugin to support audio playback.
+ * @extends EventDispatcher
+ * @constructor
+ */
+
+(function () {
+	&quot;use strict&quot;;
+
+
+// Constructor:
+	var AbstractSoundInstance = function (src, startTime, duration, playbackResource) {
+		this.EventDispatcher_constructor();
+
+
+	// public properties:
+		/**
+		 * The source of the sound.
+		 * @property src
+		 * @type {String}
+		 * @default null
+		 */
+		this.src = src;
+
+		/**
+		 * The unique ID of the instance. This is set by {{#crossLink &quot;Sound&quot;}}{{/crossLink}}.
+		 * @property uniqueId
+		 * @type {String} | Number
+		 * @default -1
+		 */
+		this.uniqueId = -1;
+
+		/**
+		 * The play state of the sound. Play states are defined as constants on {{#crossLink &quot;Sound&quot;}}{{/crossLink}}.
+		 * @property playState
+		 * @type {String}
+		 * @default null
+		 */
+		this.playState = null;
+
+		/**
+		 * A Timeout created by {{#crossLink &quot;Sound&quot;}}{{/crossLink}} when this AbstractSoundInstance is played with a delay.
+		 * This allows AbstractSoundInstance to remove the delay if stop, pause, or cleanup are called before playback begins.
+		 * @property delayTimeoutId
+		 * @type {timeoutVariable}
+		 * @default null
+		 * @protected
+		 * @since 0.4.0
+		 */
+		this.delayTimeoutId = null;
+		// TODO consider moving delay into AbstractSoundInstance so it can be handled by plugins
+
+
+	// private properties
+	// Getter / Setter Properties
+		// OJR TODO find original reason that we didn&#x27;t use defined functions.  I think it was performance related
+		/**
+		 * The volume of the sound, between 0 and 1.
+		 *
+		 * The actual output volume of a sound can be calculated using:
+		 * &lt;code&gt;myInstance.volume * createjs.Sound.getVolume();&lt;/code&gt;
+		 *
+		 * @property volume
+		 * @type {Number}
+		 * @default 1
+		 */
+		this._volume =  1;
+		Object.defineProperty(this, &quot;volume&quot;, {
+			get: this.getVolume,
+			set: this.setVolume
+		});
+
+		/**
+		 * The pan of the sound, between -1 (left) and 1 (right). Note that pan is not supported by HTML Audio.
+		 *
+		 * &lt;br /&gt;Note in WebAudioPlugin this only gives us the &quot;x&quot; value of what is actually 3D audio.
+		 *
+		 * @property pan
+		 * @type {Number}
+		 * @default 0
+		 */
+		this._pan =  0;
+		Object.defineProperty(this, &quot;pan&quot;, {
+			get: this.getPan,
+			set: this.setPan
+		});
+
+		/**
+		 * Audio sprite property used to determine the starting offset.
+		 * @property startTime
+		 * @type {Number}
+		 * @default 0
+		 * @since 0.6.1
+		 */
+		this._startTime = Math.max(0, startTime || 0);
+		Object.defineProperty(this, &quot;startTime&quot;, {
+			get: this.getStartTime,
+			set: this.setStartTime
+		});
+
+		/**
+		 * Sets or gets the length of the audio clip, value is in milliseconds.
+		 *
+		 * @property duration
+		 * @type {Number}
+		 * @default 0
+		 * @since 0.6.0
+		 */
+		this._duration = Math.max(0, duration || 0);
+		Object.defineProperty(this, &quot;duration&quot;, {
+			get: this.getDuration,
+			set: this.setDuration
+		});
+
+		/**
+		 * Object that holds plugin specific resource need for audio playback.
+		 * This is set internally by the plugin.  For example, WebAudioPlugin will set an array buffer,
+		 * HTMLAudioPlugin will set a tag, FlashAudioPlugin will set a flash reference.
+		 *
+		 * @property playbackResource
+		 * @type {Object}
+		 * @default null
+		 */
+		this._playbackResource = null;
+		Object.defineProperty(this, &quot;playbackResource&quot;, {
+			get: this.getPlaybackResource,
+			set: this.setPlaybackResource
+		});
+		if(playbackResource !== false &amp;&amp; playbackResource !== true) { this.setPlaybackResource(playbackResource); }
+
+		/**
+		 * The position of the playhead in milliseconds. This can be set while a sound is playing, paused, or stopped.
+		 *
+		 * @property position
+		 * @type {Number}
+		 * @default 0
+		 * @since 0.6.0
+		 */
+		this._position = 0;
+		Object.defineProperty(this, &quot;position&quot;, {
+			get: this.getPosition,
+			set: this.setPosition
+		});
+
+		/**
+		 * The number of play loops remaining. Negative values will loop infinitely.
+		 *
+		 * @property loop
+		 * @type {Number}
+		 * @default 0
+		 * @public
+		 * @since 0.6.0
+		 */
+		this._loop = 0;
+		Object.defineProperty(this, &quot;loop&quot;, {
+			get: this.getLoop,
+			set: this.setLoop
+		});
+
+		/**
+		 * Mutes or unmutes the current audio instance.
+		 *
+		 * @property muted
+		 * @type {Boolean}
+		 * @default false
+		 * @since 0.6.0
+		 */
+		this._muted = false;
+		Object.defineProperty(this, &quot;muted&quot;, {
+			get: this.getMuted,
+			set: this.setMuted
+		});
+
+		/**
+		 * Pauses or resumes the current audio instance.
+		 *
+		 * @property paused
+		 * @type {Boolean}
+		 */
+		this._paused = false;
+		Object.defineProperty(this, &quot;paused&quot;, {
+			get: this.getPaused,
+			set: this.setPaused
+		});
+
+
+	// Events
+		/**
+		 * The event that is fired when playback has started successfully.
+		 * @event succeeded
+		 * @param {Object} target The object that dispatched the event.
+		 * @param {String} type The event type.
+		 * @since 0.4.0
+		 */
+
+		/**
+		 * The event that is fired when playback is interrupted. This happens when another sound with the same
+		 * src property is played using an interrupt value that causes this instance to stop playing.
+		 * @event interrupted
+		 * @param {Object} target The object that dispatched the event.
+		 * @param {String} type The event type.
+		 * @since 0.4.0
+		 */
+
+		/**
+		 * The event that is fired when playback has failed. This happens when there are too many channels with the same
+		 * src property already playing (and the interrupt value doesn&#x27;t cause an interrupt of another instance), or
+		 * the sound could not be played, perhaps due to a 404 error.
+		 * @event failed
+		 * @param {Object} target The object that dispatched the event.
+		 * @param {String} type The event type.
+		 * @since 0.4.0
+		 */
+
+		/**
+		 * The event that is fired when a sound has completed playing but has loops remaining.
+		 * @event loop
+		 * @param {Object} target The object that dispatched the event.
+		 * @param {String} type The event type.
+		 * @since 0.4.0
+		 */
+
+		/**
+		 * The event that is fired when playback completes. This means that the sound has finished playing in its
+		 * entirety, including its loop iterations.
+		 * @event complete
+		 * @param {Object} target The object that dispatched the event.
+		 * @param {String} type The event type.
+		 * @since 0.4.0
+		 */
+	};
+
+	var p = createjs.extend(AbstractSoundInstance, createjs.EventDispatcher);
+
+	// TODO: deprecated
+	// p.initialize = function() {}; // searchable for devs wondering where it is. REMOVED. See docs for details.
+
+
+// Public Methods:
+	/**
+	 * Play an instance. This method is intended to be called on SoundInstances that already exist (created
+	 * with the Sound API {{#crossLink &quot;Sound/createInstance&quot;}}{{/crossLink}} or {{#crossLink &quot;Sound/play&quot;}}{{/crossLink}}).
+	 *
+	 * &lt;h4&gt;Example&lt;/h4&gt;
+	 *
+	 *      var myInstance = createjs.Sound.createInstance(mySrc);
+	 *      myInstance.play({interrupt:createjs.Sound.INTERRUPT_ANY, loop:2, pan:0.5});
+	 *
+	 * Note that if this sound is already playing, this call will still set the passed in parameters.
+
+	 * &lt;b&gt;Parameters Deprecated&lt;/b&gt;&lt;br /&gt;
+	 * The parameters for this method are deprecated in favor of a single parameter that is an Object or {{#crossLink &quot;PlayPropsConfig&quot;}}{{/crossLink}}.
+	 *
+	 * @method play
+	 * @param {String | Object} [interrupt=&quot;none&quot;|options] &lt;b&gt;This parameter will be renamed playProps in the next release.&lt;/b&gt;&lt;br /&gt;
+	 * This parameter can be an instance of {{#crossLink &quot;PlayPropsConfig&quot;}}{{/crossLink}} or an Object that contains any or all optional properties by name,
+	 * including: interrupt, delay, offset, loop, volume, pan, startTime, and duration (see the above code sample).
+	 * &lt;br /&gt;&lt;strong&gt;OR&lt;/strong&gt;&lt;br /&gt;
+	 * &lt;b&gt;Deprecated&lt;/b&gt; How to interrupt any currently playing instances of audio with the same source,
+	 * if the maximum number of instances of the sound are already playing. Values are defined as &lt;code&gt;INTERRUPT_TYPE&lt;/code&gt;
+	 * constants on the Sound class, with the default defined by {{#crossLink &quot;Sound/defaultInterruptBehavior:property&quot;}}{{/crossLink}}.
+	 * @param {Number} [delay=0] &lt;b&gt;Deprecated&lt;/b&gt; The amount of time to delay the start of audio playback, in milliseconds.
+	 * @param {Number} [offset=0] &lt;b&gt;Deprecated&lt;/b&gt; The offset from the start of the audio to begin playback, in milliseconds.
+	 * @param {Number} [loop=0] &lt;b&gt;Deprecated&lt;/b&gt; How many times the audio loops when it reaches the end of playback. The default is 0 (no
+	 * loops), and -1 can be used for infinite playback.
+	 * @param {Number} [volume=1] &lt;b&gt;Deprecated&lt;/b&gt; The volume of the sound, between 0 and 1. Note that the master volume is applied
+	 * against the individual volume.
+	 * @param {Number} [pan=0] &lt;b&gt;Deprecated&lt;/b&gt; The left-right pan of the sound (if supported), between -1 (left) and 1 (right).
+	 * Note that pan is not supported for HTML Audio.
+	 * @return {AbstractSoundInstance} A reference to itself, intended for chaining calls.
+	 */
+	p.play = function (interrupt, delay, offset, loop, volume, pan) {
+		var playProps;
+		if (interrupt instanceof Object || interrupt instanceof createjs.PlayPropsConfig) {
+			playProps = createjs.PlayPropsConfig.create(interrupt);
+		} else {
+			playProps = createjs.PlayPropsConfig.create({interrupt:interrupt, delay:delay, offset:offset, loop:loop, volume:volume, pan:pan});
+		}
+
+		if (this.playState == createjs.Sound.PLAY_SUCCEEDED) {
+			this.applyPlayProps(playProps);
+			if (this._paused) {	this.setPaused(false); }
+			return;
+		}
+		this._cleanUp();
+		createjs.Sound._playInstance(this, playProps);	// make this an event dispatch??
+		return this;
+	};
+
+	/**
+	 * Stop playback of the instance. Stopped sounds will reset their position to 0, and calls to {{#crossLink &quot;AbstractSoundInstance/resume&quot;}}{{/crossLink}}
+	 * will fail. To start playback again, call {{#crossLink &quot;AbstractSoundInstance/play&quot;}}{{/crossLink}}.
+     *
+     * If you don&#x27;t want to lose your position use yourSoundInstance.paused = true instead. {{#crossLink &quot;AbstractSoundInstance/paused&quot;}}{{/crossLink}}.
+	 *
+	 * &lt;h4&gt;Example&lt;/h4&gt;
+	 *
+	 *     myInstance.stop();
+	 *
+	 * @method stop
+	 * @return {AbstractSoundInstance} A reference to itself, intended for chaining calls.
+	 */
+	p.stop = function () {
+		this._position = 0;
+		this._paused = false;
+		this._handleStop();
+		this._cleanUp();
+		this.playState = createjs.Sound.PLAY_FINISHED;
+		return this;
+	};
+
+	/**
+	 * Remove all external references and resources from AbstractSoundInstance.  Note this is irreversible and AbstractSoundInstance will no longer work
+	 * @method destroy
+	 * @since 0.6.0
+	 */
+	p.destroy = function() {
+		this._cleanUp();
+		this.src = null;
+		this.playbackResource = null;
+
+		this.removeAllEventListeners();
+	};
+
+	/**
+	 * Takes an PlayPropsConfig or Object with the same properties and sets them on this instance.
+	 * @method applyPlayProps
+	 * @param {PlayPropsConfig | Object} playProps A PlayPropsConfig or object containing the same properties.
+	 * @since 0.6.1
+	 * @return {AbstractSoundInstance} A reference to itself, intended for chaining calls.
+	 */
+	p.applyPlayProps = function(playProps) {
+		if (playProps.offset != null) { this.setPosition(playProps.offset) }
+		if (playProps.loop != null) { this.setLoop(playProps.loop); }
+		if (playProps.volume != null) { this.setVolume(playProps.volume); }
+		if (playProps.pan != null) { this.setPan(playProps.pan); }
+		if (playProps.startTime != null) {
+			this.setStartTime(playProps.startTime);
+			this.setDuration(playProps.duration);
+		}
+		return this;
+	};
+
+	p.toString = function () {
+		return &quot;[AbstractSoundInstance]&quot;;
+	};
+
+// get/set methods that allow support for IE8
+	/**
+	 * DEPRECATED, please use {{#crossLink &quot;AbstractSoundInstance/paused:property&quot;}}{{/crossLink}} directly as a property,
+	 *
+	 * @deprecated
+	 * @method getPaused
+	 * @returns {boolean} If the instance is currently paused
+	 * @since 0.6.0
+	 */
+	p.getPaused = function() {
+		return this._paused;
+	};
+
+	/**
+	 * DEPRECATED, please use {{#crossLink &quot;AbstractSoundInstance/paused:property&quot;}}{{/crossLink}} directly as a property
+	 *
+	 * @deprecated
+	 * @method setPaused
+	 * @param {boolean} value
+	 * @since 0.6.0
+	 * @return {AbstractSoundInstance} A reference to itself, intended for chaining calls.
+	 */
+	p.setPaused = function (value) {
+		if ((value !== true &amp;&amp; value !== false) || this._paused == value) {return;}
+		if (value == true &amp;&amp; this.playState != createjs.Sound.PLAY_SUCCEEDED) {return;}
+		this._paused = value;
+		if(value) {
+			this._pause();
+		} else {
+			this._resume();
+		}
+		clearTimeout(this.delayTimeoutId);
+		return this;
+	};
+
+	/**
+	 * DEPRECATED, please use {{#crossLink &quot;AbstractSoundInstance/volume:property&quot;}}{{/crossLink}} directly as a property
+	 *
+	 * @deprecated
+	 * @method setVolume
+	 * @param {Number} value The volume to set, between 0 and 1.
+	 * @return {AbstractSoundInstance} A reference to itself, intended for chaining calls.
+	 */
+	p.setVolume = function (value) {
+		if (value == this._volume) { return this; }
+		this._volume = Math.max(0, Math.min(1, value));
+		if (!this._muted) {
+			this._updateVolume();
+		}
+		return this;
+	};
+
+	/**
+	 * DEPRECATED, please use {{#crossLink &quot;AbstractSoundInstance/volume:property&quot;}}{{/crossLink}} directly as a property
+	 *
+	 * @deprecated
+	 * @method getVolume
+	 * @return {Number} The current volume of the sound instance.
+	 */
+	p.getVolume = function () {
+		return this._volume;
+	};
+
+	/**
+	 * DEPRECATED, please use {{#crossLink &quot;AbstractSoundInstance/muted:property&quot;}}{{/crossLink}} directly as a property
+	 *
+	 * @deprecated
+	 * @method setMuted
+	 * @param {Boolean} value If the sound should be muted.
+	 * @return {AbstractSoundInstance} A reference to itself, intended for chaining calls.
+	 * @since 0.6.0
+	 */
+	p.setMuted = function (value) {
+		if (value !== true &amp;&amp; value !== false) {return;}
+		this._muted = value;
+		this._updateVolume();
+		return this;
+	};
+
+	/**
+	 * DEPRECATED, please use {{#crossLink &quot;AbstractSoundInstance/muted:property&quot;}}{{/crossLink}} directly as a property
+	 *
+	 * @deprecated
+	 * @method getMuted
+	 * @return {Boolean} If the sound is muted.
+	 * @since 0.6.0
+	 */
+	p.getMuted = function () {
+		return this._muted;
+	};
+
+	/**
+	 * DEPRECATED, please use {{#crossLink &quot;AbstractSoundInstance/pan:property&quot;}}{{/crossLink}} directly as a property
+	 *
+	 * @deprecated
+	 * @method setPan
+	 * @param {Number} value The pan value, between -1 (left) and 1 (right).
+	 * @return {AbstractSoundInstance} Returns reference to itself for chaining calls
+	 */
+	p.setPan = function (value) {
+		if(value == this._pan) { return this; }
+		this._pan = Math.max(-1, Math.min(1, value));
+		this._updatePan();
+		return this;
+	};
+
+	/**
+	 * DEPRECATED, please use {{#crossLink &quot;AbstractSoundInstance/pan:property&quot;}}{{/crossLink}} directly as a property
+	 *
+	 * @deprecated
+	 * @method getPan
+	 * @return {Number} The value of the pan, between -1 (left) and 1 (right).
+	 */
+	p.getPan = function () {
+		return this._pan;
+	};
+
+	/**
+	 * DEPRECATED, please use {{#crossLink &quot;AbstractSoundInstance/position:property&quot;}}{{/crossLink}} directly as a property
+	 *
+	 * @deprecated
+	 * @method getPosition
+	 * @return {Number} The position of the playhead in the sound, in milliseconds.
+	 */
+	p.getPosition = function () {
+		if (!this._paused &amp;&amp; this.playState == createjs.Sound.PLAY_SUCCEEDED) {
+			this._position = this._calculateCurrentPosition();
+		}
+		return this._position;
+	};
+
+	/**
+	 * DEPRECATED, please use {{#crossLink &quot;AbstractSoundInstance/position:property&quot;}}{{/crossLink}} directly as a property
+	 *
+	 * @deprecated
+	 * @method setPosition
+	 * @param {Number} value The position to place the playhead, in milliseconds.
+	 * @return {AbstractSoundInstance} Returns reference to itself for chaining calls
+	 */
+	p.setPosition = function (value) {
+		this._position = Math.max(0, value);
+		if (this.playState == createjs.Sound.PLAY_SUCCEEDED) {
+			this._updatePosition();
+		}
+		return this;
+	};
+
+	/**
+	 * DEPRECATED, please use {{#crossLink &quot;AbstractSoundInstance/startTime:property&quot;}}{{/crossLink}} directly as a property
+	 *
+	 * @deprecated
+	 * @method getStartTime
+	 * @return {Number} The startTime of the sound instance in milliseconds.
+	 */
+	p.getStartTime = function () {
+		return this._startTime;
+	};
+
+	/**
+	 * DEPRECATED, please use {{#crossLink &quot;AbstractSoundInstance/startTime:property&quot;}}{{/crossLink}} directly as a property
+	 *
+	 * @deprecated
+	 * @method setStartTime
+	 * @param {number} value The new startTime time in milli seconds.
+	 * @return {AbstractSoundInstance} Returns reference to itself for chaining calls
+	 */
+	p.setStartTime = function (value) {
+		if (value == this._startTime) { return this; }
+		this._startTime = Math.max(0, value || 0);
+		this._updateStartTime();
+		return this;
+	};
+
+	/**
+	 * DEPRECATED, please use {{#crossLink &quot;AbstractSoundInstance/duration:property&quot;}}{{/crossLink}} directly as a property
+	 *
+	 * @deprecated
+	 * @method getDuration
+	 * @return {Number} The duration of the sound instance in milliseconds.
+	 */
+	p.getDuration = function () {
+		return this._duration;
+	};
+
+	/**
+	 * DEPRECATED, please use {{#crossLink &quot;AbstractSoundInstance/duration:property&quot;}}{{/crossLink}} directly as a property
+	 *
+	 * @deprecated
+	 * @method setDuration
+	 * @param {number} value The new duration time in milli seconds.
+	 * @return {AbstractSoundInstance} Returns reference to itself for chaining calls
+	 * @since 0.6.0
+	 */
+	p.setDuration = function (value) {
+		if (value == this._duration) { return this; }
+		this._duration = Math.max(0, value || 0);
+		this._updateDuration();
+		return this;
+	};
+
+	/**
+	 * DEPRECATED, please use {{#crossLink &quot;AbstractSoundInstance/playbackResource:property&quot;}}{{/crossLink}} directly as a property
+	 *
+	 * @deprecated
+	 * @method setPlayback
+	 * @param {Object} value The new playback resource.
+	 * @return {AbstractSoundInstance} Returns reference to itself for chaining calls
+	 * @since 0.6.0
+	 **/
+	p.setPlaybackResource = function (value) {
+		this._playbackResource = value;
+		if (this._duration == 0) { this._setDurationFromSource(); }
+		return this;
+	};
+
+	/**
+	 * DEPRECATED, please use {{#crossLink &quot;AbstractSoundInstance/playbackResource:property&quot;}}{{/crossLink}} directly as a property
+	 *
+	 * @deprecated
+	 * @method setPlayback
+	 * @param {Object} value The new playback resource.
+	 * @return {Object} playback resource used for playing audio
+	 * @since 0.6.0
+	 **/
+	p.getPlaybackResource = function () {
+		return this._playbackResource;
+	};
+
+	/**
+	 * DEPRECATED, please use {{#crossLink &quot;AbstractSoundInstance/loop:property&quot;}}{{/crossLink}} directly as a property
+	 *
+	 * @deprecated
+	 * @method getLoop
+	 * @return {number}
+	 * @since 0.6.0
+	 **/
+	p.getLoop = function () {
+		return this._loop;
+	};
+
+	/**
+	 * DEPRECATED, please use {{#crossLink &quot;AbstractSoundInstance/loop:property&quot;}}{{/crossLink}} directly as a property,
+	 *
+	 * @deprecated
+	 * @method setLoop
+	 * @param {number} value The number of times to loop after play.
+	 * @since 0.6.0
+	 */
+	p.setLoop = function (value) {
+		if(this._playbackResource != null) {
+			// remove looping
+			if (this._loop != 0 &amp;&amp; value == 0) {
+				this._removeLooping(value);
+			}
+			// add looping
+			else if (this._loop == 0 &amp;&amp; value != 0) {
+				this._addLooping(value);
+			}
+		}
+		this._loop = value;
+	};
+
+
+// Private Methods:
+	/**
+	 * A helper method that dispatches all events for AbstractSoundInstance.
+	 * @method _sendEvent
+	 * @param {String} type The event type
+	 * @protected
+	 */
+	p._sendEvent = function (type) {
+		var event = new createjs.Event(type);
+		this.dispatchEvent(event);
+	};
+
+	/**
+	 * Clean up the instance. Remove references and clean up any additional properties such as timers.
+	 * @method _cleanUp
+	 * @protected
+	 */
+	p._cleanUp = function () {
+		clearTimeout(this.delayTimeoutId); // clear timeout that plays delayed sound
+		this._handleCleanUp();
+		this._paused = false;
+
+		createjs.Sound._playFinished(this);	// TODO change to an event
+	};
+
+	/**
+	 * The sound has been interrupted.
+	 * @method _interrupt
+	 * @protected
+	 */
+	p._interrupt = function () {
+		this._cleanUp();
+		this.playState = createjs.Sound.PLAY_INTERRUPTED;
+		this._sendEvent(&quot;interrupted&quot;);
+	};
+
+	/**
+	 * Called by the Sound class when the audio is ready to play (delay has completed). Starts sound playing if the
+	 * src is loaded, otherwise playback will fail.
+	 * @method _beginPlaying
+	 * @param {PlayPropsConfig} playProps A PlayPropsConfig object.
+	 * @return {Boolean} If playback succeeded.
+	 * @protected
+	 */
+	// OJR FlashAudioSoundInstance overwrites
+	p._beginPlaying = function (playProps) {
+		this.setPosition(playProps.offset);
+		this.setLoop(playProps.loop);
+		this.setVolume(playProps.volume);
+		this.setPan(playProps.pan);
+		if (playProps.startTime != null) {
+			this.setStartTime(playProps.startTime);
+			this.setDuration(playProps.duration);
+		}
+
+		if (this._playbackResource != null &amp;&amp; this._position &lt; this._duration) {
+			this._paused = false;
+			this._handleSoundReady();
+			this.playState = createjs.Sound.PLAY_SUCCEEDED;
+			this._sendEvent(&quot;succeeded&quot;);
+			return true;
+		} else {
+			this._playFailed();
+			return false;
+		}
+	};
+
+	/**
+	 * Play has failed, which can happen for a variety of reasons.
+	 * Cleans up instance and dispatches failed event
+	 * @method _playFailed
+	 * @private
+	 */
+	p._playFailed = function () {
+		this._cleanUp();
+		this.playState = createjs.Sound.PLAY_FAILED;
+		this._sendEvent(&quot;failed&quot;);
+	};
+
+	/**
+	 * Audio has finished playing. Manually loop it if required.
+	 * @method _handleSoundComplete
+	 * @param event
+	 * @protected
+	 */
+	p._handleSoundComplete = function (event) {
+		this._position = 0;  // have to set this as it can be set by pause during playback
+
+		if (this._loop != 0) {
+			this._loop--;  // NOTE this introduces a theoretical limit on loops = float max size x 2 - 1
+			this._handleLoop();
+			this._sendEvent(&quot;loop&quot;);
+			return;
+		}
+
+		this._cleanUp();
+		this.playState = createjs.Sound.PLAY_FINISHED;
+		this._sendEvent(&quot;complete&quot;);
+	};
+
+// Plugin specific code
+	/**
+	 * Handles starting playback when the sound is ready for playing.
+	 * @method _handleSoundReady
+	 * @protected
+ 	 */
+	p._handleSoundReady = function () {
+		// plugin specific code
+	};
+
+	/**
+	 * Internal function used to update the volume based on the instance volume, master volume, instance mute value,
+	 * and master mute value.
+	 * @method _updateVolume
+	 * @protected
+	 */
+	p._updateVolume = function () {
+		// plugin specific code
+	};
+
+	/**
+	 * Internal function used to update the pan
+	 * @method _updatePan
+	 * @protected
+	 * @since 0.6.0
+	 */
+	p._updatePan = function () {
+		// plugin specific code
+	};
+
+	/**
+	 * Internal function used to update the startTime of the audio.
+	 * @method _updateStartTime
+	 * @protected
+	 * @since 0.6.1
+	 */
+	p._updateStartTime = function () {
+		// plugin specific code
+	};
+
+	/**
+	 * Internal function used to update the duration of the audio.
+	 * @method _updateDuration
+	 * @protected
+	 * @since 0.6.0
+	 */
+	p._updateDuration = function () {
+		// plugin specific code
+	};
+
+	/**
+	 * Internal function used to get the duration of the audio from the source we&#x27;ll be playing.
+	 * @method _updateDuration
+	 * @protected
+	 * @since 0.6.0
+	 */
+	p._setDurationFromSource = function () {
+		// plugin specific code
+	};
+
+	/**
+	 * Internal function that calculates the current position of the playhead and sets this._position to that value
+	 * @method _calculateCurrentPosition
+	 * @protected
+	 * @since 0.6.0
+	 */
+	p._calculateCurrentPosition = function () {
+		// plugin specific code that sets this.position
+	};
+
+	/**
+	 * Internal function used to update the position of the playhead.
+	 * @method _updatePosition
+	 * @protected
+	 * @since 0.6.0
+	 */
+	p._updatePosition = function () {
+		// plugin specific code
+	};
+
+	/**
+	 * Internal function called when looping is removed during playback.
+	 * @method _removeLooping
+	 * @param {number} value The number of times to loop after play.
+	 * @protected
+	 * @since 0.6.0
+	 */
+	p._removeLooping = function (value) {
+		// plugin specific code
+	};
+
+	/**
+	 * Internal function called when looping is added during playback.
+	 * @method _addLooping
+	 * @param {number} value The number of times to loop after play.
+	 * @protected
+	 * @since 0.6.0
+	 */
+	p._addLooping = function (value) {
+		// plugin specific code
+	};
+
+	/**
+	 * Internal function called when pausing playback
+	 * @method _pause
+	 * @protected
+	 * @since 0.6.0
+	 */
+	p._pause = function () {
+		// plugin specific code
+	};
+
+	/**
+	 * Internal function called when resuming playback
+	 * @method _resume
+	 * @protected
+	 * @since 0.6.0
+	 */
+	p._resume = function () {
+		// plugin specific code
+	};
+
+	/**
+	 * Internal function called when stopping playback
+	 * @method _handleStop
+	 * @protected
+	 * @since 0.6.0
+	 */
+	p._handleStop = function() {
+		// plugin specific code
+	};
+
+	/**
+	 * Internal function called when AbstractSoundInstance is being cleaned up
+	 * @method _handleCleanUp
+	 * @protected
+	 * @since 0.6.0
+	 */
+	p._handleCleanUp = function() {
+		// plugin specific code
+	};
+
+	/**
+	 * Internal function called when AbstractSoundInstance has played to end and is looping
+	 * @method _handleLoop
+	 * @protected
+	 * @since 0.6.0
+	 */
+	p._handleLoop = function () {
+		// plugin specific code
+	};
+
+	createjs.AbstractSoundInstance = createjs.promote(AbstractSoundInstance, &quot;EventDispatcher&quot;);
+	createjs.DefaultSoundInstance = createjs.AbstractSoundInstance;	// used when no plugin is supported
+}());
+
+    </pre>
+</div>
+
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+<script src="../assets/vendor/prettify/prettify-min.js"></script>
+<script>prettyPrint();</script>
+<script src="../assets/js/yui-prettify.js"></script>
+<script src="../assets/../api.js"></script>
+<script src="../assets/js/api-filter.js"></script>
+<script src="../assets/js/api-list.js"></script>
+<script src="../assets/js/api-search.js"></script>
+<script src="../assets/js/apidocs.js"></script>
+</body>
+</html>

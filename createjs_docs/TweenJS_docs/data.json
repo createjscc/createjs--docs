@@ -1,0 +1,4060 @@
+{
+    "project": {
+        "name": "TweenJS",
+        "version": "0.6.2",
+        "description": "TweenJS Docs",
+        "url": "http://www.createjs.com/tweenjs",
+        "logo": "assets/docs-icon-TweenJS.png"
+    },
+    "files": {
+        "createjs/events/Event.js": {
+            "name": "createjs/events/Event.js",
+            "modules": {
+                "CreateJS": 1
+            },
+            "classes": {
+                "Event": 1
+            },
+            "fors": {},
+            "namespaces": {}
+        },
+        "createjs/events/EventDispatcher.js": {
+            "name": "createjs/events/EventDispatcher.js",
+            "modules": {},
+            "classes": {
+                "EventDispatcher": 1
+            },
+            "fors": {},
+            "namespaces": {}
+        },
+        "createjs/utils/Ticker.js": {
+            "name": "createjs/utils/Ticker.js",
+            "modules": {},
+            "classes": {
+                "Ticker": 1
+            },
+            "fors": {},
+            "namespaces": {}
+        },
+        "createjs/utils/extend.js": {
+            "name": "createjs/utils/extend.js",
+            "modules": {},
+            "classes": {},
+            "fors": {},
+            "namespaces": {}
+        },
+        "createjs/utils/indexOf.js": {
+            "name": "createjs/utils/indexOf.js",
+            "modules": {},
+            "classes": {},
+            "fors": {},
+            "namespaces": {}
+        },
+        "createjs/utils/promote.js": {
+            "name": "createjs/utils/promote.js",
+            "modules": {},
+            "classes": {
+                "Utility Methods": 1
+            },
+            "fors": {},
+            "namespaces": {}
+        },
+        "tweenjs/CSSPlugin.js": {
+            "name": "tweenjs/CSSPlugin.js",
+            "modules": {},
+            "classes": {
+                "CSSPlugin": 1
+            },
+            "fors": {},
+            "namespaces": {}
+        },
+        "tweenjs/Ease.js": {
+            "name": "tweenjs/Ease.js",
+            "modules": {},
+            "classes": {
+                "Ease": 1
+            },
+            "fors": {},
+            "namespaces": {}
+        },
+        "tweenjs/MotionGuidePlugin.js": {
+            "name": "tweenjs/MotionGuidePlugin.js",
+            "modules": {},
+            "classes": {
+                "MotionGuidePlugin": 1
+            },
+            "fors": {},
+            "namespaces": {}
+        },
+        "tweenjs/SamplePlugin.js": {
+            "name": "tweenjs/SamplePlugin.js",
+            "modules": {},
+            "classes": {
+                "SamplePlugin": 1
+            },
+            "fors": {},
+            "namespaces": {}
+        },
+        "tweenjs/Timeline.js": {
+            "name": "tweenjs/Timeline.js",
+            "modules": {},
+            "classes": {
+                "Timeline": 1
+            },
+            "fors": {},
+            "namespaces": {}
+        },
+        "tweenjs/Tween.js": {
+            "name": "tweenjs/Tween.js",
+            "modules": {
+                "TweenJS": 1
+            },
+            "classes": {
+                "Tween": 1
+            },
+            "fors": {},
+            "namespaces": {}
+        },
+        "tweenjs/version.js": {
+            "name": "tweenjs/version.js",
+            "modules": {},
+            "classes": {
+                "TweenJS": 1
+            },
+            "fors": {},
+            "namespaces": {}
+        }
+    },
+    "modules": {
+        "CreateJS": {
+            "name": "CreateJS",
+            "submodules": {},
+            "classes": {
+                "Event": 1,
+                "EventDispatcher": 1,
+                "Ticker": 1,
+                "Utility Methods": 1
+            },
+            "fors": {},
+            "namespaces": {},
+            "tag": "main",
+            "file": "createjs/utils/promote.js",
+            "line": 36,
+            "description": "A collection of Classes that are shared across all the CreateJS libraries.  The classes are included in the minified\nfiles of each library and are available on the createsjs namespace directly.\n\n<h4>Example</h4>\n\n     myObject.addEventListener(\"change\", createjs.proxy(myMethod, scope));",
+            "itemtype": "main"
+        },
+        "TweenJS": {
+            "name": "TweenJS",
+            "submodules": {},
+            "classes": {
+                "CSSPlugin": 1,
+                "Ease": 1,
+                "MotionGuidePlugin": 1,
+                "SamplePlugin": 1,
+                "Timeline": 1,
+                "Tween": 1,
+                "TweenJS": 1
+            },
+            "fors": {},
+            "namespaces": {},
+            "tag": "main",
+            "file": "tweenjs/version.js",
+            "line": 9,
+            "description": "The TweenJS Javascript library provides a simple but powerful tweening interface. It supports tweening of both\nnumeric object properties & CSS style properties, and allows you to chain tweens and actions together to create\ncomplex sequences.\n\n<h4>Simple Tween</h4>\nThis tween will tween the target's alpha property from 0 to 1 for 1s then call the <code>handleComplete</code> function.\n\n\t    target.alpha = 0;\n\t    createjs.Tween.get(target).to({alpha:1}, 1000).call(handleComplete);\n\t    function handleComplete() {\n\t    \t//Tween complete\n\t    }\n\n<strong>Arguments and Scope</strong>\nTween also supports a `call()` with arguments and/or a scope. If no scope is passed, then the function is called\nanonymously (normal JavaScript behaviour). The scope is useful for maintaining scope when doing object-oriented\nstyle development.\n\n     createjs.Tween.get(target).to({alpha:0})\n         .call(handleComplete, [argument1, argument2], this);\n\n<h4>Chainable Tween</h4>\nThis tween will wait 0.5s, tween the target's alpha property to 0 over 1s, set it's visible to false, then call the\n<code>handleComplete</code> function.\n\n\t    target.alpha = 1;\n\t    createjs.Tween.get(target).wait(500).to({alpha:0, visible:false}, 1000).call(handleComplete);\n\t    function handleComplete() {\n\t    \t//Tween complete\n\t    }\n\n<h4>Browser Support</h4>\nTweenJS will work in modern browsers. To use TweenJS with IE8 and earlier, use an older version of PreloadJS\n(version 0.4.1 and earlier).",
+            "itemtype": "main"
+        }
+    },
+    "classes": {
+        "Event": {
+            "name": "Event",
+            "shortname": "Event",
+            "classitems": [],
+            "plugins": [],
+            "extensions": [],
+            "plugin_for": [],
+            "extension_for": [],
+            "module": "CreateJS",
+            "namespace": "",
+            "file": "createjs/events/Event.js",
+            "line": 48,
+            "description": "Contains properties and methods shared by all events for use with\n{{#crossLink \"EventDispatcher\"}}{{/crossLink}}.\n\nNote that Event objects are often reused, so you should never\nrely on an event object's state outside of the call stack it was received in.",
+            "params": [
+                {
+                    "name": "type",
+                    "description": "The event type.",
+                    "type": "String"
+                },
+                {
+                    "name": "bubbles",
+                    "description": "Indicates whether the event will bubble through the display list.",
+                    "type": "Boolean"
+                },
+                {
+                    "name": "cancelable",
+                    "description": "Indicates whether the default behaviour of this event can be cancelled.",
+                    "type": "Boolean"
+                }
+            ],
+            "is_constructor": 1
+        },
+        "EventDispatcher": {
+            "name": "EventDispatcher",
+            "shortname": "EventDispatcher",
+            "classitems": [],
+            "plugins": [],
+            "extensions": [],
+            "plugin_for": [],
+            "extension_for": [
+                "Ticker"
+            ],
+            "module": "CreateJS",
+            "namespace": "",
+            "file": "createjs/events/EventDispatcher.js",
+            "line": 41,
+            "description": "EventDispatcher provides methods for managing queues of event listeners and dispatching events.\n\nYou can either extend EventDispatcher or mix its methods into an existing prototype or instance by using the\nEventDispatcher {{#crossLink \"EventDispatcher/initialize\"}}{{/crossLink}} method.\n\nTogether with the CreateJS Event class, EventDispatcher provides an extended event model that is based on the\nDOM Level 2 event model, including addEventListener, removeEventListener, and dispatchEvent. It supports\nbubbling / capture, preventDefault, stopPropagation, stopImmediatePropagation, and handleEvent.\n\nEventDispatcher also exposes a {{#crossLink \"EventDispatcher/on\"}}{{/crossLink}} method, which makes it easier\nto create scoped listeners, listeners that only run once, and listeners with associated arbitrary data. The \n{{#crossLink \"EventDispatcher/off\"}}{{/crossLink}} method is merely an alias to\n{{#crossLink \"EventDispatcher/removeEventListener\"}}{{/crossLink}}.\n\nAnother addition to the DOM Level 2 model is the {{#crossLink \"EventDispatcher/removeAllEventListeners\"}}{{/crossLink}}\nmethod, which can be used to listeners for all events, or listeners for a specific event. The Event object also \nincludes a {{#crossLink \"Event/remove\"}}{{/crossLink}} method which removes the active listener.\n\n<h4>Example</h4>\nAdd EventDispatcher capabilities to the \"MyClass\" class.\n\n     EventDispatcher.initialize(MyClass.prototype);\n\nAdd an event (see {{#crossLink \"EventDispatcher/addEventListener\"}}{{/crossLink}}).\n\n     instance.addEventListener(\"eventName\", handlerMethod);\n     function handlerMethod(event) {\n         console.log(event.target + \" Was Clicked\");\n     }\n\n<b>Maintaining proper scope</b><br />\nScope (ie. \"this\") can be be a challenge with events. Using the {{#crossLink \"EventDispatcher/on\"}}{{/crossLink}}\nmethod to subscribe to events simplifies this.\n\n     instance.addEventListener(\"click\", function(event) {\n         console.log(instance == this); // false, scope is ambiguous.\n     });\n     \n     instance.on(\"click\", function(event) {\n         console.log(instance == this); // true, \"on\" uses dispatcher scope by default.\n     });\n\nIf you want to use addEventListener instead, you may want to use function.bind() or a similar proxy to manage\nscope.\n\n<b>Browser support</b>\nThe event model in CreateJS can be used separately from the suite in any project, however the inheritance model\nrequires modern browsers (IE9+).",
+            "is_constructor": 1
+        },
+        "Ticker": {
+            "name": "Ticker",
+            "shortname": "Ticker",
+            "classitems": [],
+            "plugins": [],
+            "extensions": [],
+            "plugin_for": [],
+            "extension_for": [],
+            "module": "CreateJS",
+            "namespace": "",
+            "file": "createjs/utils/Ticker.js",
+            "line": 41,
+            "description": "The Ticker provides a centralized tick or heartbeat broadcast at a set interval. Listeners can subscribe to the tick\nevent to be notified when a set time interval has elapsed.\n\nNote that the interval that the tick event is called is a target interval, and may be broadcast at a slower interval\nwhen under high CPU load. The Ticker class uses a static interface (ex. `Ticker.framerate = 30;`) and\ncan not be instantiated.\n\n<h4>Example</h4>\n\n     createjs.Ticker.addEventListener(\"tick\", handleTick);\n     function handleTick(event) {\n         // Actions carried out each tick (aka frame)\n         if (!event.paused) {\n             // Actions carried out when the Ticker is not paused.\n         }\n     }",
+            "uses": [
+                "EventDispatcher"
+            ],
+            "static": 1
+        },
+        "Utility Methods": {
+            "name": "Utility Methods",
+            "shortname": "Utility Methods",
+            "classitems": [],
+            "plugins": [],
+            "extensions": [],
+            "plugin_for": [],
+            "extension_for": [],
+            "module": "CreateJS",
+            "namespace": "",
+            "file": "createjs/utils/promote.js",
+            "line": 36
+        },
+        "CSSPlugin": {
+            "name": "CSSPlugin",
+            "shortname": "CSSPlugin",
+            "classitems": [],
+            "plugins": [],
+            "extensions": [],
+            "plugin_for": [],
+            "extension_for": [],
+            "module": "TweenJS",
+            "namespace": "",
+            "file": "tweenjs/CSSPlugin.js",
+            "line": 39,
+            "description": "A TweenJS plugin for working with numeric CSS string properties (ex. top, left). To use simply install after\nTweenJS has loaded:\n\n     createjs.CSSPlugin.install();\n\nYou can adjust the CSS properties it will work with by modifying the <code>cssSuffixMap</code> property. Currently,\nthe top, left, bottom, right, width, height have a \"px\" suffix appended.\n\nPlease note that the CSS Plugin is not included in the TweenJS minified file.",
+            "is_constructor": 1
+        },
+        "Ease": {
+            "name": "Ease",
+            "shortname": "Ease",
+            "classitems": [],
+            "plugins": [],
+            "extensions": [],
+            "plugin_for": [],
+            "extension_for": [],
+            "module": "TweenJS",
+            "namespace": "",
+            "file": "tweenjs/Ease.js",
+            "line": 39,
+            "description": "The Ease class provides a collection of easing functions for use with TweenJS. It does not use the standard 4 param\neasing signature. Instead it uses a single param which indicates the current linear ratio (0 to 1) of the tween.\n\nMost methods on Ease can be passed directly as easing functions:\n\n     Tween.get(target).to({x:100}, 500, Ease.linear);\n\nHowever, methods beginning with \"get\" will return an easing function based on parameter values:\n\n     Tween.get(target).to({y:200}, 500, Ease.getPowIn(2.2));\n\nPlease see the <a href=\"http://www.createjs.com/Demos/TweenJS/Tween_SparkTable\">spark table demo</a> for an\noverview of the different ease types on <a href=\"http://tweenjs.com\">TweenJS.com</a>.\n\n<em>Equations derived from work by Robert Penner.</em>",
+            "static": 1
+        },
+        "MotionGuidePlugin": {
+            "name": "MotionGuidePlugin",
+            "shortname": "MotionGuidePlugin",
+            "classitems": [],
+            "plugins": [],
+            "extensions": [],
+            "plugin_for": [],
+            "extension_for": [],
+            "module": "TweenJS",
+            "namespace": "",
+            "file": "tweenjs/MotionGuidePlugin.js",
+            "line": 39,
+            "description": "A TweenJS plugin for working with motion guides.\n\nTo use, install the plugin after TweenJS has loaded. Next tween the 'guide' property with an object as detailed below.\n\n      createjs.MotionGuidePlugin.install();\n\n<h4>Example</h4>\n\n     // Using a Motion Guide\n\t    createjs.Tween.get(target).to({guide:{ path:[0,0, 0,200,200,200, 200,0,0,0] }},7000);\n\t    // Visualizing the line\n\t    graphics.moveTo(0,0).curveTo(0,200,200,200).curveTo(200,0,0,0);\n\nEach path needs pre-computation to ensure there's fast performance. Because of the pre-computation there's no\nbuilt in support for path changes mid tween. These are the Guide Object's properties:<UL>\n     <LI> path: Required, Array : The x/y points used to draw the path with a moveTo and 1 to n curveTo calls.</LI>\n     <LI> start: Optional, 0-1 : Initial position, default 0 except for when continuing along the same path.</LI>\n     <LI> end: Optional, 0-1 : Final position, default 1 if not specified.</LI>\n     <LI> orient: Optional, string : \"fixed\"/\"auto\"/\"cw\"/\"ccw\"<UL>\n\t\t\t\t<LI>\"fixed\" forces the object to face down the path all movement (relative to start rotation),</LI>\n     \t\t<LI>\"auto\" rotates the object along the path relative to the line.</LI>\n     \t\t<LI>\"cw\"/\"ccw\" force clockwise or counter clockwise rotations including flash like behaviour</LI>\n\t\t</UL></LI>\n</UL>\nGuide objects should not be shared between tweens even if all properties are identical, the library stores\ninformation on these objects in the background and sharing them can cause unexpected behaviour. Values\noutside 0-1 range of tweens will be a \"best guess\" from the appropriate part of the defined curve.",
+            "is_constructor": 1
+        },
+        "SamplePlugin": {
+            "name": "SamplePlugin",
+            "shortname": "SamplePlugin",
+            "classitems": [],
+            "plugins": [],
+            "extensions": [],
+            "plugin_for": [],
+            "extension_for": [],
+            "module": "TweenJS",
+            "namespace": "",
+            "file": "tweenjs/SamplePlugin.js",
+            "line": 39,
+            "description": "A sample TweenJS plugin. This plugin does not actually affect tweens in any way, it's merely intended to document\nhow to build TweenJS plugins. Please look at the code for inline comments.\n\nA TweenJS plugin is simply an object that exposes one property (priority), and three methods (init, step, and tween).\nGenerally a plugin will also expose an <code>install</code> method as well, though this is not strictly necessary.",
+            "is_constructor": 1
+        },
+        "Timeline": {
+            "name": "Timeline",
+            "shortname": "Timeline",
+            "classitems": [],
+            "plugins": [],
+            "extensions": [],
+            "plugin_for": [],
+            "extension_for": [],
+            "module": "TweenJS",
+            "namespace": "",
+            "file": "tweenjs/Timeline.js",
+            "line": 42,
+            "description": "The Timeline class synchronizes multiple tweens and allows them to be controlled as a group. Please note that if a\ntimeline is looping, the tweens on it may appear to loop even if the \"loop\" property of the tween is false.",
+            "params": [
+                {
+                    "name": "tweens",
+                    "description": "An array of Tweens to add to this timeline. See {{#crossLink \"Timeline/addTween\"}}{{/crossLink}}\nfor more info.",
+                    "type": "Array"
+                },
+                {
+                    "name": "labels",
+                    "description": "An object defining labels for using {{#crossLink \"Timeline/gotoAndPlay\"}}{{/crossLink}}/{{#crossLink \"Timeline/gotoAndStop\"}}{{/crossLink}}.\nSee {{#crossLink \"Timeline/setLabels\"}}{{/crossLink}}\nfor details.",
+                    "type": "Object"
+                },
+                {
+                    "name": "props",
+                    "description": "The configuration properties to apply to this tween instance (ex. `{loop:true}`). All properties\ndefault to false. Supported props are:<UL>\n   <LI> loop: sets the loop property on this tween.</LI>\n   <LI> useTicks: uses ticks for all durations instead of milliseconds.</LI>\n   <LI> ignoreGlobalPause: sets the ignoreGlobalPause property on this tween.</LI>\n   <LI> paused: indicates whether to start the tween paused.</LI>\n   <LI> position: indicates the initial position for this timeline.</LI>\n   <LI> onChange: specifies a listener to add for the {{#crossLink \"Timeline/change:event\"}}{{/crossLink}} event.</LI>\n</UL>",
+                    "type": "Object"
+                }
+            ],
+            "extends": "EventDispatcher",
+            "is_constructor": 1
+        },
+        "Tween": {
+            "name": "Tween",
+            "shortname": "Tween",
+            "classitems": [],
+            "plugins": [],
+            "extensions": [],
+            "plugin_for": [],
+            "extension_for": [],
+            "module": "TweenJS",
+            "namespace": "",
+            "file": "tweenjs/Tween.js",
+            "line": 80,
+            "description": "A Tween instance tweens properties for a single target. Instance methods can be chained for easy construction and sequencing:\n\n<h4>Example</h4>\n\n     target.alpha = 1;\n\t    createjs.Tween.get(target)\n\t         .wait(500)\n\t         .to({alpha:0, visible:false}, 1000)\n\t         .call(handleComplete);\n\t    function handleComplete() {\n\t    \t//Tween complete\n\t    }\n\nMultiple tweens can point to the same instance, however if they affect the same properties there could be unexpected\nbehaviour. To stop all tweens on an object, use {{#crossLink \"Tween/removeTweens\"}}{{/crossLink}} or pass `override:true`\nin the props argument.\n\n     createjs.Tween.get(target, {override:true}).to({x:100});\n\nSubscribe to the {{#crossLink \"Tween/change:event\"}}{{/crossLink}} event to get notified when a property of the\ntarget is changed.\n\n     createjs.Tween.get(target, {override:true}).to({x:100}).addEventListener(\"change\", handleChange);\n     function handleChange(event) {\n         // The tween changed.\n     }\n\nSee the Tween {{#crossLink \"Tween/get\"}}{{/crossLink}} method for additional param documentation.",
+            "params": [
+                {
+                    "name": "target",
+                    "description": "The target object that will have its properties tweened.",
+                    "type": "Object"
+                },
+                {
+                    "name": "props",
+                    "description": "The configuration properties to apply to this tween instance (ex. `{loop:true, paused:true}`.\nAll properties default to false. Supported props are:<UL>\n   <LI> loop: sets the loop property on this tween.</LI>\n   <LI> useTicks: uses ticks for all durations instead of milliseconds.</LI>\n   <LI> ignoreGlobalPause: sets the {{#crossLink \"Tween/ignoreGlobalPause:property\"}}{{/crossLink}} property on this tween.</LI>\n   <LI> override: if true, `Tween.removeTweens(target)` will be called to remove any other tweens with the same target.\n   <LI> paused: indicates whether to start the tween paused.</LI>\n   <LI> position: indicates the initial position for this tween.</LI>\n   <LI> onChange: specifies a listener for the \"change\" event.</LI>\n</UL>",
+                    "type": "Object",
+                    "optional": true
+                },
+                {
+                    "name": "pluginData",
+                    "description": "An object containing data for use by installed plugins. See individual\nplugins' documentation for details.",
+                    "type": "Object",
+                    "optional": true
+                }
+            ],
+            "extends": "EventDispatcher",
+            "is_constructor": 1
+        },
+        "TweenJS": {
+            "name": "TweenJS",
+            "shortname": "TweenJS",
+            "classitems": [],
+            "plugins": [],
+            "extensions": [],
+            "plugin_for": [],
+            "extension_for": [],
+            "module": "TweenJS",
+            "namespace": "",
+            "file": "tweenjs/version.js",
+            "line": 9,
+            "description": "Static class holding library specific information such as the version and buildDate of\nthe library."
+        }
+    },
+    "classitems": [
+        {
+            "file": "createjs/events/Event.js",
+            "line": 64,
+            "description": "The type of event.",
+            "itemtype": "property",
+            "name": "type",
+            "type": "String",
+            "class": "Event",
+            "module": "CreateJS"
+        },
+        {
+            "file": "createjs/events/Event.js",
+            "line": 71,
+            "description": "The object that generated an event.",
+            "itemtype": "property",
+            "name": "target",
+            "type": "Object",
+            "default": "null",
+            "readonly": "",
+            "class": "Event",
+            "module": "CreateJS"
+        },
+        {
+            "file": "createjs/events/Event.js",
+            "line": 80,
+            "description": "The current target that a bubbling event is being dispatched from. For non-bubbling events, this will\nalways be the same as target. For example, if childObj.parent = parentObj, and a bubbling event\nis generated from childObj, then a listener on parentObj would receive the event with\ntarget=childObj (the original target) and currentTarget=parentObj (where the listener was added).",
+            "itemtype": "property",
+            "name": "currentTarget",
+            "type": "Object",
+            "default": "null",
+            "readonly": "",
+            "class": "Event",
+            "module": "CreateJS"
+        },
+        {
+            "file": "createjs/events/Event.js",
+            "line": 92,
+            "description": "For bubbling events, this indicates the current event phase:<OL>\n\t<LI> capture phase: starting from the top parent to the target</LI>\n\t<LI> at target phase: currently being dispatched from the target</LI>\n\t<LI> bubbling phase: from the target to the top parent</LI>\n</OL>",
+            "itemtype": "property",
+            "name": "eventPhase",
+            "type": "Number",
+            "default": "0",
+            "readonly": "",
+            "class": "Event",
+            "module": "CreateJS"
+        },
+        {
+            "file": "createjs/events/Event.js",
+            "line": 105,
+            "description": "Indicates whether the event will bubble through the display list.",
+            "itemtype": "property",
+            "name": "bubbles",
+            "type": "Boolean",
+            "default": "false",
+            "readonly": "",
+            "class": "Event",
+            "module": "CreateJS"
+        },
+        {
+            "file": "createjs/events/Event.js",
+            "line": 114,
+            "description": "Indicates whether the default behaviour of this event can be cancelled via\n{{#crossLink \"Event/preventDefault\"}}{{/crossLink}}. This is set via the Event constructor.",
+            "itemtype": "property",
+            "name": "cancelable",
+            "type": "Boolean",
+            "default": "false",
+            "readonly": "",
+            "class": "Event",
+            "module": "CreateJS"
+        },
+        {
+            "file": "createjs/events/Event.js",
+            "line": 124,
+            "description": "The epoch time at which this event was created.",
+            "itemtype": "property",
+            "name": "timeStamp",
+            "type": "Number",
+            "default": "0",
+            "readonly": "",
+            "class": "Event",
+            "module": "CreateJS"
+        },
+        {
+            "file": "createjs/events/Event.js",
+            "line": 133,
+            "description": "Indicates if {{#crossLink \"Event/preventDefault\"}}{{/crossLink}} has been called\non this event.",
+            "itemtype": "property",
+            "name": "defaultPrevented",
+            "type": "Boolean",
+            "default": "false",
+            "readonly": "",
+            "class": "Event",
+            "module": "CreateJS"
+        },
+        {
+            "file": "createjs/events/Event.js",
+            "line": 143,
+            "description": "Indicates if {{#crossLink \"Event/stopPropagation\"}}{{/crossLink}} or\n{{#crossLink \"Event/stopImmediatePropagation\"}}{{/crossLink}} has been called on this event.",
+            "itemtype": "property",
+            "name": "propagationStopped",
+            "type": "Boolean",
+            "default": "false",
+            "readonly": "",
+            "class": "Event",
+            "module": "CreateJS"
+        },
+        {
+            "file": "createjs/events/Event.js",
+            "line": 153,
+            "description": "Indicates if {{#crossLink \"Event/stopImmediatePropagation\"}}{{/crossLink}} has been called\non this event.",
+            "itemtype": "property",
+            "name": "immediatePropagationStopped",
+            "type": "Boolean",
+            "default": "false",
+            "readonly": "",
+            "class": "Event",
+            "module": "CreateJS"
+        },
+        {
+            "file": "createjs/events/Event.js",
+            "line": 163,
+            "description": "Indicates if {{#crossLink \"Event/remove\"}}{{/crossLink}} has been called on this event.",
+            "itemtype": "property",
+            "name": "removed",
+            "type": "Boolean",
+            "default": "false",
+            "readonly": "",
+            "class": "Event",
+            "module": "CreateJS"
+        },
+        {
+            "file": "createjs/events/Event.js",
+            "line": 174,
+            "description": "<strong>REMOVED</strong>. Removed in favor of using `MySuperClass_constructor`.\nSee {{#crossLink \"Utility Methods/extend\"}}{{/crossLink}} and {{#crossLink \"Utility Methods/promote\"}}{{/crossLink}}\nfor details.\n\nThere is an inheritance tutorial distributed with EaselJS in /tutorials/Inheritance.",
+            "itemtype": "method",
+            "name": "initialize",
+            "access": "protected",
+            "tagname": "",
+            "deprecated": true,
+            "class": "Event",
+            "module": "CreateJS"
+        },
+        {
+            "file": "createjs/events/Event.js",
+            "line": 188,
+            "description": "Sets {{#crossLink \"Event/defaultPrevented\"}}{{/crossLink}} to true if the event is cancelable.\nMirrors the DOM level 2 event standard. In general, cancelable events that have `preventDefault()` called will\ncancel the default behaviour associated with the event.",
+            "itemtype": "method",
+            "name": "preventDefault",
+            "class": "Event",
+            "module": "CreateJS"
+        },
+        {
+            "file": "createjs/events/Event.js",
+            "line": 198,
+            "description": "Sets {{#crossLink \"Event/propagationStopped\"}}{{/crossLink}} to true.\nMirrors the DOM event standard.",
+            "itemtype": "method",
+            "name": "stopPropagation",
+            "class": "Event",
+            "module": "CreateJS"
+        },
+        {
+            "file": "createjs/events/Event.js",
+            "line": 207,
+            "description": "Sets {{#crossLink \"Event/propagationStopped\"}}{{/crossLink}} and\n{{#crossLink \"Event/immediatePropagationStopped\"}}{{/crossLink}} to true.\nMirrors the DOM event standard.",
+            "itemtype": "method",
+            "name": "stopImmediatePropagation",
+            "class": "Event",
+            "module": "CreateJS"
+        },
+        {
+            "file": "createjs/events/Event.js",
+            "line": 217,
+            "description": "Causes the active listener to be removed via removeEventListener();\n\n\t\tmyBtn.addEventListener(\"click\", function(evt) {\n\t\t\t// do stuff...\n\t\t\tevt.remove(); // removes this listener.\n\t\t});",
+            "itemtype": "method",
+            "name": "remove",
+            "class": "Event",
+            "module": "CreateJS"
+        },
+        {
+            "file": "createjs/events/Event.js",
+            "line": 231,
+            "description": "Returns a clone of the Event instance.",
+            "itemtype": "method",
+            "name": "clone",
+            "return": {
+                "description": "a clone of the Event instance.",
+                "type": "Event"
+            },
+            "class": "Event",
+            "module": "CreateJS"
+        },
+        {
+            "file": "createjs/events/Event.js",
+            "line": 240,
+            "description": "Provides a chainable shortcut method for setting a number of properties on the instance.",
+            "itemtype": "method",
+            "name": "set",
+            "params": [
+                {
+                    "name": "props",
+                    "description": "A generic object containing properties to copy to the instance.",
+                    "type": "Object"
+                }
+            ],
+            "return": {
+                "description": "Returns the instance the method is called on (useful for chaining calls.)",
+                "type": "Event"
+            },
+            "chainable": 1,
+            "class": "Event",
+            "module": "CreateJS"
+        },
+        {
+            "file": "createjs/events/Event.js",
+            "line": 253,
+            "description": "Returns a string representation of this object.",
+            "itemtype": "method",
+            "name": "toString",
+            "return": {
+                "description": "a string representation of the instance.",
+                "type": "String"
+            },
+            "class": "Event",
+            "module": "CreateJS"
+        },
+        {
+            "file": "createjs/events/EventDispatcher.js",
+            "line": 99,
+            "access": "protected",
+            "tagname": "",
+            "itemtype": "property",
+            "name": "_listeners",
+            "type": "Object",
+            "class": "EventDispatcher",
+            "module": "CreateJS"
+        },
+        {
+            "file": "createjs/events/EventDispatcher.js",
+            "line": 106,
+            "access": "protected",
+            "tagname": "",
+            "itemtype": "property",
+            "name": "_captureListeners",
+            "type": "Object",
+            "class": "EventDispatcher",
+            "module": "CreateJS"
+        },
+        {
+            "file": "createjs/events/EventDispatcher.js",
+            "line": 115,
+            "description": "<strong>REMOVED</strong>. Removed in favor of using `MySuperClass_constructor`.\nSee {{#crossLink \"Utility Methods/extend\"}}{{/crossLink}} and {{#crossLink \"Utility Methods/promote\"}}{{/crossLink}}\nfor details.\n\nThere is an inheritance tutorial distributed with EaselJS in /tutorials/Inheritance.",
+            "itemtype": "method",
+            "name": "initialize",
+            "access": "protected",
+            "tagname": "",
+            "deprecated": true,
+            "class": "EventDispatcher",
+            "module": "CreateJS"
+        },
+        {
+            "file": "createjs/events/EventDispatcher.js",
+            "line": 130,
+            "description": "Static initializer to mix EventDispatcher methods into a target object or prototype.\n\n\t\tEventDispatcher.initialize(MyClass.prototype); // add to the prototype of the class\n\t\tEventDispatcher.initialize(myObject); // add to a specific instance",
+            "itemtype": "method",
+            "name": "initialize",
+            "static": 1,
+            "params": [
+                {
+                    "name": "target",
+                    "description": "The target object to inject EventDispatcher methods into. This can be an instance or a\nprototype.",
+                    "type": "Object"
+                }
+            ],
+            "class": "EventDispatcher",
+            "module": "CreateJS"
+        },
+        {
+            "file": "createjs/events/EventDispatcher.js",
+            "line": 154,
+            "description": "Adds the specified event listener. Note that adding multiple listeners to the same function will result in\nmultiple callbacks getting fired.\n\n<h4>Example</h4>\n\n     displayObject.addEventListener(\"click\", handleClick);\n     function handleClick(event) {\n        // Click happened.\n     }",
+            "itemtype": "method",
+            "name": "addEventListener",
+            "params": [
+                {
+                    "name": "type",
+                    "description": "The string type of the event.",
+                    "type": "String"
+                },
+                {
+                    "name": "listener",
+                    "description": "An object with a handleEvent method, or a function that will be called when\nthe event is dispatched.",
+                    "type": "Function | Object"
+                },
+                {
+                    "name": "useCapture",
+                    "description": "For events that bubble, indicates whether to listen for the event in the capture or bubbling/target phase.",
+                    "type": "Boolean",
+                    "optional": true
+                }
+            ],
+            "return": {
+                "description": "Returns the listener for chaining or assignment.",
+                "type": "Function | Object"
+            },
+            "class": "EventDispatcher",
+            "module": "CreateJS"
+        },
+        {
+            "file": "createjs/events/EventDispatcher.js",
+            "line": 187,
+            "description": "A shortcut method for using addEventListener that makes it easier to specify an execution scope, have a listener\nonly run once, associate arbitrary data with the listener, and remove the listener.\n\nThis method works by creating an anonymous wrapper function and subscribing it with addEventListener.\nThe wrapper function is returned for use with `removeEventListener` (or `off`).\n\n<b>IMPORTANT:</b> To remove a listener added with `on`, you must pass in the returned wrapper function as the listener, or use\n{{#crossLink \"Event/remove\"}}{{/crossLink}}. Likewise, each time you call `on` a NEW wrapper function is subscribed, so multiple calls\nto `on` with the same params will create multiple listeners.\n\n<h4>Example</h4>\n\n\t\tvar listener = myBtn.on(\"click\", handleClick, null, false, {count:3});\n\t\tfunction handleClick(evt, data) {\n\t\t\tdata.count -= 1;\n\t\t\tconsole.log(this == myBtn); // true - scope defaults to the dispatcher\n\t\t\tif (data.count == 0) {\n\t\t\t\talert(\"clicked 3 times!\");\n\t\t\t\tmyBtn.off(\"click\", listener);\n\t\t\t\t// alternately: evt.remove();\n\t\t\t}\n\t\t}",
+            "itemtype": "method",
+            "name": "on",
+            "params": [
+                {
+                    "name": "type",
+                    "description": "The string type of the event.",
+                    "type": "String"
+                },
+                {
+                    "name": "listener",
+                    "description": "An object with a handleEvent method, or a function that will be called when\nthe event is dispatched.",
+                    "type": "Function | Object"
+                },
+                {
+                    "name": "scope",
+                    "description": "The scope to execute the listener in. Defaults to the dispatcher/currentTarget for function listeners, and to the listener itself for object listeners (ie. using handleEvent).",
+                    "type": "Object",
+                    "optional": true
+                },
+                {
+                    "name": "once",
+                    "description": "If true, the listener will remove itself after the first time it is triggered.",
+                    "type": "Boolean",
+                    "optional": true,
+                    "optdefault": "false"
+                },
+                {
+                    "name": "data",
+                    "description": "Arbitrary data that will be included as the second parameter when the listener is called.",
+                    "type": "*",
+                    "optional": true
+                },
+                {
+                    "name": "useCapture",
+                    "description": "For events that bubble, indicates whether to listen for the event in the capture or bubbling/target phase.",
+                    "type": "Boolean",
+                    "optional": true,
+                    "optdefault": "false"
+                }
+            ],
+            "return": {
+                "description": "Returns the anonymous function that was created and assigned as the listener. This is needed to remove the listener later using .removeEventListener.",
+                "type": "Function"
+            },
+            "class": "EventDispatcher",
+            "module": "CreateJS"
+        },
+        {
+            "file": "createjs/events/EventDispatcher.js",
+            "line": 233,
+            "description": "Removes the specified event listener.\n\n<b>Important Note:</b> that you must pass the exact function reference used when the event was added. If a proxy\nfunction, or function closure is used as the callback, the proxy/closure reference must be used - a new proxy or\nclosure will not work.\n\n<h4>Example</h4>\n\n     displayObject.removeEventListener(\"click\", handleClick);",
+            "itemtype": "method",
+            "name": "removeEventListener",
+            "params": [
+                {
+                    "name": "type",
+                    "description": "The string type of the event.",
+                    "type": "String"
+                },
+                {
+                    "name": "listener",
+                    "description": "The listener function or object.",
+                    "type": "Function | Object"
+                },
+                {
+                    "name": "useCapture",
+                    "description": "For events that bubble, indicates whether to listen for the event in the capture or bubbling/target phase.",
+                    "type": "Boolean",
+                    "optional": true
+                }
+            ],
+            "class": "EventDispatcher",
+            "module": "CreateJS"
+        },
+        {
+            "file": "createjs/events/EventDispatcher.js",
+            "line": 263,
+            "description": "A shortcut to the removeEventListener method, with the same parameters and return value. This is a companion to the\n.on method.\n\n<b>IMPORTANT:</b> To remove a listener added with `on`, you must pass in the returned wrapper function as the listener. See \n{{#crossLink \"EventDispatcher/on\"}}{{/crossLink}} for an example.",
+            "itemtype": "method",
+            "name": "off",
+            "params": [
+                {
+                    "name": "type",
+                    "description": "The string type of the event.",
+                    "type": "String"
+                },
+                {
+                    "name": "listener",
+                    "description": "The listener function or object.",
+                    "type": "Function | Object"
+                },
+                {
+                    "name": "useCapture",
+                    "description": "For events that bubble, indicates whether to listen for the event in the capture or bubbling/target phase.",
+                    "type": "Boolean",
+                    "optional": true
+                }
+            ],
+            "class": "EventDispatcher",
+            "module": "CreateJS"
+        },
+        {
+            "file": "createjs/events/EventDispatcher.js",
+            "line": 277,
+            "description": "Removes all listeners for the specified type, or all listeners of all types.\n\n<h4>Example</h4>\n\n     // Remove all listeners\n     displayObject.removeAllEventListeners();\n\n     // Remove all click listeners\n     displayObject.removeAllEventListeners(\"click\");",
+            "itemtype": "method",
+            "name": "removeAllEventListeners",
+            "params": [
+                {
+                    "name": "type",
+                    "description": "The string type of the event. If omitted, all listeners for all types will be removed.",
+                    "type": "String",
+                    "optional": true
+                }
+            ],
+            "class": "EventDispatcher",
+            "module": "CreateJS"
+        },
+        {
+            "file": "createjs/events/EventDispatcher.js",
+            "line": 299,
+            "description": "Dispatches the specified event to all listeners.\n\n<h4>Example</h4>\n\n     // Use a string event\n     this.dispatchEvent(\"complete\");\n\n     // Use an Event instance\n     var event = new createjs.Event(\"progress\");\n     this.dispatchEvent(event);",
+            "itemtype": "method",
+            "name": "dispatchEvent",
+            "params": [
+                {
+                    "name": "eventObj",
+                    "description": "An object with a \"type\" property, or a string type.\nWhile a generic object will work, it is recommended to use a CreateJS Event instance. If a string is used,\ndispatchEvent will construct an Event instance if necessary with the specified type. This latter approach can\nbe used to avoid event object instantiation for non-bubbling events that may not have any listeners.",
+                    "type": "Object | String | Event"
+                },
+                {
+                    "name": "bubbles",
+                    "description": "Specifies the `bubbles` value when a string was passed to eventObj.",
+                    "type": "Boolean",
+                    "optional": true
+                },
+                {
+                    "name": "cancelable",
+                    "description": "Specifies the `cancelable` value when a string was passed to eventObj.",
+                    "type": "Boolean",
+                    "optional": true
+                }
+            ],
+            "return": {
+                "description": "Returns false if `preventDefault()` was called on a cancelable event, true otherwise.",
+                "type": "Boolean"
+            },
+            "class": "EventDispatcher",
+            "module": "CreateJS"
+        },
+        {
+            "file": "createjs/events/EventDispatcher.js",
+            "line": 353,
+            "description": "Indicates whether there is at least one listener for the specified event type.",
+            "itemtype": "method",
+            "name": "hasEventListener",
+            "params": [
+                {
+                    "name": "type",
+                    "description": "The string type of the event.",
+                    "type": "String"
+                }
+            ],
+            "return": {
+                "description": "Returns true if there is at least one listener for the specified event.",
+                "type": "Boolean"
+            },
+            "class": "EventDispatcher",
+            "module": "CreateJS"
+        },
+        {
+            "file": "createjs/events/EventDispatcher.js",
+            "line": 364,
+            "description": "Indicates whether there is at least one listener for the specified event type on this object or any of its\nancestors (parent, parent's parent, etc). A return value of true indicates that if a bubbling event of the\nspecified type is dispatched from this object, it will trigger at least one listener.\n\nThis is similar to {{#crossLink \"EventDispatcher/hasEventListener\"}}{{/crossLink}}, but it searches the entire\nevent flow for a listener, not just this object.",
+            "itemtype": "method",
+            "name": "willTrigger",
+            "params": [
+                {
+                    "name": "type",
+                    "description": "The string type of the event.",
+                    "type": "String"
+                }
+            ],
+            "return": {
+                "description": "Returns `true` if there is at least one listener for the specified event.",
+                "type": "Boolean"
+            },
+            "class": "EventDispatcher",
+            "module": "CreateJS"
+        },
+        {
+            "file": "createjs/events/EventDispatcher.js",
+            "line": 384,
+            "itemtype": "method",
+            "name": "toString",
+            "return": {
+                "description": "a string representation of the instance.",
+                "type": "String"
+            },
+            "class": "EventDispatcher",
+            "module": "CreateJS"
+        },
+        {
+            "file": "createjs/events/EventDispatcher.js",
+            "line": 394,
+            "itemtype": "method",
+            "name": "_dispatchEvent",
+            "params": [
+                {
+                    "name": "eventObj",
+                    "description": "",
+                    "type": "Object | String | Event"
+                },
+                {
+                    "name": "eventPhase",
+                    "description": "",
+                    "type": "Object"
+                }
+            ],
+            "access": "protected",
+            "tagname": "",
+            "class": "EventDispatcher",
+            "module": "CreateJS"
+        },
+        {
+            "file": "createjs/utils/Ticker.js",
+            "line": 69,
+            "description": "In this mode, Ticker uses the requestAnimationFrame API, but attempts to synch the ticks to target framerate. It\nuses a simple heuristic that compares the time of the RAF return to the target time for the current frame and\ndispatches the tick when the time is within a certain threshold.\n\nThis mode has a higher variance for time between frames than {{#crossLink \"Ticker/TIMEOUT:property\"}}{{/crossLink}},\nbut does not require that content be time based as with {{#crossLink \"Ticker/RAF:property\"}}{{/crossLink}} while\ngaining the benefits of that API (screen synch, background throttling).\n\nVariance is usually lowest for framerates that are a divisor of the RAF frequency. This is usually 60, so\nframerates of 10, 12, 15, 20, and 30 work well.\n\nFalls back to {{#crossLink \"Ticker/TIMEOUT:property\"}}{{/crossLink}} if the requestAnimationFrame API is not\nsupported.",
+            "itemtype": "property",
+            "name": "RAF_SYNCHED",
+            "static": 1,
+            "type": "{String}",
+            "default": "\"synched\"",
+            "readonly": "",
+            "class": "Ticker",
+            "module": "CreateJS"
+        },
+        {
+            "file": "createjs/utils/Ticker.js",
+            "line": 91,
+            "description": "In this mode, Ticker passes through the requestAnimationFrame heartbeat, ignoring the target framerate completely.\nBecause requestAnimationFrame frequency is not deterministic, any content using this mode should be time based.\nYou can leverage {{#crossLink \"Ticker/getTime\"}}{{/crossLink}} and the {{#crossLink \"Ticker/tick:event\"}}{{/crossLink}}\nevent object's \"delta\" properties to make this easier.\n\nFalls back on {{#crossLink \"Ticker/TIMEOUT:property\"}}{{/crossLink}} if the requestAnimationFrame API is not\nsupported.",
+            "itemtype": "property",
+            "name": "RAF",
+            "static": 1,
+            "type": "{String}",
+            "default": "\"raf\"",
+            "readonly": "",
+            "class": "Ticker",
+            "module": "CreateJS"
+        },
+        {
+            "file": "createjs/utils/Ticker.js",
+            "line": 107,
+            "description": "In this mode, Ticker uses the setTimeout API. This provides predictable, adaptive frame timing, but does not\nprovide the benefits of requestAnimationFrame (screen synch, background throttling).",
+            "itemtype": "property",
+            "name": "TIMEOUT",
+            "static": 1,
+            "type": "{String}",
+            "default": "\"timeout\"",
+            "readonly": "",
+            "class": "Ticker",
+            "module": "CreateJS"
+        },
+        {
+            "file": "createjs/utils/Ticker.js",
+            "line": 120,
+            "description": "Dispatched each tick. The event will be dispatched to each listener even when the Ticker has been paused using\n{{#crossLink \"Ticker/setPaused\"}}{{/crossLink}}.\n\n<h4>Example</h4>\n\n     createjs.Ticker.addEventListener(\"tick\", handleTick);\n     function handleTick(event) {\n         console.log(\"Paused:\", event.paused, event.delta);\n     }",
+            "itemtype": "event",
+            "name": "tick",
+            "params": [
+                {
+                    "name": "target",
+                    "description": "The object that dispatched the event.",
+                    "type": "Object"
+                },
+                {
+                    "name": "type",
+                    "description": "The event type.",
+                    "type": "String"
+                },
+                {
+                    "name": "paused",
+                    "description": "Indicates whether the ticker is currently paused.",
+                    "type": "Boolean"
+                },
+                {
+                    "name": "delta",
+                    "description": "The time elapsed in ms since the last tick.",
+                    "type": "Number"
+                },
+                {
+                    "name": "time",
+                    "description": "The total time in ms since Ticker was initialized.",
+                    "type": "Number"
+                },
+                {
+                    "name": "runTime",
+                    "description": "The total time in ms that Ticker was not paused since it was initialized. For example,\n\tyou could determine the amount of time that the Ticker has been paused since initialization with `time-runTime`.",
+                    "type": "Number"
+                }
+            ],
+            "since": "0.6.0",
+            "class": "Ticker",
+            "module": "CreateJS"
+        },
+        {
+            "file": "createjs/utils/Ticker.js",
+            "line": 144,
+            "description": "Deprecated in favour of {{#crossLink \"Ticker/timingMode\"}}{{/crossLink}}, and will be removed in a future version. If true, timingMode will\nuse {{#crossLink \"Ticker/RAF_SYNCHED\"}}{{/crossLink}} by default.",
+            "deprecated": true,
+            "deprecationMessage": "Deprecated in favour of {{#crossLink \"Ticker/timingMode\"}}{{/crossLink}}.",
+            "itemtype": "property",
+            "name": "useRAF",
+            "static": 1,
+            "type": "{Boolean}",
+            "default": "false",
+            "class": "Ticker",
+            "module": "CreateJS"
+        },
+        {
+            "file": "createjs/utils/Ticker.js",
+            "line": 155,
+            "description": "Specifies the timing api (setTimeout or requestAnimationFrame) and mode to use. See\n{{#crossLink \"Ticker/TIMEOUT\"}}{{/crossLink}}, {{#crossLink \"Ticker/RAF\"}}{{/crossLink}}, and\n{{#crossLink \"Ticker/RAF_SYNCHED\"}}{{/crossLink}} for mode details.",
+            "itemtype": "property",
+            "name": "timingMode",
+            "static": 1,
+            "type": "{String}",
+            "default": "Ticker.TIMEOUT",
+            "class": "Ticker",
+            "module": "CreateJS"
+        },
+        {
+            "file": "createjs/utils/Ticker.js",
+            "line": 166,
+            "description": "Specifies a maximum value for the delta property in the tick event object. This is useful when building time\nbased animations and systems to prevent issues caused by large time gaps caused by background tabs, system sleep,\nalert dialogs, or other blocking routines. Double the expected frame duration is often an effective value\n(ex. maxDelta=50 when running at 40fps).\n\nThis does not impact any other values (ex. time, runTime, etc), so you may experience issues if you enable maxDelta\nwhen using both delta and other values.\n\nIf 0, there is no maximum.",
+            "itemtype": "property",
+            "name": "maxDelta",
+            "static": 1,
+            "type": "{number}",
+            "default": "0",
+            "class": "Ticker",
+            "module": "CreateJS"
+        },
+        {
+            "file": "createjs/utils/Ticker.js",
+            "line": 183,
+            "description": "When the ticker is paused, all listeners will still receive a tick event, but the <code>paused</code> property\nof the event will be `true`. Also, while paused the `runTime` will not increase. See {{#crossLink \"Ticker/tick:event\"}}{{/crossLink}},\n{{#crossLink \"Ticker/getTime\"}}{{/crossLink}}, and {{#crossLink \"Ticker/getEventTime\"}}{{/crossLink}} for more\ninfo.\n\n<h4>Example</h4>\n\n     createjs.Ticker.addEventListener(\"tick\", handleTick);\n     createjs.Ticker.paused = true;\n     function handleTick(event) {\n         console.log(event.paused,\n         \tcreatejs.Ticker.getTime(false),\n         \tcreatejs.Ticker.getTime(true));\n     }",
+            "itemtype": "property",
+            "name": "paused",
+            "static": 1,
+            "type": "{Boolean}",
+            "default": "false",
+            "class": "Ticker",
+            "module": "CreateJS"
+        },
+        {
+            "file": "createjs/utils/Ticker.js",
+            "line": 223,
+            "itemtype": "property",
+            "name": "_inited",
+            "static": 1,
+            "type": "{Boolean}",
+            "access": "protected",
+            "tagname": "",
+            "class": "Ticker",
+            "module": "CreateJS"
+        },
+        {
+            "file": "createjs/utils/Ticker.js",
+            "line": 231,
+            "itemtype": "property",
+            "name": "_startTime",
+            "static": 1,
+            "type": "{Number}",
+            "access": "protected",
+            "tagname": "",
+            "class": "Ticker",
+            "module": "CreateJS"
+        },
+        {
+            "file": "createjs/utils/Ticker.js",
+            "line": 239,
+            "itemtype": "property",
+            "name": "_pausedTime",
+            "static": 1,
+            "type": "{Number}",
+            "access": "protected",
+            "tagname": "",
+            "class": "Ticker",
+            "module": "CreateJS"
+        },
+        {
+            "file": "createjs/utils/Ticker.js",
+            "line": 247,
+            "description": "The number of ticks that have passed",
+            "itemtype": "property",
+            "name": "_ticks",
+            "static": 1,
+            "type": "{Number}",
+            "access": "protected",
+            "tagname": "",
+            "class": "Ticker",
+            "module": "CreateJS"
+        },
+        {
+            "file": "createjs/utils/Ticker.js",
+            "line": 256,
+            "description": "The number of ticks that have passed while Ticker has been paused",
+            "itemtype": "property",
+            "name": "_pausedTicks",
+            "static": 1,
+            "type": "{Number}",
+            "access": "protected",
+            "tagname": "",
+            "class": "Ticker",
+            "module": "CreateJS"
+        },
+        {
+            "file": "createjs/utils/Ticker.js",
+            "line": 265,
+            "itemtype": "property",
+            "name": "_interval",
+            "static": 1,
+            "type": "{Number}",
+            "access": "protected",
+            "tagname": "",
+            "class": "Ticker",
+            "module": "CreateJS"
+        },
+        {
+            "file": "createjs/utils/Ticker.js",
+            "line": 273,
+            "itemtype": "property",
+            "name": "_lastTime",
+            "static": 1,
+            "type": "{Number}",
+            "access": "protected",
+            "tagname": "",
+            "class": "Ticker",
+            "module": "CreateJS"
+        },
+        {
+            "file": "createjs/utils/Ticker.js",
+            "line": 281,
+            "itemtype": "property",
+            "name": "_times",
+            "static": 1,
+            "type": "{Array}",
+            "access": "protected",
+            "tagname": "",
+            "class": "Ticker",
+            "module": "CreateJS"
+        },
+        {
+            "file": "createjs/utils/Ticker.js",
+            "line": 289,
+            "itemtype": "property",
+            "name": "_tickTimes",
+            "static": 1,
+            "type": "{Array}",
+            "access": "protected",
+            "tagname": "",
+            "class": "Ticker",
+            "module": "CreateJS"
+        },
+        {
+            "file": "createjs/utils/Ticker.js",
+            "line": 297,
+            "description": "Stores the timeout or requestAnimationFrame id.",
+            "itemtype": "property",
+            "name": "_timerId",
+            "static": 1,
+            "type": "{Number}",
+            "access": "protected",
+            "tagname": "",
+            "class": "Ticker",
+            "module": "CreateJS"
+        },
+        {
+            "file": "createjs/utils/Ticker.js",
+            "line": 306,
+            "description": "True if currently using requestAnimationFrame, false if using setTimeout. This may be different than timingMode\nif that property changed and a tick hasn't fired.",
+            "itemtype": "property",
+            "name": "_raf",
+            "static": 1,
+            "type": "{Boolean}",
+            "access": "protected",
+            "tagname": "",
+            "class": "Ticker",
+            "module": "CreateJS"
+        },
+        {
+            "file": "createjs/utils/Ticker.js",
+            "line": 318,
+            "description": "Use the {{#crossLink \"Ticker/interval:property\"}}{{/crossLink}} property instead.",
+            "itemtype": "method",
+            "name": "setInterval",
+            "static": 1,
+            "params": [
+                {
+                    "name": "interval",
+                    "description": "",
+                    "type": "Number"
+                }
+            ],
+            "deprecated": true,
+            "class": "Ticker",
+            "module": "CreateJS"
+        },
+        {
+            "file": "createjs/utils/Ticker.js",
+            "line": 331,
+            "description": "Use the {{#crossLink \"Ticker/interval:property\"}}{{/crossLink}} property instead.",
+            "itemtype": "method",
+            "name": "getInterval",
+            "static": 1,
+            "return": {
+                "description": "",
+                "type": "Number"
+            },
+            "deprecated": true,
+            "class": "Ticker",
+            "module": "CreateJS"
+        },
+        {
+            "file": "createjs/utils/Ticker.js",
+            "line": 342,
+            "description": "Use the {{#crossLink \"Ticker/framerate:property\"}}{{/crossLink}} property instead.",
+            "itemtype": "method",
+            "name": "setFPS",
+            "static": 1,
+            "params": [
+                {
+                    "name": "value",
+                    "description": "",
+                    "type": "Number"
+                }
+            ],
+            "deprecated": true,
+            "class": "Ticker",
+            "module": "CreateJS"
+        },
+        {
+            "file": "createjs/utils/Ticker.js",
+            "line": 353,
+            "description": "Use the {{#crossLink \"Ticker/framerate:property\"}}{{/crossLink}} property instead.",
+            "itemtype": "method",
+            "name": "getFPS",
+            "static": 1,
+            "return": {
+                "description": "",
+                "type": "Number"
+            },
+            "deprecated": true,
+            "class": "Ticker",
+            "module": "CreateJS"
+        },
+        {
+            "file": "createjs/utils/Ticker.js",
+            "line": 364,
+            "description": "Indicates the target time (in milliseconds) between ticks. Default is 50 (20 FPS).\nNote that actual time between ticks may be more than specified depending on CPU load.\nThis property is ignored if the ticker is using the `RAF` timing mode.",
+            "itemtype": "property",
+            "name": "interval",
+            "static": 1,
+            "type": "{Number}",
+            "class": "Ticker",
+            "module": "CreateJS"
+        },
+        {
+            "file": "createjs/utils/Ticker.js",
+            "line": 373,
+            "description": "Indicates the target frame rate in frames per second (FPS). Effectively just a shortcut to `interval`, where\n`framerate == 1000/interval`.",
+            "itemtype": "property",
+            "name": "framerate",
+            "static": 1,
+            "type": "{Number}",
+            "class": "Ticker",
+            "module": "CreateJS"
+        },
+        {
+            "file": "createjs/utils/Ticker.js",
+            "line": 389,
+            "description": "Starts the tick. This is called automatically when the first listener is added.",
+            "itemtype": "method",
+            "name": "init",
+            "static": 1,
+            "class": "Ticker",
+            "module": "CreateJS"
+        },
+        {
+            "file": "createjs/utils/Ticker.js",
+            "line": 404,
+            "description": "Stops the Ticker and removes all listeners. Use init() to restart the Ticker.",
+            "itemtype": "method",
+            "name": "reset",
+            "static": 1,
+            "class": "Ticker",
+            "module": "CreateJS"
+        },
+        {
+            "file": "createjs/utils/Ticker.js",
+            "line": 422,
+            "description": "Returns the average time spent within a tick. This can vary significantly from the value provided by getMeasuredFPS\nbecause it only measures the time spent within the tick execution stack. \n\nExample 1: With a target FPS of 20, getMeasuredFPS() returns 20fps, which indicates an average of 50ms between \nthe end of one tick and the end of the next. However, getMeasuredTickTime() returns 15ms. This indicates that \nthere may be up to 35ms of \"idle\" time between the end of one tick and the start of the next.\n\nExample 2: With a target FPS of 30, getFPS() returns 10fps, which indicates an average of 100ms between the end of\none tick and the end of the next. However, getMeasuredTickTime() returns 20ms. This would indicate that something\nother than the tick is using ~80ms (another script, DOM rendering, etc).",
+            "itemtype": "method",
+            "name": "getMeasuredTickTime",
+            "static": 1,
+            "params": [
+                {
+                    "name": "ticks",
+                    "description": "The number of previous ticks over which to measure the average time spent in a tick.\nDefaults to the number of ticks per second. To get only the last tick's time, pass in 1.",
+                    "type": "Number",
+                    "optional": true
+                }
+            ],
+            "return": {
+                "description": "The average time spent in a tick in milliseconds.",
+                "type": "Number"
+            },
+            "class": "Ticker",
+            "module": "CreateJS"
+        },
+        {
+            "file": "createjs/utils/Ticker.js",
+            "line": 449,
+            "description": "Returns the actual frames / ticks per second.",
+            "itemtype": "method",
+            "name": "getMeasuredFPS",
+            "static": 1,
+            "params": [
+                {
+                    "name": "ticks",
+                    "description": "The number of previous ticks over which to measure the actual frames / ticks per second.\nDefaults to the number of ticks per second.",
+                    "type": "Number",
+                    "optional": true
+                }
+            ],
+            "return": {
+                "description": "The actual frames / ticks per second. Depending on performance, this may differ\nfrom the target frames per second.",
+                "type": "Number"
+            },
+            "class": "Ticker",
+            "module": "CreateJS"
+        },
+        {
+            "file": "createjs/utils/Ticker.js",
+            "line": 467,
+            "description": "Use the {{#crossLink \"Ticker/paused:property\"}}{{/crossLink}} property instead.",
+            "itemtype": "method",
+            "name": "setPaused",
+            "static": 1,
+            "params": [
+                {
+                    "name": "value",
+                    "description": "",
+                    "type": "Boolean"
+                }
+            ],
+            "deprecated": true,
+            "class": "Ticker",
+            "module": "CreateJS"
+        },
+        {
+            "file": "createjs/utils/Ticker.js",
+            "line": 479,
+            "description": "Use the {{#crossLink \"Ticker/paused:property\"}}{{/crossLink}} property instead.",
+            "itemtype": "method",
+            "name": "getPaused",
+            "static": 1,
+            "return": {
+                "description": "",
+                "type": "Boolean"
+            },
+            "deprecated": true,
+            "class": "Ticker",
+            "module": "CreateJS"
+        },
+        {
+            "file": "createjs/utils/Ticker.js",
+            "line": 491,
+            "description": "Returns the number of milliseconds that have elapsed since Ticker was initialized via {{#crossLink \"Ticker/init\"}}.\nReturns -1 if Ticker has not been initialized. For example, you could use\nthis in a time synchronized animation to determine the exact amount of time that has elapsed.",
+            "itemtype": "method",
+            "name": "getTime",
+            "static": 1,
+            "params": [
+                {
+                    "name": "runTime",
+                    "description": "If true only time elapsed while Ticker was not paused will be returned.\nIf false, the value returned will be total time elapsed since the first tick event listener was added.",
+                    "type": "Boolean",
+                    "optional": true,
+                    "optdefault": "false"
+                }
+            ],
+            "return": {
+                "description": "Number of milliseconds that have elapsed since Ticker was initialized or -1.",
+                "type": "Number"
+            },
+            "class": "Ticker",
+            "module": "CreateJS"
+        },
+        {
+            "file": "createjs/utils/Ticker.js",
+            "line": 505,
+            "description": "Similar to the {{#crossLink \"Ticker/getTime\"}}{{/crossLink}} method, but returns the time on the most recent {{#crossLink \"Ticker/tick:event\"}}{{/crossLink}}\nevent object.",
+            "itemtype": "method",
+            "name": "getEventTime",
+            "static": 1,
+            "params": [
+                {
+                    "name": "runTime",
+                    "description": "[runTime=false] If true, the runTime property will be returned instead of time.",
+                    "type": "Boolean"
+                }
+            ],
+            "return": {
+                "description": "The time or runTime property from the most recent tick event or -1.",
+                "type": "Number"
+            },
+            "class": "Ticker",
+            "module": "CreateJS"
+        },
+        {
+            "file": "createjs/utils/Ticker.js",
+            "line": 517,
+            "description": "Returns the number of ticks that have been broadcast by Ticker.",
+            "itemtype": "method",
+            "name": "getTicks",
+            "static": 1,
+            "params": [
+                {
+                    "name": "pauseable",
+                    "description": "Indicates whether to include ticks that would have been broadcast\nwhile Ticker was paused. If true only tick events broadcast while Ticker is not paused will be returned.\nIf false, tick events that would have been broadcast while Ticker was paused will be included in the return\nvalue. The default value is false.",
+                    "type": "Boolean"
+                }
+            ],
+            "return": {
+                "description": "of ticks that have been broadcast.",
+                "type": "Number"
+            },
+            "class": "Ticker",
+            "module": "CreateJS"
+        },
+        {
+            "file": "createjs/utils/Ticker.js",
+            "line": 533,
+            "itemtype": "method",
+            "name": "_handleSynch",
+            "static": 1,
+            "access": "protected",
+            "tagname": "",
+            "class": "Ticker",
+            "module": "CreateJS"
+        },
+        {
+            "file": "createjs/utils/Ticker.js",
+            "line": 548,
+            "itemtype": "method",
+            "name": "_handleRAF",
+            "static": 1,
+            "access": "protected",
+            "tagname": "",
+            "class": "Ticker",
+            "module": "CreateJS"
+        },
+        {
+            "file": "createjs/utils/Ticker.js",
+            "line": 559,
+            "itemtype": "method",
+            "name": "_handleTimeout",
+            "static": 1,
+            "access": "protected",
+            "tagname": "",
+            "class": "Ticker",
+            "module": "CreateJS"
+        },
+        {
+            "file": "createjs/utils/Ticker.js",
+            "line": 570,
+            "itemtype": "method",
+            "name": "_setupTick",
+            "static": 1,
+            "access": "protected",
+            "tagname": "",
+            "class": "Ticker",
+            "module": "CreateJS"
+        },
+        {
+            "file": "createjs/utils/Ticker.js",
+            "line": 591,
+            "itemtype": "method",
+            "name": "_tick",
+            "static": 1,
+            "access": "protected",
+            "tagname": "",
+            "class": "Ticker",
+            "module": "CreateJS"
+        },
+        {
+            "file": "createjs/utils/Ticker.js",
+            "line": 625,
+            "itemtype": "method",
+            "name": "_getTime",
+            "static": 1,
+            "access": "protected",
+            "tagname": "",
+            "class": "Ticker",
+            "module": "CreateJS"
+        },
+        {
+            "file": "createjs/utils/extend.js",
+            "line": 40,
+            "description": "Sets up the prototype chain and constructor property for a new class.\n\nThis should be called right after creating the class constructor.\n\n\tfunction MySubClass() {}\n\tcreatejs.extend(MySubClass, MySuperClass);\n\tMySubClass.prototype.doSomething = function() { }\n\n\tvar foo = new MySubClass();\n\tconsole.log(foo instanceof MySuperClass); // true\n\tconsole.log(foo.prototype.constructor === MySubClass); // true",
+            "itemtype": "method",
+            "name": "extend",
+            "params": [
+                {
+                    "name": "subclass",
+                    "description": "The subclass.",
+                    "type": "Function"
+                },
+                {
+                    "name": "superclass",
+                    "description": "The superclass to extend.",
+                    "type": "Function"
+                }
+            ],
+            "return": {
+                "description": "Returns the subclass's new prototype.",
+                "type": "Function"
+            },
+            "class": "Utility Methods",
+            "module": "CreateJS"
+        },
+        {
+            "file": "createjs/utils/indexOf.js",
+            "line": 40,
+            "description": "Finds the first occurrence of a specified value searchElement in the passed in array, and returns the index of\nthat value.  Returns -1 if value is not found.\n\n     var i = createjs.indexOf(myArray, myElementToFind);",
+            "itemtype": "method",
+            "name": "indexOf",
+            "params": [
+                {
+                    "name": "array",
+                    "description": "Array to search for searchElement",
+                    "type": "Array"
+                },
+                {
+                    "name": "searchElement",
+                    "description": "Element to find in array."
+                }
+            ],
+            "return": {
+                "description": "The first index of searchElement in array.",
+                "type": "Number"
+            },
+            "class": "Utility Methods",
+            "module": "CreateJS"
+        },
+        {
+            "file": "createjs/utils/promote.js",
+            "line": 40,
+            "description": "Promotes any methods on the super class that were overridden, by creating an alias in the format `prefix_methodName`.\nIt is recommended to use the super class's name as the prefix.\nAn alias to the super class's constructor is always added in the format `prefix_constructor`.\nThis allows the subclass to call super class methods without using `function.call`, providing better performance.\n\nFor example, if `MySubClass` extends `MySuperClass`, and both define a `draw` method, then calling `promote(MySubClass, \"MySuperClass\")`\nwould add a `MySuperClass_constructor` method to MySubClass and promote the `draw` method on `MySuperClass` to the\nprototype of `MySubClass` as `MySuperClass_draw`.\n\nThis should be called after the class's prototype is fully defined.\n\n\tfunction ClassA(name) {\n\t\tthis.name = name;\n\t}\n\tClassA.prototype.greet = function() {\n\t\treturn \"Hello \"+this.name;\n\t}\n\n\tfunction ClassB(name, punctuation) {\n\t\tthis.ClassA_constructor(name);\n\t\tthis.punctuation = punctuation;\n\t}\n\tcreatejs.extend(ClassB, ClassA);\n\tClassB.prototype.greet = function() {\n\t\treturn this.ClassA_greet()+this.punctuation;\n\t}\n\tcreatejs.promote(ClassB, \"ClassA\");\n\n\tvar foo = new ClassB(\"World\", \"!?!\");\n\tconsole.log(foo.greet()); // Hello World!?!",
+            "itemtype": "method",
+            "name": "promote",
+            "params": [
+                {
+                    "name": "subclass",
+                    "description": "The class to promote super class methods on.",
+                    "type": "Function"
+                },
+                {
+                    "name": "prefix",
+                    "description": "The prefix to add to the promoted method names. Usually the name of the superclass.",
+                    "type": "String"
+                }
+            ],
+            "return": {
+                "description": "Returns the subclass.",
+                "type": "Function"
+            },
+            "class": "Utility Methods",
+            "module": "CreateJS"
+        },
+        {
+            "file": "tweenjs/CSSPlugin.js",
+            "line": 58,
+            "description": "Defines the default suffix map for CSS tweens. This can be overridden on a per tween basis by specifying a\ncssSuffixMap value for the individual tween. The object maps CSS property names to the suffix to use when\nreading or setting those properties. For example a map in the form {top:\"px\"} specifies that when tweening\nthe \"top\" CSS property, it should use the \"px\" suffix (ex. target.style.top = \"20.5px\"). This only applies\nto tweens with the \"css\" config property set to true.",
+            "itemtype": "property",
+            "name": "cssSuffixMap",
+            "type": "Object",
+            "static": 1,
+            "class": "CSSPlugin",
+            "module": "TweenJS"
+        },
+        {
+            "file": "tweenjs/CSSPlugin.js",
+            "line": 70,
+            "itemtype": "property",
+            "name": "priority",
+            "access": "protected",
+            "tagname": "",
+            "static": 1,
+            "class": "CSSPlugin",
+            "module": "TweenJS"
+        },
+        {
+            "file": "tweenjs/CSSPlugin.js",
+            "line": 79,
+            "description": "Installs this plugin for use with TweenJS. Call this once after TweenJS is loaded to enable this plugin.",
+            "itemtype": "method",
+            "name": "install",
+            "static": 1,
+            "class": "CSSPlugin",
+            "module": "TweenJS"
+        },
+        {
+            "file": "tweenjs/CSSPlugin.js",
+            "line": 90,
+            "itemtype": "method",
+            "name": "init",
+            "access": "protected",
+            "tagname": "",
+            "static": 1,
+            "class": "CSSPlugin",
+            "module": "TweenJS"
+        },
+        {
+            "file": "tweenjs/CSSPlugin.js",
+            "line": 108,
+            "itemtype": "method",
+            "name": "step",
+            "access": "protected",
+            "tagname": "",
+            "static": 1,
+            "class": "CSSPlugin",
+            "module": "TweenJS"
+        },
+        {
+            "file": "tweenjs/CSSPlugin.js",
+            "line": 117,
+            "itemtype": "method",
+            "name": "tween",
+            "access": "protected",
+            "tagname": "",
+            "static": 1,
+            "class": "CSSPlugin",
+            "module": "TweenJS"
+        },
+        {
+            "file": "tweenjs/Ease.js",
+            "line": 64,
+            "itemtype": "method",
+            "name": "linear",
+            "params": [
+                {
+                    "name": "t",
+                    "description": "",
+                    "type": "Number"
+                }
+            ],
+            "static": 1,
+            "return": {
+                "description": "",
+                "type": "Number"
+            },
+            "class": "Ease",
+            "module": "TweenJS"
+        },
+        {
+            "file": "tweenjs/Ease.js",
+            "line": 72,
+            "description": "Identical to linear.",
+            "itemtype": "method",
+            "name": "none",
+            "params": [
+                {
+                    "name": "t",
+                    "description": "",
+                    "type": "Number"
+                }
+            ],
+            "static": 1,
+            "return": {
+                "description": "",
+                "type": "Number"
+            },
+            "class": "Ease",
+            "module": "TweenJS"
+        },
+        {
+            "file": "tweenjs/Ease.js",
+            "line": 81,
+            "description": "Mimics the simple -100 to 100 easing in Flash Pro.",
+            "itemtype": "method",
+            "name": "get",
+            "params": [
+                {
+                    "name": "amount",
+                    "description": "A value from -1 (ease in) to 1 (ease out) indicating the strength and direction of the ease.",
+                    "type": "Number"
+                }
+            ],
+            "static": 1,
+            "return": {
+                "description": "",
+                "type": "Function"
+            },
+            "class": "Ease",
+            "module": "TweenJS"
+        },
+        {
+            "file": "tweenjs/Ease.js",
+            "line": 98,
+            "description": "Configurable exponential ease.",
+            "itemtype": "method",
+            "name": "getPowIn",
+            "params": [
+                {
+                    "name": "pow",
+                    "description": "The exponent to use (ex. 3 would return a cubic ease).",
+                    "type": "Number"
+                }
+            ],
+            "static": 1,
+            "return": {
+                "description": "",
+                "type": "Function"
+            },
+            "class": "Ease",
+            "module": "TweenJS"
+        },
+        {
+            "file": "tweenjs/Ease.js",
+            "line": 111,
+            "description": "Configurable exponential ease.",
+            "itemtype": "method",
+            "name": "getPowOut",
+            "params": [
+                {
+                    "name": "pow",
+                    "description": "The exponent to use (ex. 3 would return a cubic ease).",
+                    "type": "Number"
+                }
+            ],
+            "static": 1,
+            "return": {
+                "description": "",
+                "type": "Function"
+            },
+            "class": "Ease",
+            "module": "TweenJS"
+        },
+        {
+            "file": "tweenjs/Ease.js",
+            "line": 124,
+            "description": "Configurable exponential ease.",
+            "itemtype": "method",
+            "name": "getPowInOut",
+            "params": [
+                {
+                    "name": "pow",
+                    "description": "The exponent to use (ex. 3 would return a cubic ease).",
+                    "type": "Number"
+                }
+            ],
+            "static": 1,
+            "return": {
+                "description": "",
+                "type": "Function"
+            },
+            "class": "Ease",
+            "module": "TweenJS"
+        },
+        {
+            "file": "tweenjs/Ease.js",
+            "line": 138,
+            "itemtype": "method",
+            "name": "quadIn",
+            "params": [
+                {
+                    "name": "t",
+                    "description": "",
+                    "type": "Number"
+                }
+            ],
+            "static": 1,
+            "return": {
+                "description": "",
+                "type": "Number"
+            },
+            "class": "Ease",
+            "module": "TweenJS"
+        },
+        {
+            "file": "tweenjs/Ease.js",
+            "line": 145,
+            "itemtype": "method",
+            "name": "quadOut",
+            "params": [
+                {
+                    "name": "t",
+                    "description": "",
+                    "type": "Number"
+                }
+            ],
+            "static": 1,
+            "return": {
+                "description": "",
+                "type": "Number"
+            },
+            "class": "Ease",
+            "module": "TweenJS"
+        },
+        {
+            "file": "tweenjs/Ease.js",
+            "line": 152,
+            "itemtype": "method",
+            "name": "quadInOut",
+            "params": [
+                {
+                    "name": "t",
+                    "description": "",
+                    "type": "Number"
+                }
+            ],
+            "static": 1,
+            "return": {
+                "description": "",
+                "type": "Number"
+            },
+            "class": "Ease",
+            "module": "TweenJS"
+        },
+        {
+            "file": "tweenjs/Ease.js",
+            "line": 160,
+            "itemtype": "method",
+            "name": "cubicIn",
+            "params": [
+                {
+                    "name": "t",
+                    "description": "",
+                    "type": "Number"
+                }
+            ],
+            "static": 1,
+            "return": {
+                "description": "",
+                "type": "Number"
+            },
+            "class": "Ease",
+            "module": "TweenJS"
+        },
+        {
+            "file": "tweenjs/Ease.js",
+            "line": 167,
+            "itemtype": "method",
+            "name": "cubicOut",
+            "params": [
+                {
+                    "name": "t",
+                    "description": "",
+                    "type": "Number"
+                }
+            ],
+            "static": 1,
+            "return": {
+                "description": "",
+                "type": "Number"
+            },
+            "class": "Ease",
+            "module": "TweenJS"
+        },
+        {
+            "file": "tweenjs/Ease.js",
+            "line": 174,
+            "itemtype": "method",
+            "name": "cubicInOut",
+            "params": [
+                {
+                    "name": "t",
+                    "description": "",
+                    "type": "Number"
+                }
+            ],
+            "static": 1,
+            "return": {
+                "description": "",
+                "type": "Number"
+            },
+            "class": "Ease",
+            "module": "TweenJS"
+        },
+        {
+            "file": "tweenjs/Ease.js",
+            "line": 182,
+            "itemtype": "method",
+            "name": "quartIn",
+            "params": [
+                {
+                    "name": "t",
+                    "description": "",
+                    "type": "Number"
+                }
+            ],
+            "static": 1,
+            "return": {
+                "description": "",
+                "type": "Number"
+            },
+            "class": "Ease",
+            "module": "TweenJS"
+        },
+        {
+            "file": "tweenjs/Ease.js",
+            "line": 189,
+            "itemtype": "method",
+            "name": "quartOut",
+            "params": [
+                {
+                    "name": "t",
+                    "description": "",
+                    "type": "Number"
+                }
+            ],
+            "static": 1,
+            "return": {
+                "description": "",
+                "type": "Number"
+            },
+            "class": "Ease",
+            "module": "TweenJS"
+        },
+        {
+            "file": "tweenjs/Ease.js",
+            "line": 196,
+            "itemtype": "method",
+            "name": "quartInOut",
+            "params": [
+                {
+                    "name": "t",
+                    "description": "",
+                    "type": "Number"
+                }
+            ],
+            "static": 1,
+            "return": {
+                "description": "",
+                "type": "Number"
+            },
+            "class": "Ease",
+            "module": "TweenJS"
+        },
+        {
+            "file": "tweenjs/Ease.js",
+            "line": 204,
+            "itemtype": "method",
+            "name": "quintIn",
+            "params": [
+                {
+                    "name": "t",
+                    "description": "",
+                    "type": "Number"
+                }
+            ],
+            "static": 1,
+            "return": {
+                "description": "",
+                "type": "Number"
+            },
+            "class": "Ease",
+            "module": "TweenJS"
+        },
+        {
+            "file": "tweenjs/Ease.js",
+            "line": 211,
+            "itemtype": "method",
+            "name": "quintOut",
+            "params": [
+                {
+                    "name": "t",
+                    "description": "",
+                    "type": "Number"
+                }
+            ],
+            "static": 1,
+            "return": {
+                "description": "",
+                "type": "Number"
+            },
+            "class": "Ease",
+            "module": "TweenJS"
+        },
+        {
+            "file": "tweenjs/Ease.js",
+            "line": 218,
+            "itemtype": "method",
+            "name": "quintInOut",
+            "params": [
+                {
+                    "name": "t",
+                    "description": "",
+                    "type": "Number"
+                }
+            ],
+            "static": 1,
+            "return": {
+                "description": "",
+                "type": "Number"
+            },
+            "class": "Ease",
+            "module": "TweenJS"
+        },
+        {
+            "file": "tweenjs/Ease.js",
+            "line": 226,
+            "itemtype": "method",
+            "name": "sineIn",
+            "params": [
+                {
+                    "name": "t",
+                    "description": "",
+                    "type": "Number"
+                }
+            ],
+            "static": 1,
+            "return": {
+                "description": "",
+                "type": "Number"
+            },
+            "class": "Ease",
+            "module": "TweenJS"
+        },
+        {
+            "file": "tweenjs/Ease.js",
+            "line": 236,
+            "itemtype": "method",
+            "name": "sineOut",
+            "params": [
+                {
+                    "name": "t",
+                    "description": "",
+                    "type": "Number"
+                }
+            ],
+            "static": 1,
+            "return": {
+                "description": "",
+                "type": "Number"
+            },
+            "class": "Ease",
+            "module": "TweenJS"
+        },
+        {
+            "file": "tweenjs/Ease.js",
+            "line": 246,
+            "itemtype": "method",
+            "name": "sineInOut",
+            "params": [
+                {
+                    "name": "t",
+                    "description": "",
+                    "type": "Number"
+                }
+            ],
+            "static": 1,
+            "return": {
+                "description": "",
+                "type": "Number"
+            },
+            "class": "Ease",
+            "module": "TweenJS"
+        },
+        {
+            "file": "tweenjs/Ease.js",
+            "line": 256,
+            "description": "Configurable \"back in\" ease.",
+            "itemtype": "method",
+            "name": "getBackIn",
+            "params": [
+                {
+                    "name": "amount",
+                    "description": "The strength of the ease.",
+                    "type": "Number"
+                }
+            ],
+            "static": 1,
+            "return": {
+                "description": "",
+                "type": "Function"
+            },
+            "class": "Ease",
+            "module": "TweenJS"
+        },
+        {
+            "file": "tweenjs/Ease.js",
+            "line": 268,
+            "itemtype": "method",
+            "name": "backIn",
+            "params": [
+                {
+                    "name": "t",
+                    "description": "",
+                    "type": "Number"
+                }
+            ],
+            "static": 1,
+            "return": {
+                "description": "",
+                "type": "Number"
+            },
+            "class": "Ease",
+            "module": "TweenJS"
+        },
+        {
+            "file": "tweenjs/Ease.js",
+            "line": 276,
+            "description": "Configurable \"back out\" ease.",
+            "itemtype": "method",
+            "name": "getBackOut",
+            "params": [
+                {
+                    "name": "amount",
+                    "description": "The strength of the ease.",
+                    "type": "Number"
+                }
+            ],
+            "static": 1,
+            "return": {
+                "description": "",
+                "type": "Function"
+            },
+            "class": "Ease",
+            "module": "TweenJS"
+        },
+        {
+            "file": "tweenjs/Ease.js",
+            "line": 288,
+            "itemtype": "method",
+            "name": "backOut",
+            "params": [
+                {
+                    "name": "t",
+                    "description": "",
+                    "type": "Number"
+                }
+            ],
+            "static": 1,
+            "return": {
+                "description": "",
+                "type": "Number"
+            },
+            "class": "Ease",
+            "module": "TweenJS"
+        },
+        {
+            "file": "tweenjs/Ease.js",
+            "line": 296,
+            "description": "Configurable \"back in out\" ease.",
+            "itemtype": "method",
+            "name": "getBackInOut",
+            "params": [
+                {
+                    "name": "amount",
+                    "description": "The strength of the ease.",
+                    "type": "Number"
+                }
+            ],
+            "static": 1,
+            "return": {
+                "description": "",
+                "type": "Function"
+            },
+            "class": "Ease",
+            "module": "TweenJS"
+        },
+        {
+            "file": "tweenjs/Ease.js",
+            "line": 310,
+            "itemtype": "method",
+            "name": "backInOut",
+            "params": [
+                {
+                    "name": "t",
+                    "description": "",
+                    "type": "Number"
+                }
+            ],
+            "static": 1,
+            "return": {
+                "description": "",
+                "type": "Number"
+            },
+            "class": "Ease",
+            "module": "TweenJS"
+        },
+        {
+            "file": "tweenjs/Ease.js",
+            "line": 318,
+            "itemtype": "method",
+            "name": "circIn",
+            "params": [
+                {
+                    "name": "t",
+                    "description": "",
+                    "type": "Number"
+                }
+            ],
+            "static": 1,
+            "return": {
+                "description": "",
+                "type": "Number"
+            },
+            "class": "Ease",
+            "module": "TweenJS"
+        },
+        {
+            "file": "tweenjs/Ease.js",
+            "line": 328,
+            "itemtype": "method",
+            "name": "circOut",
+            "params": [
+                {
+                    "name": "t",
+                    "description": "",
+                    "type": "Number"
+                }
+            ],
+            "static": 1,
+            "return": {
+                "description": "",
+                "type": "Number"
+            },
+            "class": "Ease",
+            "module": "TweenJS"
+        },
+        {
+            "file": "tweenjs/Ease.js",
+            "line": 338,
+            "itemtype": "method",
+            "name": "circInOut",
+            "params": [
+                {
+                    "name": "t",
+                    "description": "",
+                    "type": "Number"
+                }
+            ],
+            "static": 1,
+            "return": {
+                "description": "",
+                "type": "Number"
+            },
+            "class": "Ease",
+            "module": "TweenJS"
+        },
+        {
+            "file": "tweenjs/Ease.js",
+            "line": 349,
+            "itemtype": "method",
+            "name": "bounceIn",
+            "params": [
+                {
+                    "name": "t",
+                    "description": "",
+                    "type": "Number"
+                }
+            ],
+            "static": 1,
+            "return": {
+                "description": "",
+                "type": "Number"
+            },
+            "class": "Ease",
+            "module": "TweenJS"
+        },
+        {
+            "file": "tweenjs/Ease.js",
+            "line": 359,
+            "itemtype": "method",
+            "name": "bounceOut",
+            "params": [
+                {
+                    "name": "t",
+                    "description": "",
+                    "type": "Number"
+                }
+            ],
+            "static": 1,
+            "return": {
+                "description": "",
+                "type": "Number"
+            },
+            "class": "Ease",
+            "module": "TweenJS"
+        },
+        {
+            "file": "tweenjs/Ease.js",
+            "line": 377,
+            "itemtype": "method",
+            "name": "bounceInOut",
+            "params": [
+                {
+                    "name": "t",
+                    "description": "",
+                    "type": "Number"
+                }
+            ],
+            "static": 1,
+            "return": {
+                "description": "",
+                "type": "Number"
+            },
+            "class": "Ease",
+            "module": "TweenJS"
+        },
+        {
+            "file": "tweenjs/Ease.js",
+            "line": 388,
+            "description": "Configurable elastic ease.",
+            "itemtype": "method",
+            "name": "getElasticIn",
+            "params": [
+                {
+                    "name": "amplitude",
+                    "description": "",
+                    "type": "Number"
+                },
+                {
+                    "name": "period",
+                    "description": "",
+                    "type": "Number"
+                }
+            ],
+            "static": 1,
+            "return": {
+                "description": "",
+                "type": "Function"
+            },
+            "class": "Ease",
+            "module": "TweenJS"
+        },
+        {
+            "file": "tweenjs/Ease.js",
+            "line": 404,
+            "itemtype": "method",
+            "name": "elasticIn",
+            "params": [
+                {
+                    "name": "t",
+                    "description": "",
+                    "type": "Number"
+                }
+            ],
+            "static": 1,
+            "return": {
+                "description": "",
+                "type": "Number"
+            },
+            "class": "Ease",
+            "module": "TweenJS"
+        },
+        {
+            "file": "tweenjs/Ease.js",
+            "line": 412,
+            "description": "Configurable elastic ease.",
+            "itemtype": "method",
+            "name": "getElasticOut",
+            "params": [
+                {
+                    "name": "amplitude",
+                    "description": "",
+                    "type": "Number"
+                },
+                {
+                    "name": "period",
+                    "description": "",
+                    "type": "Number"
+                }
+            ],
+            "static": 1,
+            "return": {
+                "description": "",
+                "type": "Function"
+            },
+            "class": "Ease",
+            "module": "TweenJS"
+        },
+        {
+            "file": "tweenjs/Ease.js",
+            "line": 428,
+            "itemtype": "method",
+            "name": "elasticOut",
+            "params": [
+                {
+                    "name": "t",
+                    "description": "",
+                    "type": "Number"
+                }
+            ],
+            "static": 1,
+            "return": {
+                "description": "",
+                "type": "Number"
+            },
+            "class": "Ease",
+            "module": "TweenJS"
+        },
+        {
+            "file": "tweenjs/Ease.js",
+            "line": 436,
+            "description": "Configurable elastic ease.",
+            "itemtype": "method",
+            "name": "getElasticInOut",
+            "params": [
+                {
+                    "name": "amplitude",
+                    "description": "",
+                    "type": "Number"
+                },
+                {
+                    "name": "period",
+                    "description": "",
+                    "type": "Number"
+                }
+            ],
+            "static": 1,
+            "return": {
+                "description": "",
+                "type": "Function"
+            },
+            "class": "Ease",
+            "module": "TweenJS"
+        },
+        {
+            "file": "tweenjs/Ease.js",
+            "line": 452,
+            "itemtype": "method",
+            "name": "elasticInOut",
+            "params": [
+                {
+                    "name": "t",
+                    "description": "",
+                    "type": "Number"
+                }
+            ],
+            "static": 1,
+            "return": {
+                "description": "",
+                "type": "Number"
+            },
+            "class": "Ease",
+            "module": "TweenJS"
+        },
+        {
+            "file": "tweenjs/MotionGuidePlugin.js",
+            "line": 77,
+            "itemtype": "property",
+            "name": "priority",
+            "access": "protected",
+            "tagname": "",
+            "static": 1,
+            "class": "MotionGuidePlugin",
+            "module": "TweenJS"
+        },
+        {
+            "file": "tweenjs/MotionGuidePlugin.js",
+            "line": 84,
+            "itemtype": "property",
+            "name": "temporary variable storage",
+            "access": "private",
+            "tagname": "",
+            "static": 1,
+            "class": "MotionGuidePlugin",
+            "module": "TweenJS"
+        },
+        {
+            "file": "tweenjs/MotionGuidePlugin.js",
+            "line": 90,
+            "itemtype": "property",
+            "name": "temporary variable storage",
+            "access": "private",
+            "tagname": "",
+            "static": 1,
+            "class": "MotionGuidePlugin",
+            "module": "TweenJS"
+        },
+        {
+            "file": "tweenjs/MotionGuidePlugin.js",
+            "line": 96,
+            "itemtype": "property",
+            "name": "temporary variable storage",
+            "access": "private",
+            "tagname": "",
+            "static": 1,
+            "class": "MotionGuidePlugin",
+            "module": "TweenJS"
+        },
+        {
+            "file": "tweenjs/MotionGuidePlugin.js",
+            "line": 102,
+            "itemtype": "property",
+            "name": "temporary variable storage",
+            "access": "private",
+            "tagname": "",
+            "static": 1,
+            "class": "MotionGuidePlugin",
+            "module": "TweenJS"
+        },
+        {
+            "file": "tweenjs/MotionGuidePlugin.js",
+            "line": 111,
+            "description": "Installs this plugin for use with TweenJS. Call this once after TweenJS is loaded to enable this plugin.",
+            "itemtype": "method",
+            "name": "install",
+            "static": 1,
+            "class": "MotionGuidePlugin",
+            "module": "TweenJS"
+        },
+        {
+            "file": "tweenjs/MotionGuidePlugin.js",
+            "line": 121,
+            "itemtype": "method",
+            "name": "init",
+            "access": "protected",
+            "tagname": "",
+            "static": 1,
+            "class": "MotionGuidePlugin",
+            "module": "TweenJS"
+        },
+        {
+            "file": "tweenjs/MotionGuidePlugin.js",
+            "line": 136,
+            "itemtype": "method",
+            "name": "step",
+            "access": "protected",
+            "tagname": "",
+            "static": 1,
+            "class": "MotionGuidePlugin",
+            "module": "TweenJS"
+        },
+        {
+            "file": "tweenjs/MotionGuidePlugin.js",
+            "line": 209,
+            "itemtype": "method",
+            "name": "testRotData",
+            "access": "protected",
+            "tagname": "",
+            "static": 1,
+            "class": "MotionGuidePlugin",
+            "module": "TweenJS"
+        },
+        {
+            "file": "tweenjs/MotionGuidePlugin.js",
+            "line": 254,
+            "itemtype": "method",
+            "name": "tween",
+            "access": "protected",
+            "tagname": "",
+            "static": 1,
+            "class": "MotionGuidePlugin",
+            "module": "TweenJS"
+        },
+        {
+            "file": "tweenjs/MotionGuidePlugin.js",
+            "line": 279,
+            "description": "Determine the appropriate x/y/rotation information about a path for a given ratio along the path.\nAssumes a path object with all optional parameters specified.",
+            "params": [
+                {
+                    "name": "data",
+                    "description": "Data object you would pass to the \"guide:\" property in a Tween"
+                },
+                {
+                    "name": "ratio",
+                    "description": "0-1 Distance along path, values outside 0-1 are \"best guess\""
+                },
+                {
+                    "name": "target",
+                    "description": "Object to copy the results onto, will use a new object if not supplied."
+                }
+            ],
+            "return": {
+                "description": "The target object or a new object w/ the tweened properties",
+                "type": "Object"
+            },
+            "static": 1,
+            "class": "MotionGuidePlugin",
+            "module": "TweenJS"
+        },
+        {
+            "file": "tweenjs/SamplePlugin.js",
+            "line": 53,
+            "description": "Used by TweenJS to determine when to call this plugin. Plugins with higher priority have their methods called\nbefore plugins with lower priority. The priority value can be any positive or negative number.",
+            "itemtype": "property",
+            "name": "priority",
+            "static": 1,
+            "class": "SamplePlugin",
+            "module": "TweenJS"
+        },
+        {
+            "file": "tweenjs/SamplePlugin.js",
+            "line": 61,
+            "description": "Installs this plugin for use with TweenJS, and registers for a list of properties that this plugin will operate\nwith. Call this once after TweenJS is loaded to enable this plugin.",
+            "itemtype": "method",
+            "name": "install",
+            "static": 1,
+            "class": "SamplePlugin",
+            "module": "TweenJS"
+        },
+        {
+            "file": "tweenjs/SamplePlugin.js",
+            "line": 72,
+            "description": "Called by TweenJS when a new tween property initializes that this plugin is registered for. Generally, the call\nto <code>Plugin.init</code> will be immediately followed by a call to <code>Plugin.step</code>.",
+            "itemtype": "method",
+            "name": "init",
+            "params": [
+                {
+                    "name": "tween",
+                    "description": "The related tween instance.",
+                    "type": "Tween"
+                },
+                {
+                    "name": "prop",
+                    "description": "The name of the property that is being initialized.",
+                    "type": "String"
+                },
+                {
+                    "name": "value",
+                    "description": "The current value of the property on the tween's target.",
+                    "type": "Any"
+                }
+            ],
+            "return": {
+                "description": "The starting tween value for the property. In most cases, you would simply\nreturn the value parameter, but some plugins may need to modify the starting value.",
+                "type": "Any"
+            },
+            "static": 1,
+            "class": "SamplePlugin",
+            "module": "TweenJS"
+        },
+        {
+            "file": "tweenjs/SamplePlugin.js",
+            "line": 90,
+            "description": "Called by TweenJS when a new step is added to a tween that includes a property the plugin is registered for (ie.\na new \"to\" action is added to a tween).",
+            "itemtype": "method",
+            "name": "init",
+            "params": [
+                {
+                    "name": "tween",
+                    "description": "The related tween instance.",
+                    "type": "Tween"
+                },
+                {
+                    "name": "prop",
+                    "description": "The name of the property being tweened.",
+                    "type": "String"
+                },
+                {
+                    "name": "startValue",
+                    "description": "The value of the property at the beginning of the step. This will\nbe the same as the init value if this is the first step, or the same as the\nendValue of the previous step if not.",
+                    "type": "Any"
+                },
+                {
+                    "name": "injectProps",
+                    "description": "A generic object to which the plugin can append other properties which should be updated on this step.",
+                    "type": "Object"
+                },
+                {
+                    "name": "endValue",
+                    "description": "The value of the property at the end of the step.",
+                    "type": "Any"
+                }
+            ],
+            "static": 1,
+            "class": "SamplePlugin",
+            "module": "TweenJS"
+        },
+        {
+            "file": "tweenjs/SamplePlugin.js",
+            "line": 107,
+            "description": "Called when a tween property advances that this plugin is registered for.",
+            "itemtype": "method",
+            "name": "tween",
+            "params": [
+                {
+                    "name": "tween",
+                    "description": "The related tween instance.",
+                    "type": "Tween"
+                },
+                {
+                    "name": "prop",
+                    "description": "The name of the property being tweened.",
+                    "type": "String"
+                },
+                {
+                    "name": "value",
+                    "description": "The current tweened value of the property, as calculated by TweenJS.",
+                    "type": "Any"
+                },
+                {
+                    "name": "startValues",
+                    "description": "A hash of all of the property values at the start of the current\nstep. You could access the start value of the current property using\nstartValues[prop].",
+                    "type": "Object"
+                },
+                {
+                    "name": "endValues",
+                    "description": "A hash of all of the property values at the end of the current\nstep.",
+                    "type": "Object"
+                },
+                {
+                    "name": "ratio",
+                    "description": "A value indicating the eased progress through the current step. This\nnumber is generally between 0 and 1, though some eases will generate values outside\nthis range.",
+                    "type": "Number"
+                },
+                {
+                    "name": "wait",
+                    "description": "Indicates whether the current step is a \"wait\" step.",
+                    "type": "Boolean"
+                },
+                {
+                    "name": "end",
+                    "description": "Indicates that the tween has reached the end.",
+                    "type": "Boolean"
+                }
+            ],
+            "return": {
+                "description": "Return the value that should be assigned to the target property. For example\nreturning <code>Math.round(value)</code> would assign the default calculated value\nas an integer. Returning Tween.IGNORE will prevent Tween from assigning a value to\nthe target property.",
+                "type": "Any"
+            },
+            "static": 1,
+            "class": "SamplePlugin",
+            "module": "TweenJS"
+        },
+        {
+            "file": "tweenjs/Timeline.js",
+            "line": 67,
+            "description": "Causes this timeline to continue playing when a global pause is active.",
+            "itemtype": "property",
+            "name": "ignoreGlobalPause",
+            "type": "Boolean",
+            "class": "Timeline",
+            "module": "TweenJS"
+        },
+        {
+            "file": "tweenjs/Timeline.js",
+            "line": 74,
+            "description": "The total duration of this timeline in milliseconds (or ticks if `useTicks `is `true`). This value is usually\nautomatically updated as you modify the timeline. See {{#crossLink \"Timeline/updateDuration\"}}{{/crossLink}}\nfor more information.",
+            "itemtype": "property",
+            "name": "duration",
+            "type": "Number",
+            "default": "0",
+            "readonly": "",
+            "class": "Timeline",
+            "module": "TweenJS"
+        },
+        {
+            "file": "tweenjs/Timeline.js",
+            "line": 85,
+            "description": "If true, the timeline will loop when it reaches the end. Can be set via the props param.",
+            "itemtype": "property",
+            "name": "loop",
+            "type": "Boolean",
+            "class": "Timeline",
+            "module": "TweenJS"
+        },
+        {
+            "file": "tweenjs/Timeline.js",
+            "line": 92,
+            "description": "The current normalized position of the timeline. This will always be a value between 0 and\n{{#crossLink \"Timeline/duration:property\"}}{{/crossLink}}.\nChanging this property directly will have no effect.",
+            "itemtype": "property",
+            "name": "position",
+            "type": "Object",
+            "readonly": "",
+            "class": "Timeline",
+            "module": "TweenJS"
+        },
+        {
+            "file": "tweenjs/Timeline.js",
+            "line": 103,
+            "itemtype": "property",
+            "name": "_paused",
+            "type": "Boolean",
+            "access": "protected",
+            "tagname": "",
+            "class": "Timeline",
+            "module": "TweenJS"
+        },
+        {
+            "file": "tweenjs/Timeline.js",
+            "line": 110,
+            "itemtype": "property",
+            "name": "_tweens",
+            "type": "Array[Tween]",
+            "access": "protected",
+            "tagname": "",
+            "class": "Timeline",
+            "module": "TweenJS"
+        },
+        {
+            "file": "tweenjs/Timeline.js",
+            "line": 117,
+            "itemtype": "property",
+            "name": "_labels",
+            "type": "Object",
+            "access": "protected",
+            "tagname": "",
+            "class": "Timeline",
+            "module": "TweenJS"
+        },
+        {
+            "file": "tweenjs/Timeline.js",
+            "line": 124,
+            "itemtype": "property",
+            "name": "_labelList",
+            "type": "Array[Object]",
+            "access": "protected",
+            "tagname": "",
+            "class": "Timeline",
+            "module": "TweenJS"
+        },
+        {
+            "file": "tweenjs/Timeline.js",
+            "line": 131,
+            "itemtype": "property",
+            "name": "_prevPosition",
+            "type": "Number",
+            "default": "0",
+            "access": "protected",
+            "tagname": "",
+            "class": "Timeline",
+            "module": "TweenJS"
+        },
+        {
+            "file": "tweenjs/Timeline.js",
+            "line": 139,
+            "itemtype": "property",
+            "name": "_prevPos",
+            "type": "Number",
+            "default": "-1",
+            "access": "protected",
+            "tagname": "",
+            "class": "Timeline",
+            "module": "TweenJS"
+        },
+        {
+            "file": "tweenjs/Timeline.js",
+            "line": 147,
+            "itemtype": "property",
+            "name": "_useTicks",
+            "type": "Boolean",
+            "default": "false",
+            "access": "protected",
+            "tagname": "",
+            "class": "Timeline",
+            "module": "TweenJS"
+        },
+        {
+            "file": "tweenjs/Timeline.js",
+            "line": 155,
+            "description": "Indicates whether the timeline is currently registered with Tween.",
+            "itemtype": "property",
+            "name": "_registered",
+            "type": "{boolean}",
+            "default": "false",
+            "access": "protected",
+            "tagname": "",
+            "class": "Timeline",
+            "module": "TweenJS"
+        },
+        {
+            "file": "tweenjs/Timeline.js",
+            "line": 186,
+            "description": "Called whenever the timeline's position changes.",
+            "itemtype": "event",
+            "name": "change",
+            "since": "0.5.0",
+            "class": "Timeline",
+            "module": "TweenJS"
+        },
+        {
+            "file": "tweenjs/Timeline.js",
+            "line": 194,
+            "description": "Adds one or more tweens (or timelines) to this timeline. The tweens will be paused (to remove them from the\nnormal ticking system) and managed by this timeline. Adding a tween to multiple timelines will result in\nunexpected behaviour.",
+            "itemtype": "method",
+            "name": "addTween",
+            "params": [
+                {
+                    "name": "...tween",
+                    "description": "The tween(s) to add. Accepts multiple arguments.",
+                    "type": "Tween"
+                }
+            ],
+            "return": {
+                "description": "The first tween that was passed in.",
+                "type": "Tween"
+            },
+            "class": "Timeline",
+            "module": "TweenJS"
+        },
+        {
+            "file": "tweenjs/Timeline.js",
+            "line": 218,
+            "description": "Removes one or more tweens from this timeline.",
+            "itemtype": "method",
+            "name": "removeTween",
+            "params": [
+                {
+                    "name": "...tween",
+                    "description": "The tween(s) to remove. Accepts multiple arguments.",
+                    "type": "Tween"
+                }
+            ],
+            "return": {
+                "description": "Boolean Returns `true` if all of the tweens were successfully removed."
+            },
+            "class": "Timeline",
+            "module": "TweenJS"
+        },
+        {
+            "file": "tweenjs/Timeline.js",
+            "line": 244,
+            "description": "Adds a label that can be used with {{#crossLink \"Timeline/gotoAndPlay\"}}{{/crossLink}}/{{#crossLink \"Timeline/gotoAndStop\"}}{{/crossLink}}.",
+            "itemtype": "method",
+            "name": "addLabel",
+            "params": [
+                {
+                    "name": "label",
+                    "description": "The label name.",
+                    "type": "String"
+                },
+                {
+                    "name": "position",
+                    "description": "The position this label represents.",
+                    "type": "Number"
+                }
+            ],
+            "class": "Timeline",
+            "module": "TweenJS"
+        },
+        {
+            "file": "tweenjs/Timeline.js",
+            "line": 259,
+            "description": "Defines labels for use with gotoAndPlay/Stop. Overwrites any previously set labels.",
+            "itemtype": "method",
+            "name": "setLabels",
+            "params": [
+                {
+                    "name": "o",
+                    "description": "An object defining labels for using {{#crossLink \"Timeline/gotoAndPlay\"}}{{/crossLink}}/{{#crossLink \"Timeline/gotoAndStop\"}}{{/crossLink}}\nin the form `{labelName:time}` where time is in milliseconds (or ticks if `useTicks` is `true`).",
+                    "type": "Object"
+                }
+            ],
+            "class": "Timeline",
+            "module": "TweenJS"
+        },
+        {
+            "file": "tweenjs/Timeline.js",
+            "line": 269,
+            "description": "Returns a sorted list of the labels defined on this timeline.",
+            "itemtype": "method",
+            "name": "getLabels",
+            "return": {
+                "description": "A sorted array of objects with label and position properties.",
+                "type": "Array[Object]"
+            },
+            "class": "Timeline",
+            "module": "TweenJS"
+        },
+        {
+            "file": "tweenjs/Timeline.js",
+            "line": 287,
+            "description": "Returns the name of the label on or immediately before the current position. For example, given a timeline with\ntwo labels, \"first\" on frame index 4, and \"second\" on frame 8, getCurrentLabel would return:\n<UL>\n\t\t<LI>null if the current position is 2.</LI>\n\t\t<LI>\"first\" if the current position is 4.</LI>\n\t\t<LI>\"first\" if the current position is 7.</LI>\n\t\t<LI>\"second\" if the current position is 15.</LI>\n</UL>",
+            "itemtype": "method",
+            "name": "getCurrentLabel",
+            "return": {
+                "description": "The name of the current label or null if there is no label",
+                "type": "String"
+            },
+            "class": "Timeline",
+            "module": "TweenJS"
+        },
+        {
+            "file": "tweenjs/Timeline.js",
+            "line": 310,
+            "description": "Unpauses this timeline and jumps to the specified position or label.",
+            "itemtype": "method",
+            "name": "gotoAndPlay",
+            "params": [
+                {
+                    "name": "positionOrLabel",
+                    "description": "The position in milliseconds (or ticks if `useTicks` is `true`)\nor label to jump to.",
+                    "type": "String|Number"
+                }
+            ],
+            "class": "Timeline",
+            "module": "TweenJS"
+        },
+        {
+            "file": "tweenjs/Timeline.js",
+            "line": 321,
+            "description": "Pauses this timeline and jumps to the specified position or label.",
+            "itemtype": "method",
+            "name": "gotoAndStop",
+            "params": [
+                {
+                    "name": "positionOrLabel",
+                    "description": "The position in milliseconds (or ticks if `useTicks` is `true`) or label\nto jump to.",
+                    "type": "String|Number"
+                }
+            ],
+            "class": "Timeline",
+            "module": "TweenJS"
+        },
+        {
+            "file": "tweenjs/Timeline.js",
+            "line": 332,
+            "description": "Advances the timeline to the specified position.",
+            "itemtype": "method",
+            "name": "setPosition",
+            "params": [
+                {
+                    "name": "value",
+                    "description": "The position to seek to in milliseconds (or ticks if `useTicks` is `true`).",
+                    "type": "Number"
+                },
+                {
+                    "name": "actionsMode",
+                    "description": "parameter specifying how actions are handled. See the Tween {{#crossLink \"Tween/setPosition\"}}{{/crossLink}}\nmethod for more details.",
+                    "type": "Number",
+                    "optional": true
+                }
+            ],
+            "return": {
+                "description": "Returns `true` if the timeline is complete (ie. the full timeline has run & {{#crossLink \"Timeline/loop:property\"}}{{/crossLink}}\nis `false`).",
+                "type": "Boolean"
+            },
+            "class": "Timeline",
+            "module": "TweenJS"
+        },
+        {
+            "file": "tweenjs/Timeline.js",
+            "line": 356,
+            "description": "Pauses or plays this timeline.",
+            "itemtype": "method",
+            "name": "setPaused",
+            "params": [
+                {
+                    "name": "value",
+                    "description": "Indicates whether the tween should be paused (`true`) or played (`false`).",
+                    "type": "Boolean"
+                }
+            ],
+            "class": "Timeline",
+            "module": "TweenJS"
+        },
+        {
+            "file": "tweenjs/Timeline.js",
+            "line": 366,
+            "description": "Recalculates the duration of the timeline. The duration is automatically updated when tweens are added or removed,\nbut this method is useful if you modify a tween after it was added to the timeline.",
+            "itemtype": "method",
+            "name": "updateDuration",
+            "class": "Timeline",
+            "module": "TweenJS"
+        },
+        {
+            "file": "tweenjs/Timeline.js",
+            "line": 379,
+            "description": "Advances this timeline by the specified amount of time in milliseconds (or ticks if `useTicks` is `true`).\nThis is normally called automatically by the Tween engine (via the {{#crossLink \"Tween/tick:event\"}}{{/crossLink}}\nevent), but is exposed for advanced uses.",
+            "itemtype": "method",
+            "name": "tick",
+            "params": [
+                {
+                    "name": "delta",
+                    "description": "The time to advance in milliseconds (or ticks if useTicks is true).",
+                    "type": "Number"
+                }
+            ],
+            "class": "Timeline",
+            "module": "TweenJS"
+        },
+        {
+            "file": "tweenjs/Timeline.js",
+            "line": 390,
+            "description": "If a numeric position is passed, it is returned unchanged. If a string is passed, the position of the\ncorresponding frame label will be returned, or `null` if a matching label is not defined.",
+            "itemtype": "method",
+            "name": "resolve",
+            "params": [
+                {
+                    "name": "positionOrLabel",
+                    "description": "A numeric position value or label string.",
+                    "type": "String|Number"
+                }
+            ],
+            "class": "Timeline",
+            "module": "TweenJS"
+        },
+        {
+            "file": "tweenjs/Timeline.js",
+            "line": 402,
+            "description": "Returns a string representation of this object.",
+            "itemtype": "method",
+            "name": "toString",
+            "return": {
+                "description": "a string representation of the instance.",
+                "type": "String"
+            },
+            "class": "Timeline",
+            "module": "TweenJS"
+        },
+        {
+            "file": "tweenjs/Timeline.js",
+            "line": 411,
+            "itemtype": "method",
+            "name": "clone",
+            "access": "protected",
+            "tagname": "",
+            "class": "Timeline",
+            "module": "TweenJS"
+        },
+        {
+            "file": "tweenjs/Timeline.js",
+            "line": 420,
+            "itemtype": "method",
+            "name": "_goto",
+            "params": [
+                {
+                    "name": "positionOrLabel",
+                    "description": "",
+                    "type": "String | Number"
+                }
+            ],
+            "access": "protected",
+            "tagname": "",
+            "class": "Timeline",
+            "module": "TweenJS"
+        },
+        {
+            "file": "tweenjs/Timeline.js",
+            "line": 430,
+            "itemtype": "method",
+            "name": "_calcPosition",
+            "params": [
+                {
+                    "name": "value",
+                    "description": "",
+                    "type": "Number"
+                }
+            ],
+            "return": {
+                "description": "",
+                "type": "Number"
+            },
+            "access": "protected",
+            "tagname": "",
+            "class": "Timeline",
+            "module": "TweenJS"
+        },
+        {
+            "file": "tweenjs/Tween.js",
+            "line": 129,
+            "description": "Causes this tween to continue playing when a global pause is active. For example, if TweenJS is using {{#crossLink \"Ticker\"}}{{/crossLink}},\nthen setting this to true (the default) will cause this tween to be paused when <code>Ticker.setPaused(true)</code>\nis called. See the Tween {{#crossLink \"Tween/tick\"}}{{/crossLink}} method for more info. Can be set via the props\nparameter.",
+            "itemtype": "property",
+            "name": "ignoreGlobalPause",
+            "type": "Boolean",
+            "default": "false",
+            "class": "Tween",
+            "module": "TweenJS"
+        },
+        {
+            "file": "tweenjs/Tween.js",
+            "line": 140,
+            "description": "If true, the tween will loop when it reaches the end. Can be set via the props param.",
+            "itemtype": "property",
+            "name": "loop",
+            "type": "{Boolean}",
+            "default": "false",
+            "class": "Tween",
+            "module": "TweenJS"
+        },
+        {
+            "file": "tweenjs/Tween.js",
+            "line": 148,
+            "description": "Specifies the total duration of this tween in milliseconds (or ticks if useTicks is true).\nThis value is automatically updated as you modify the tween. Changing it directly could result in unexpected\nbehaviour.",
+            "itemtype": "property",
+            "name": "duration",
+            "type": "{Number}",
+            "default": "0",
+            "readonly": "",
+            "class": "Tween",
+            "module": "TweenJS"
+        },
+        {
+            "file": "tweenjs/Tween.js",
+            "line": 159,
+            "description": "Allows you to specify data that will be used by installed plugins. Each plugin uses this differently, but in general\nyou specify data by setting it to a property of pluginData with the same name as the plugin class.",
+            "example": [
+                "\n\tmyTween.pluginData.PluginClassName = data;\n<br/>\nAlso, most plugins support a property to enable or disable them. This is typically the plugin class name followed by \"_enabled\".<br/>",
+                "\n\tmyTween.pluginData.PluginClassName_enabled = false;<br/>\n<br/>\nSome plugins also store instance data in this object, usually in a property named _PluginClassName.\nSee the documentation for individual plugins for more details."
+            ],
+            "itemtype": "property",
+            "name": "pluginData",
+            "type": "{Object}",
+            "class": "Tween",
+            "module": "TweenJS"
+        },
+        {
+            "file": "tweenjs/Tween.js",
+            "line": 176,
+            "description": "The target of this tween. This is the object on which the tweened properties will be changed. Changing\nthis property after the tween is created will not have any effect.",
+            "itemtype": "property",
+            "name": "target",
+            "type": "{Object}",
+            "readonly": "",
+            "class": "Tween",
+            "module": "TweenJS"
+        },
+        {
+            "file": "tweenjs/Tween.js",
+            "line": 185,
+            "description": "The current normalized position of the tween. This will always be a value between 0 and duration.\nChanging this property directly will have no effect.",
+            "itemtype": "property",
+            "name": "position",
+            "type": "{Object}",
+            "readonly": "",
+            "class": "Tween",
+            "module": "TweenJS"
+        },
+        {
+            "file": "tweenjs/Tween.js",
+            "line": 194,
+            "description": "Indicates the tween's current position is within a passive wait.",
+            "itemtype": "property",
+            "name": "passive",
+            "type": "{Boolean}",
+            "default": "false",
+            "readonly": "",
+            "class": "Tween",
+            "module": "TweenJS"
+        },
+        {
+            "file": "tweenjs/Tween.js",
+            "line": 204,
+            "itemtype": "property",
+            "name": "_paused",
+            "type": "{Boolean}",
+            "default": "false",
+            "access": "protected",
+            "tagname": "",
+            "class": "Tween",
+            "module": "TweenJS"
+        },
+        {
+            "file": "tweenjs/Tween.js",
+            "line": 212,
+            "itemtype": "property",
+            "name": "_curQueueProps",
+            "type": "{Object}",
+            "access": "protected",
+            "tagname": "",
+            "class": "Tween",
+            "module": "TweenJS"
+        },
+        {
+            "file": "tweenjs/Tween.js",
+            "line": 219,
+            "itemtype": "property",
+            "name": "_initQueueProps",
+            "type": "{Object}",
+            "access": "protected",
+            "tagname": "",
+            "class": "Tween",
+            "module": "TweenJS"
+        },
+        {
+            "file": "tweenjs/Tween.js",
+            "line": 226,
+            "itemtype": "property",
+            "name": "_steps",
+            "type": "{Array}",
+            "access": "protected",
+            "tagname": "",
+            "class": "Tween",
+            "module": "TweenJS"
+        },
+        {
+            "file": "tweenjs/Tween.js",
+            "line": 233,
+            "itemtype": "property",
+            "name": "_actions",
+            "type": "{Array}",
+            "access": "protected",
+            "tagname": "",
+            "class": "Tween",
+            "module": "TweenJS"
+        },
+        {
+            "file": "tweenjs/Tween.js",
+            "line": 240,
+            "description": "Raw position.",
+            "itemtype": "property",
+            "name": "_prevPosition",
+            "type": "{Number}",
+            "default": "0",
+            "access": "protected",
+            "tagname": "",
+            "class": "Tween",
+            "module": "TweenJS"
+        },
+        {
+            "file": "tweenjs/Tween.js",
+            "line": 249,
+            "description": "The position within the current step.",
+            "itemtype": "property",
+            "name": "_stepPosition",
+            "type": "{Number}",
+            "default": "0",
+            "access": "protected",
+            "tagname": "",
+            "class": "Tween",
+            "module": "TweenJS"
+        },
+        {
+            "file": "tweenjs/Tween.js",
+            "line": 258,
+            "description": "Normalized position.",
+            "itemtype": "property",
+            "name": "_prevPos",
+            "type": "{Number}",
+            "default": "-1",
+            "access": "protected",
+            "tagname": "",
+            "class": "Tween",
+            "module": "TweenJS"
+        },
+        {
+            "file": "tweenjs/Tween.js",
+            "line": 267,
+            "itemtype": "property",
+            "name": "_target",
+            "type": "{Object}",
+            "access": "protected",
+            "tagname": "",
+            "class": "Tween",
+            "module": "TweenJS"
+        },
+        {
+            "file": "tweenjs/Tween.js",
+            "line": 274,
+            "itemtype": "property",
+            "name": "_useTicks",
+            "type": "{Boolean}",
+            "default": "false",
+            "access": "protected",
+            "tagname": "",
+            "class": "Tween",
+            "module": "TweenJS"
+        },
+        {
+            "file": "tweenjs/Tween.js",
+            "line": 282,
+            "itemtype": "property",
+            "name": "_inited",
+            "type": "{boolean}",
+            "default": "false",
+            "access": "protected",
+            "tagname": "",
+            "class": "Tween",
+            "module": "TweenJS"
+        },
+        {
+            "file": "tweenjs/Tween.js",
+            "line": 290,
+            "description": "Indicates whether the tween is currently registered with Tween.",
+            "itemtype": "property",
+            "name": "_registered",
+            "type": "{boolean}",
+            "default": "false",
+            "access": "protected",
+            "tagname": "",
+            "class": "Tween",
+            "module": "TweenJS"
+        },
+        {
+            "file": "tweenjs/Tween.js",
+            "line": 320,
+            "description": "Constant defining the none actionsMode for use with setPosition.",
+            "itemtype": "property",
+            "name": "NONE",
+            "type": "Number",
+            "default": "0",
+            "static": 1,
+            "class": "Tween",
+            "module": "TweenJS"
+        },
+        {
+            "file": "tweenjs/Tween.js",
+            "line": 329,
+            "description": "Constant defining the loop actionsMode for use with setPosition.",
+            "itemtype": "property",
+            "name": "LOOP",
+            "type": "Number",
+            "default": "1",
+            "static": 1,
+            "class": "Tween",
+            "module": "TweenJS"
+        },
+        {
+            "file": "tweenjs/Tween.js",
+            "line": 338,
+            "description": "Constant defining the reverse actionsMode for use with setPosition.",
+            "itemtype": "property",
+            "name": "REVERSE",
+            "type": "Number",
+            "default": "2",
+            "static": 1,
+            "class": "Tween",
+            "module": "TweenJS"
+        },
+        {
+            "file": "tweenjs/Tween.js",
+            "line": 347,
+            "description": "Constant returned by plugins to tell the tween not to use default assignment.",
+            "itemtype": "property",
+            "name": "IGNORE",
+            "type": "Object",
+            "static": 1,
+            "class": "Tween",
+            "module": "TweenJS"
+        },
+        {
+            "file": "tweenjs/Tween.js",
+            "line": 355,
+            "itemtype": "property",
+            "name": "_listeners",
+            "type": "Array[Tween]",
+            "static": 1,
+            "access": "protected",
+            "tagname": "",
+            "class": "Tween",
+            "module": "TweenJS"
+        },
+        {
+            "file": "tweenjs/Tween.js",
+            "line": 363,
+            "itemtype": "property",
+            "name": "_plugins",
+            "type": "Object",
+            "static": 1,
+            "access": "protected",
+            "tagname": "",
+            "class": "Tween",
+            "module": "TweenJS"
+        },
+        {
+            "file": "tweenjs/Tween.js",
+            "line": 373,
+            "description": "Returns a new tween instance. This is functionally identical to using \"new Tween(...)\", but looks cleaner\nwith the chained syntax of TweenJS.\n<h4>Example</h4>\n\n\t\tvar tween = createjs.Tween.get(target);",
+            "itemtype": "method",
+            "name": "get",
+            "params": [
+                {
+                    "name": "target",
+                    "description": "The target object that will have its properties tweened.",
+                    "type": "Object"
+                },
+                {
+                    "name": "props",
+                    "description": "The configuration properties to apply to this tween instance (ex. `{loop:true, paused:true}`).\nAll properties default to `false`. Supported props are:\n<UL>\n   <LI> loop: sets the loop property on this tween.</LI>\n   <LI> useTicks: uses ticks for all durations instead of milliseconds.</LI>\n   <LI> ignoreGlobalPause: sets the {{#crossLink \"Tween/ignoreGlobalPause:property\"}}{{/crossLink}} property on\n   this tween.</LI>\n   <LI> override: if true, `createjs.Tween.removeTweens(target)` will be called to remove any other tweens with\n   the same target.\n   <LI> paused: indicates whether to start the tween paused.</LI>\n   <LI> position: indicates the initial position for this tween.</LI>\n   <LI> onChange: specifies a listener for the {{#crossLink \"Tween/change:event\"}}{{/crossLink}} event.</LI>\n</UL>",
+                    "type": "Object",
+                    "optional": true
+                },
+                {
+                    "name": "pluginData",
+                    "description": "An object containing data for use by installed plugins. See individual plugins'\ndocumentation for details.",
+                    "type": "Object",
+                    "optional": true
+                },
+                {
+                    "name": "override",
+                    "description": "If true, any previous tweens on the same target will be removed. This is the\nsame as calling `Tween.removeTweens(target)`.",
+                    "type": "Boolean",
+                    "optional": true,
+                    "optdefault": "false"
+                }
+            ],
+            "return": {
+                "description": "A reference to the created tween. Additional chained tweens, method calls, or callbacks can be\napplied to the returned tween instance.",
+                "type": "Tween"
+            },
+            "static": 1,
+            "class": "Tween",
+            "module": "TweenJS"
+        },
+        {
+            "file": "tweenjs/Tween.js",
+            "line": 408,
+            "description": "Advances all tweens. This typically uses the {{#crossLink \"Ticker\"}}{{/crossLink}} class, but you can call it\nmanually if you prefer to use your own \"heartbeat\" implementation.",
+            "itemtype": "method",
+            "name": "tick",
+            "params": [
+                {
+                    "name": "delta",
+                    "description": "The change in time in milliseconds since the last tick. Required unless all tweens have\n`useTicks` set to true.",
+                    "type": "Number"
+                },
+                {
+                    "name": "paused",
+                    "description": "Indicates whether a global pause is in effect. Tweens with {{#crossLink \"Tween/ignoreGlobalPause:property\"}}{{/crossLink}}\nwill ignore this, but all others will pause if this is `true`.",
+                    "type": "Boolean"
+                }
+            ],
+            "static": 1,
+            "class": "Tween",
+            "module": "TweenJS"
+        },
+        {
+            "file": "tweenjs/Tween.js",
+            "line": 427,
+            "description": "Handle events that result from Tween being used as an event handler. This is included to allow Tween to handle\n{{#crossLink \"Ticker/tick:event\"}}{{/crossLink}} events from the createjs {{#crossLink \"Ticker\"}}{{/crossLink}}.\nNo other events are handled in Tween.",
+            "itemtype": "method",
+            "name": "handleEvent",
+            "params": [
+                {
+                    "name": "event",
+                    "description": "An event object passed in by the {{#crossLink \"EventDispatcher\"}}{{/crossLink}}. Will\nusually be of type \"tick\".",
+                    "type": "Object"
+                }
+            ],
+            "access": "private",
+            "tagname": "",
+            "static": 1,
+            "since": "0.4.2",
+            "class": "Tween",
+            "module": "TweenJS"
+        },
+        {
+            "file": "tweenjs/Tween.js",
+            "line": 444,
+            "description": "Removes all existing tweens for a target. This is called automatically by new tweens if the `override`\nproperty is `true`.",
+            "itemtype": "method",
+            "name": "removeTweens",
+            "params": [
+                {
+                    "name": "target",
+                    "description": "The target object to remove existing tweens from.",
+                    "type": "Object"
+                }
+            ],
+            "static": 1,
+            "class": "Tween",
+            "module": "TweenJS"
+        },
+        {
+            "file": "tweenjs/Tween.js",
+            "line": 464,
+            "description": "Stop and remove all existing tweens.",
+            "itemtype": "method",
+            "name": "removeAllTweens",
+            "static": 1,
+            "since": "0.4.1",
+            "class": "Tween",
+            "module": "TweenJS"
+        },
+        {
+            "file": "tweenjs/Tween.js",
+            "line": 480,
+            "description": "Indicates whether there are any active tweens (and how many) on the target object (if specified) or in general.",
+            "itemtype": "method",
+            "name": "hasActiveTweens",
+            "params": [
+                {
+                    "name": "target",
+                    "description": "The target to check for active tweens. If not specified, the return value will indicate\nif there are any active tweens on any target.",
+                    "type": "Object",
+                    "optional": true
+                }
+            ],
+            "return": {
+                "description": "If there are active tweens.",
+                "type": "Boolean"
+            },
+            "static": 1,
+            "class": "Tween",
+            "module": "TweenJS"
+        },
+        {
+            "file": "tweenjs/Tween.js",
+            "line": 493,
+            "description": "Installs a plugin, which can modify how certain properties are handled when tweened. See the {{#crossLink \"CSSPlugin\"}}{{/crossLink}}\nfor an example of how to write TweenJS plugins.",
+            "itemtype": "method",
+            "name": "installPlugin",
+            "static": 1,
+            "params": [
+                {
+                    "name": "plugin",
+                    "description": "The plugin class to install",
+                    "type": "Object"
+                },
+                {
+                    "name": "properties",
+                    "description": "An array of properties that the plugin will handle.",
+                    "type": "Array"
+                }
+            ],
+            "class": "Tween",
+            "module": "TweenJS"
+        },
+        {
+            "file": "tweenjs/Tween.js",
+            "line": 517,
+            "description": "Registers or unregisters a tween with the ticking system.",
+            "itemtype": "method",
+            "name": "_register",
+            "params": [
+                {
+                    "name": "tween",
+                    "description": "The tween instance to register or unregister.",
+                    "type": "Tween"
+                },
+                {
+                    "name": "value",
+                    "description": "If `true`, the tween is registered. If `false` the tween is unregistered.",
+                    "type": "Boolean"
+                }
+            ],
+            "static": 1,
+            "access": "protected",
+            "tagname": "",
+            "class": "Tween",
+            "module": "TweenJS"
+        },
+        {
+            "file": "tweenjs/Tween.js",
+            "line": 548,
+            "description": "Called whenever the tween's position changes.",
+            "itemtype": "event",
+            "name": "change",
+            "since": "0.4.0",
+            "class": "Tween",
+            "module": "TweenJS"
+        },
+        {
+            "file": "tweenjs/Tween.js",
+            "line": 556,
+            "description": "Queues a wait (essentially an empty tween).\n<h4>Example</h4>\n\n\t\t//This tween will wait 1s before alpha is faded to 0.\n\t\tcreatejs.Tween.get(target).wait(1000).to({alpha:0}, 1000);",
+            "itemtype": "method",
+            "name": "wait",
+            "params": [
+                {
+                    "name": "duration",
+                    "description": "The duration of the wait in milliseconds (or in ticks if `useTicks` is true).",
+                    "type": "Number"
+                },
+                {
+                    "name": "passive",
+                    "description": "Tween properties will not be updated during a passive wait. This\nis mostly useful for use with {{#crossLink \"Timeline\"}}{{/crossLink}} instances that contain multiple tweens\naffecting the same target at different times.",
+                    "type": "Boolean",
+                    "optional": true
+                }
+            ],
+            "return": {
+                "description": "This tween instance (for chaining calls).",
+                "type": "Tween"
+            },
+            "class": "Tween",
+            "module": "TweenJS"
+        },
+        {
+            "file": "tweenjs/Tween.js",
+            "line": 576,
+            "description": "Queues a tween from the current values to the target properties. Set duration to 0 to jump to these value.\nNumeric properties will be tweened from their current value in the tween to the target value. Non-numeric\nproperties will be set at the end of the specified duration.\n<h4>Example</h4>\n\n\t\tcreatejs.Tween.get(target).to({alpha:0}, 1000);",
+            "itemtype": "method",
+            "name": "to",
+            "params": [
+                {
+                    "name": "props",
+                    "description": "An object specifying property target values for this tween (Ex. `{x:300}` would tween the x\nproperty of the target to 300).",
+                    "type": "Object"
+                },
+                {
+                    "name": "duration",
+                    "description": "The duration of the wait in milliseconds (or in ticks if `useTicks` is true).",
+                    "type": "Number",
+                    "optional": true,
+                    "optdefault": "0"
+                },
+                {
+                    "name": "ease",
+                    "description": "The easing function to use for this tween. See the {{#crossLink \"Ease\"}}{{/crossLink}}\nclass for a list of built-in ease functions.",
+                    "type": "Function",
+                    "optional": true,
+                    "optdefault": "\"linear\""
+                }
+            ],
+            "return": {
+                "description": "This tween instance (for chaining calls).",
+                "type": "Tween"
+            },
+            "class": "Tween",
+            "module": "TweenJS"
+        },
+        {
+            "file": "tweenjs/Tween.js",
+            "line": 597,
+            "description": "Queues an action to call the specified function.\n<h4>Example</h4>\n\n  \t//would call myFunction() after 1 second.\n  \tmyTween.wait(1000).call(myFunction);",
+            "itemtype": "method",
+            "name": "call",
+            "params": [
+                {
+                    "name": "callback",
+                    "description": "The function to call.",
+                    "type": "Function"
+                },
+                {
+                    "name": "params",
+                    "description": "The parameters to call the function with. If this is omitted, then the function\n     will be called with a single param pointing to this tween.",
+                    "type": "Array",
+                    "optional": true
+                },
+                {
+                    "name": "scope",
+                    "description": "The scope to call the function in. If omitted, it will be called in the target's\n     scope.",
+                    "type": "Object",
+                    "optional": true
+                }
+            ],
+            "return": {
+                "description": "This tween instance (for chaining calls).",
+                "type": "Tween"
+            },
+            "class": "Tween",
+            "module": "TweenJS"
+        },
+        {
+            "file": "tweenjs/Tween.js",
+            "line": 617,
+            "description": "Queues an action to set the specified props on the specified target. If target is null, it will use this tween's\ntarget.\n<h4>Example</h4>\n\n\t\tmyTween.wait(1000).set({visible:false},foo);",
+            "itemtype": "method",
+            "name": "set",
+            "params": [
+                {
+                    "name": "props",
+                    "description": "The properties to set (ex. `{visible:false}`).",
+                    "type": "Object"
+                },
+                {
+                    "name": "target",
+                    "description": "The target to set the properties on. If omitted, they will be set on the tween's target.",
+                    "type": "Object",
+                    "optional": true
+                }
+            ],
+            "return": {
+                "description": "This tween instance (for chaining calls).",
+                "type": "Tween"
+            },
+            "class": "Tween",
+            "module": "TweenJS"
+        },
+        {
+            "file": "tweenjs/Tween.js",
+            "line": 633,
+            "description": "Queues an action to play (unpause) the specified tween. This enables you to sequence multiple tweens.\n<h4>Example</h4>\n\n\t\tmyTween.to({x:100},500).play(otherTween);",
+            "itemtype": "method",
+            "name": "play",
+            "params": [
+                {
+                    "name": "tween",
+                    "description": "The tween to play.",
+                    "type": "Tween"
+                }
+            ],
+            "return": {
+                "description": "This tween instance (for chaining calls).",
+                "type": "Tween"
+            },
+            "class": "Tween",
+            "module": "TweenJS"
+        },
+        {
+            "file": "tweenjs/Tween.js",
+            "line": 648,
+            "description": "Queues an action to pause the specified tween.",
+            "itemtype": "method",
+            "name": "pause",
+            "params": [
+                {
+                    "name": "tween",
+                    "description": "The tween to pause. If null, it pauses this tween.",
+                    "type": "Tween"
+                }
+            ],
+            "return": {
+                "description": "This tween instance (for chaining calls)",
+                "type": "Tween"
+            },
+            "class": "Tween",
+            "module": "TweenJS"
+        },
+        {
+            "file": "tweenjs/Tween.js",
+            "line": 659,
+            "description": "Advances the tween to a specified position.",
+            "itemtype": "method",
+            "name": "setPosition",
+            "params": [
+                {
+                    "name": "value",
+                    "description": "The position to seek to in milliseconds (or ticks if useTicks is true).",
+                    "type": "Number"
+                },
+                {
+                    "name": "actionsMode",
+                    "description": "Specifies how actions are handled (ie. call, set, play, pause):\n<ul>\n     <li>{{#crossLink \"Tween/NONE:property\"}}{{/crossLink}} (0) - run no actions.</li>\n     <li>{{#crossLink \"Tween/LOOP:property\"}}{{/crossLink}} (1) - if new position is less than old, then run all\n     actions between old and duration, then all actions between 0 and new.</li>\n     <li>{{#crossLink \"Tween/REVERSE:property\"}}{{/crossLink}} (2) - if new position is less than old, run all\n     actions between them in reverse.</li>\n</ul>",
+                    "type": "Number",
+                    "optional": true,
+                    "optdefault": "1"
+                }
+            ],
+            "return": {
+                "description": "Returns `true` if the tween is complete (ie. the full tween has run & {{#crossLink \"Tween/loop:property\"}}{{/crossLink}}\nis `false`).",
+                "type": "Boolean"
+            },
+            "class": "Tween",
+            "module": "TweenJS"
+        },
+        {
+            "file": "tweenjs/Tween.js",
+            "line": 729,
+            "description": "Advances this tween by the specified amount of time in milliseconds (or ticks if`useTicks` is `true`).\nThis is normally called automatically by the Tween engine (via {{#crossLink \"Tween/tick\"}}{{/crossLink}}), but is\nexposed for advanced uses.",
+            "itemtype": "method",
+            "name": "tick",
+            "params": [
+                {
+                    "name": "delta",
+                    "description": "The time to advance in milliseconds (or ticks if `useTicks` is `true`).",
+                    "type": "Number"
+                }
+            ],
+            "class": "Tween",
+            "module": "TweenJS"
+        },
+        {
+            "file": "tweenjs/Tween.js",
+            "line": 741,
+            "description": "Pauses or plays this tween.",
+            "itemtype": "method",
+            "name": "setPaused",
+            "params": [
+                {
+                    "name": "value",
+                    "description": "Indicates whether the tween should be paused (`true`) or played (`false`).",
+                    "type": "Boolean",
+                    "optional": true,
+                    "optdefault": "true"
+                }
+            ],
+            "return": {
+                "description": "This tween instance (for chaining calls)",
+                "type": "Tween"
+            },
+            "class": "Tween",
+            "module": "TweenJS"
+        },
+        {
+            "file": "tweenjs/Tween.js",
+            "line": 760,
+            "description": "Returns a string representation of this object.",
+            "itemtype": "method",
+            "name": "toString",
+            "return": {
+                "description": "a string representation of the instance.",
+                "type": "String"
+            },
+            "class": "Tween",
+            "module": "TweenJS"
+        },
+        {
+            "file": "tweenjs/Tween.js",
+            "line": 769,
+            "itemtype": "method",
+            "name": "clone",
+            "access": "protected",
+            "tagname": "",
+            "class": "Tween",
+            "module": "TweenJS"
+        },
+        {
+            "file": "tweenjs/Tween.js",
+            "line": 778,
+            "itemtype": "method",
+            "name": "_updateTargetProps",
+            "params": [
+                {
+                    "name": "step",
+                    "description": "",
+                    "type": "Object"
+                },
+                {
+                    "name": "ratio",
+                    "description": "",
+                    "type": "Number"
+                }
+            ],
+            "access": "protected",
+            "tagname": "",
+            "class": "Tween",
+            "module": "TweenJS"
+        },
+        {
+            "file": "tweenjs/Tween.js",
+            "line": 822,
+            "itemtype": "method",
+            "name": "_runActions",
+            "params": [
+                {
+                    "name": "startPos",
+                    "description": "",
+                    "type": "Number"
+                },
+                {
+                    "name": "endPos",
+                    "description": "",
+                    "type": "Number"
+                },
+                {
+                    "name": "includeStart",
+                    "description": "",
+                    "type": "Boolean"
+                }
+            ],
+            "access": "protected",
+            "tagname": "",
+            "class": "Tween",
+            "module": "TweenJS"
+        },
+        {
+            "file": "tweenjs/Tween.js",
+            "line": 851,
+            "itemtype": "method",
+            "name": "_appendQueueProps",
+            "params": [
+                {
+                    "name": "o",
+                    "description": "",
+                    "type": "Object"
+                }
+            ],
+            "access": "protected",
+            "tagname": "",
+            "class": "Tween",
+            "module": "TweenJS"
+        },
+        {
+            "file": "tweenjs/Tween.js",
+            "line": 889,
+            "itemtype": "method",
+            "name": "_cloneProps",
+            "params": [
+                {
+                    "name": "props",
+                    "description": "",
+                    "type": "Object"
+                }
+            ],
+            "access": "protected",
+            "tagname": "",
+            "class": "Tween",
+            "module": "TweenJS"
+        },
+        {
+            "file": "tweenjs/Tween.js",
+            "line": 902,
+            "itemtype": "method",
+            "name": "_addStep",
+            "params": [
+                {
+                    "name": "o",
+                    "description": "",
+                    "type": "Object"
+                }
+            ],
+            "access": "protected",
+            "tagname": "",
+            "class": "Tween",
+            "module": "TweenJS"
+        },
+        {
+            "file": "tweenjs/Tween.js",
+            "line": 916,
+            "itemtype": "method",
+            "name": "_addAction",
+            "params": [
+                {
+                    "name": "o",
+                    "description": "",
+                    "type": "Object"
+                }
+            ],
+            "access": "protected",
+            "tagname": "",
+            "class": "Tween",
+            "module": "TweenJS"
+        },
+        {
+            "file": "tweenjs/Tween.js",
+            "line": 927,
+            "itemtype": "method",
+            "name": "_set",
+            "params": [
+                {
+                    "name": "props",
+                    "description": "",
+                    "type": "Object"
+                },
+                {
+                    "name": "o",
+                    "description": "",
+                    "type": "Object"
+                }
+            ],
+            "access": "protected",
+            "tagname": "",
+            "class": "Tween",
+            "module": "TweenJS"
+        },
+        {
+            "file": "tweenjs/version.js",
+            "line": 16,
+            "description": "The version string for this release.",
+            "itemtype": "property",
+            "name": "version",
+            "type": "String",
+            "static": 1,
+            "class": "TweenJS",
+            "module": "TweenJS"
+        },
+        {
+            "file": "tweenjs/version.js",
+            "line": 24,
+            "description": "The build date for this release in UTC format.",
+            "itemtype": "property",
+            "name": "buildDate",
+            "type": "String",
+            "static": 1,
+            "class": "TweenJS",
+            "module": "TweenJS"
+        }
+    ],
+    "warnings": [
+        {
+            "message": "replacing incorrect tag: returns with return",
+            "line": " createjs/utils/Ticker.js:505"
+        },
+        {
+            "message": "Missing item type\nDetermine the appropriate x/y/rotation information about a path for a given ratio along the path.\nAssumes a path object with all optional parameters specified.",
+            "line": " tweenjs/MotionGuidePlugin.js:279"
+        }
+    ]
+}

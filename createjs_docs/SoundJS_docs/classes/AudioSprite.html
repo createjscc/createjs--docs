@@ -1,0 +1,247 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="utf-8">
+    <link rel="stylesheet" href="../assets/css/yui-cssgrids-min.css">
+    <link rel="stylesheet" href="../assets/vendor/prettify/prettify-min.css">
+    <link rel="stylesheet" href="../assets/css/main.css" id="site_styles">
+    <link rel="shortcut icon" type="image/x-icon" href="../assets/favicon.ico">
+    <script src="../assets/js/yui-source.js"></script>
+	<title>SoundJS 中文API v0.6.2</title>
+</head>
+<body class="yui3-skin-sam">
+
+<div id="doc">
+    <div id="hd" class="yui3-g header">
+        <div class="yui3-u-3-4">
+
+                <h1><a href="http://www.createjs.com/soundjs"><img src="../assets/docs-icon-SoundJS.png" title="SoundJS"></a></h1>
+
+        </div>
+        <div class="yui3-u-1-4 version">
+            <em>API 版本: 0.6.2</em>
+        </div>
+    </div>
+    <div id="bd" class="yui3-g">
+
+        <div class="yui3-u-1-4">
+            <div id="docs-sidebar" class="sidebar apidocs">
+                <div id="api-list">
+    <h2 class="off-left">APIs</h2>
+    <div id="api-tabview" class="tabview">
+        <ul class="tabs">
+            <li><a href="#api-classes">Classes</a></li>
+        </ul>
+
+        <div id="api-tabview-filter">
+            <input type="search" id="api-filter" placeholder="搜索 API">
+        </div>
+
+        <div id="api-tabview-panel">
+            <ul id="api-classes" class="apis classes">
+
+                <li><a href="../classes/AbstractPlugin.html">AbstractPlugin</a></li>
+
+                <li><a href="../classes/AbstractSoundInstance.html">AbstractSoundInstance</a></li>
+
+                <li><a href="../classes/AudioSprite.html">AudioSprite</a></li>
+
+                <li><a href="../classes/CordovaAudioLoader.html">CordovaAudioLoader</a></li>
+
+                <li><a href="../classes/CordovaAudioPlugin.html">CordovaAudioPlugin</a></li>
+
+                <li><a href="../classes/CordovaAudioSoundInstance.html">CordovaAudioSoundInstance</a></li>
+
+                <li><a href="../classes/ErrorEvent.html">ErrorEvent</a></li>
+
+                <li><a href="../classes/Event.html">Event</a></li>
+
+                <li><a href="../classes/EventDispatcher.html">EventDispatcher</a></li>
+
+                <li><a href="../classes/FlashAudioLoader.html">FlashAudioLoader</a></li>
+
+                <li><a href="../classes/FlashAudioPlugin.html">FlashAudioPlugin</a></li>
+
+                <li><a href="../classes/FlashAudioSoundInstance.html">FlashAudioSoundInstance</a></li>
+
+                <li><a href="../classes/HTMLAudioPlugin.html">HTMLAudioPlugin</a></li>
+
+                <li><a href="../classes/HTMLAudioSoundInstance.html">HTMLAudioSoundInstance</a></li>
+
+                <li><a href="../classes/HTMLAudioTagPool.html">HTMLAudioTagPool</a></li>
+
+                <li><a href="../classes/PlayPropsConfig.html">PlayPropsConfig</a></li>
+
+                <li><a href="../classes/Sound.html">Sound</a></li>
+
+                <li><a href="../classes/SoundJS.html">SoundJS</a></li>
+
+                <li><a href="../classes/Utility Methods.html">Utility Methods</a></li>
+
+                <li><a href="../classes/WebAudioLoader.html">WebAudioLoader</a></li>
+
+                <li><a href="../classes/WebAudioPlugin.html">WebAudioPlugin</a></li>
+
+                <li><a href="../classes/WebAudioSoundInstance.html">WebAudioSoundInstance</a></li>
+
+            </ul>
+
+            <ul id="api-modules" class="apis modules">
+
+                <li><a href="../modules/CreateJS.html">CreateJS</a></li>
+
+                <li><a href="../modules/SoundJS.html">SoundJS</a></li>
+
+            </ul>
+        </div>
+    </div>
+</div>
+
+            </div>
+        </div>
+        <div class="yui3-u-3-4">
+          <div id="api-options">
+      显示:
+      <label for="api-show-inherited">
+          <input type="checkbox" id="api-show-inherited" checked>
+          继承的
+      </label>
+
+      <label for="api-show-protected">
+          <input type="checkbox" id="api-show-protected">
+           受保护的
+      </label>
+
+      <label for="api-show-private">
+          <input type="checkbox" id="api-show-private">
+           私有的
+      </label>
+      <label for="api-show-deprecated">
+          <input type="checkbox" id="api-show-deprecated">
+           弃用的
+      </label>
+
+    </div>
+            <div class="apidocs">
+                <div id="docs-main">
+                    <div class="content">
+                        <h1>AudioSprite 类</h1>
+<div class="box meta">
+
+
+
+
+
+        <div class="foundat">
+            定义: <a href="../files/soundjs_data_AudioSprite.js.html#l6"><code>AudioSprite:6</code></a>
+        </div>
+
+
+
+
+            模块: <a href="../modules/SoundJS.html">SoundJS</a>
+
+
+
+
+        <p>0.6.0 及以上版本</p>
+
+</div>
+
+
+
+<div class="box intro">
+    <p><strong>注意:AudioSprite不是一个类,但其使用文档中很容易丢失,所以它被称为快速参考这里。 </strong></p>
+<p>音频精灵很像CSS精灵或图像精灵表：组合成一个单一的文件多音频资产。音频精灵变通限制在某些浏览器，
+  其中只有一个单一的声音可以被加载并在一个时间播放。我们建议的音频片段之间的空挡至少300ms的处理HTML标签音频误差，并防止邻近的剪辑不慎打位。</p>
+<p><strong>音频精灵的优点： </strong></p>
+<ul>
+    <li>旧的浏览器和设备，只允许单个音频实例，如iOS 5的更强大的支持。 </li>
+    <li>它们提供了一个变通的Internet Explorer 9的音频标签的限制，这限制了可一次装入多少不同的声音。 </li>
+    <li>只需要几个声音一个网络请求，尤其是在那里每个文件的网络往返可以添加显著延迟的移动设备更快的加载。</li>
+</ul>
+
+<p><strong>音频精灵的缺点 </strong></p>
+<ul>
+    <li>使用HTML或Flash音频时平稳循环的任何保证。如果你有一个需要循环顺畅的轨道，并要支持非Web浏览器的音频，不使用音频精灵的声音，如果你能避免它。 </li>
+    <li>不能保证HTML声音会立即回放，特别是第一次。在某些浏览器（！镀铬），HTML音频将只加载通过足以在当前的下载速度播放 - 所以我们依靠canplaythrough事件，以确定是否音频被加载。由于音频精灵必须直接跳到扮演着特定的声音，声音可能还没有完全下载。 </li>
+    <li>音频精灵共享相同的核心来源，所以如果你有5声音的精灵，并只限于2同时执行的情况下，你只能在同一时间播放声音的2。 </li>
+</ul>
+
+<h4>实例</h4>
+
+<pre class="code prettyprint"><code>    createjs.Sound.initializeDefaultPlugins();
+    var assetsPath = "./assets/";
+    var sounds = [{
+        src:"MyAudioSprite.ogg", data: {
+            audioSprite: [
+                {id:"sound1", startTime:0, duration:500},
+                {id:"sound2", startTime:1000, duration:400},
+                {id:"sound3", startTime:1700, duration: 1000}
+            ]}
+        }
+    ];
+    createjs.Sound.alternateExtensions = ["mp3"];
+    createjs.Sound.on("fileload", loadSound);
+    createjs.Sound.registerSounds(sounds, assetsPath);
+    // 之后加载完成
+    createjs.Sound.play("sound2");</code></pre>
+<p>您还可以通过创建一个新的AbstractSoundInstance时设置startTime和持续时间动态创建音频精灵。 </p>
+<pre class="code prettyprint"><code>    createjs.Sound.play("MyAudioSprite", {startTime: 1000, duration: 400});</code></pre>
+<p>优秀的CreateJS社会创造了在工具来创建音频精灵，可
+<a href="https://github.com/tonistiigi/audiosprite" target="_blank"><a href="https://github.com/tonistiigi/audiosprite">https://github.com/tonistiigi/audiosprite</a></a>,
+以及一个  <a href="http://jsfiddle.net/bharat_battu/g8fFP/12/" target="_blank">jsfiddle</a> 于输出到SoundJS格式转换。 </p>
+
+</div>
+
+
+
+<div id="classdocs" class="tabview">
+    <ul class="api-class-tabs">
+        <li class="api-class-tab index"><a href="#index">Index</a></li>
+
+
+
+
+
+    </ul>
+
+    <div>
+        <div id="index" class="api-class-tabpanel index">
+            <h2 class="off-left">Item Index</h2>
+
+
+
+
+
+
+
+
+        </div>
+
+
+
+
+
+
+
+
+    </div>
+</div>
+
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+<script src="../assets/vendor/prettify/prettify-min.js"></script>
+<script>prettyPrint();</script>
+<script src="../assets/js/yui-prettify.js"></script>
+<script src="../assets/../api.js"></script>
+<script src="../assets/js/api-filter.js"></script>
+<script src="../assets/js/api-list.js"></script>
+<script src="../assets/js/api-search.js"></script>
+<script src="../assets/js/apidocs.js"></script>
+</body>
+</html>
